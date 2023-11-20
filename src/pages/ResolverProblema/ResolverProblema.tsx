@@ -101,6 +101,36 @@ const ResolverProblema: React.FC = () => {
       <IonContent className="ion-padding">
         <IonTitle className="resolver-title">Simulación de Proyecto de Inversión</IonTitle>
 
+        {/* Campos para ingresar valores */}
+        <IonList>
+          <IonItem>
+            <IonLabel position="stacked">Inversión Inicial - Valor Mínimo:</IonLabel>
+            <IonInput type="number" value={inversionMin} onIonChange={(e) => setInversionMin(parseFloat(e.detail.value!))}></IonInput>
+          </IonItem>
+
+          {/* Repite lo mismo para los demás campos de inversión y flujo neto (máximo y probable) */}
+          
+          <IonItem>
+            <IonLabel position="stacked">Total de Años:</IonLabel>
+            <IonInput type="number" value={numYears} onIonChange={(e) => setNumYears(parseInt(e.detail.value!, 10))}></IonInput>
+          </IonItem>
+
+          <IonItem>
+            <IonLabel position="stacked">TREMA (%):</IonLabel>
+            <IonInput type="number" value={trema} onIonChange={(e) => setTREMA(parseFloat(e.detail.value!))}></IonInput>
+          </IonItem>
+
+          <IonItem>
+            <IonLabel position="stacked">Porcentaje de Aceptación (%):</IonLabel>
+            <IonInput type="number" value={porcentajeAceptacion} onIonChange={(e) => setPorcentajeAceptacion(parseFloat(e.detail.value!))}></IonInput>
+          </IonItem>
+
+          <IonItem>
+            <IonLabel position="stacked">Número de Corridas:</IonLabel>
+            <IonInput type="number" value={corridas} onIonChange={(e) => setCorridas(parseInt(e.detail.value!, 10))}></IonInput>
+          </IonItem>
+        </IonList>
+
         {/* ... Resto de la interfaz de usuario ... */}
 
         <IonButton onClick={simularProyecto}>Simular Proyecto</IonButton>
