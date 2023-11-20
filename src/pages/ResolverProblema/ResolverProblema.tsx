@@ -103,6 +103,7 @@ const ResolverProblema: React.FC = () => {
 
         {/* Campos para ingresar valores */}
         <IonList>
+          {/* Campos para Inversión Inicial */}
           <IonItem>
             <IonLabel position="stacked">Inversión Inicial - Valor Mínimo:</IonLabel>
             <IonInput type="number" value={inversionMin} onIonChange={(e) => setInversionMin(parseFloat(e.detail.value!))}></IonInput>
@@ -116,6 +117,22 @@ const ResolverProblema: React.FC = () => {
           <IonItem>
             <IonLabel position="stacked">Inversión Inicial - Valor Probable:</IonLabel>
             <IonInput type="number" value={inversionProbable} onIonChange={(e) => setInversionProbable(parseFloat(e.detail.value!))}></IonInput>
+          </IonItem>
+
+          {/* Campos para Flujo Neto */}
+          <IonItem>
+            <IonLabel position="stacked">Flujo Neto - Valor Mínimo:</IonLabel>
+            <IonInput type="number" value={flujoMin} onIonChange={(e) => setFlujoMin(parseFloat(e.detail.value!))}></IonInput>
+          </IonItem>
+
+          <IonItem>
+            <IonLabel position="stacked">Flujo Neto - Valor Máximo:</IonLabel>
+            <IonInput type="number" value={flujoMax} onIonChange={(e) => setFlujoMax(parseFloat(e.detail.value!))}></IonInput>
+          </IonItem>
+
+          <IonItem>
+            <IonLabel position="stacked">Flujo Neto - Valor Probable:</IonLabel>
+            <IonInput type="number" value={flujoProbable} onIonChange={(e) => setFlujoProbable(parseFloat(e.detail.value!))}></IonInput>
           </IonItem>
 
           <IonItem>
