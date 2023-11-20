@@ -54,12 +54,17 @@ const Inicio: React.FC = () => {
         }
 
         // Validar que los porcentajes estén en el rango permitido (1% - 100%)
-        if (trema < 1 || trema > 100 || porcentajeAceptacion < 1 || porcentajeAceptacion > 100) {
-            // Mostrar un mensaje de error si algún porcentaje está fuera del rango permitido
-            setErrorMessage('Los porcentajes deben estar entre 1% y 100%');
-            setShowErrorToast(true);
-            return;
-          }
+        const validateInput = (value: number, min: number, max: number, errorMessage: string) => {
+            if (value < min || value > max) {
+              setErrorMessage(errorMessage);
+              setShowErrorToast(true);
+              return false;
+            }
+            return true;
+          };
+          
+          // Llamada a la función de validación
+          validateInput(trema, 1, 100, 'El TREMA debe estar entre 1% y 100%');
 
 
     // Realizar cálculos según las fórmulas proporcionadas
@@ -183,7 +188,7 @@ return (
             </IonCol>
           </IonRow>
 
-          <p> Inversion Inicial </p>
+          <p> Flujo Neto </p>
           {/* Campos de entrada para datos de Flujo Neto */}
           <IonRow>
             <IonCol>

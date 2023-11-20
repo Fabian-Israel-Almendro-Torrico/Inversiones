@@ -1,4 +1,6 @@
 // Importa las bibliotecas necesarias
+import * as finance from 'financejs';
+import irr from 'irr';
 import React, { useEffect, useState } from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons } from '@ionic/react';
 import { useParams } from 'react-router-dom';
@@ -32,19 +34,21 @@ import { useParams } from 'react-router-dom';
     } = useParams<CorridasParams>();
 
   // Estados para almacenar los resultados de las corridas
-  const [resultados, setResultados] = useState<{ rendimiento: number }[]>([]);
+  const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujoNeto: number, tir: number }[]>([]);
 
   // Función para realizar los cálculos de las corridas
   const simularCorridas = () => {
-    // Realiza los cálculos según tus necesidades y actualiza los resultados
-    // Puedes utilizar los parámetros obtenidos de la URL
-    // Guarda los resultados en el estado resultados usando setResultados
     const resultadosSimulados = [];
     for (let i = 0; i < parseInt(numeroCorridas, 10); i++) {
-      const resultado = {
-        // Agrega los detalles del resultado según tus cálculos
-        rendimiento: Math.random() * 100, // Un ejemplo hipotético de rendimiento
-        // ...
+        const inversionInicial = calcularInversionInicial();
+        const flujoNeto = calcularFlujoNeto();
+        const tir = calcularTIR(inversionInicial, flujoNeto);
+      
+        const resultado = {
+            rendimiento: Math.random() * 100,
+            inversionInicial,
+            flujoNeto,
+            tir,
       };
       resultadosSimulados.push(resultado);
     }
@@ -53,10 +57,47 @@ import { useParams } from 'react-router-dom';
     setResultados(resultadosSimulados);
   };
 
-  // Utiliza useEffect para simular las corridas cuando el componente se monta
+  const calcularInversionInicial = () => {
+    const aleatorio = Math.random();
+
+    const inversionInicial =
+      aleatorio <= (parseFloat(valorProbableInversion) - parseFloat(valorMinimoInversion)) / (parseFloat(valorMaximoInversion) - parseFloat(valorMinimoInversion))
+        ? parseFloat(valorMinimoInversion) +
+          Math.sqrt(aleatorio * (parseFloat(valorMaximoInversion) - parseFloat(valorMinimoInversion)) * (parseFloat(valorProbableInversion) - parseFloat(valorMinimoInversion)))
+        : parseFloat(valorMaximoInversion) -
+          Math.sqrt(
+            (1 - aleatorio) * (parseFloat(valorMaximoInversion) - parseFloat(valorMinimoInversion)) * (parseFloat(valorMaximoInversion) - parseFloat(valorProbableInversion))
+          );
+  
+    return inversionInicial;
+  };
+
+  const calcularFlujoNeto = () => {
+    const aleatorio = Math.random();
+
+    const flujoNeto =
+      aleatorio <= (parseFloat(valorProbableFlujoNeto) - parseFloat(valorMinimoFlujoNeto)) / (parseFloat(valorMaximoFlujoNeto) - parseFloat(valorMinimoFlujoNeto))
+        ? parseFloat(valorMinimoFlujoNeto) +
+          Math.sqrt(aleatorio * (parseFloat(valorMaximoFlujoNeto) - parseFloat(valorMinimoFlujoNeto)) * (parseFloat(valorProbableFlujoNeto) - parseFloat(valorMinimoFlujoNeto)))
+        : parseFloat(valorMaximoFlujoNeto) -
+          Math.sqrt(
+            (1 - aleatorio) * (parseFloat(valorMaximoFlujoNeto) - parseFloat(valorMinimoFlujoNeto)) * (parseFloat(valorMaximoFlujoNeto) - parseFloat(valorProbableFlujoNeto))
+          );
+  
+    return flujoNeto;
+  };
+
+  const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
+  // Utiliza la función irr para calcular la TIR
+  const cashflows = [-inversionInicial, flujoNeto];
+  const tir = irr(cashflows);
+
+  return tir * 100; // Multiplica por 100 para obtener el porcentaje
+};
+
   useEffect(() => {
     simularCorridas();
-  }, []); // Asegúrate de ajustar las dependencias según tus necesidades
+  }, []); 
 
   return (
     <IonPage>
@@ -64,22 +105,49 @@ import { useParams } from 'react-router-dom';
         <IonToolbar>
 
         <IonButtons slot="start">
-            <IonBackButton defaultHref="/" /> {/* Puedes ajustar "defaultHref" según la ruta a la que deseas volver */}
+        <IonBackButton defaultHref="/inicio" />
           </IonButtons>
 
           <IonTitle>Resultados de Corridas</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonList>
-          {/* Muestra los resultados obtenidos de las corridas */}
-          {resultados.map((resultado, index) => (
-            <IonItem key={index}>
-              <IonLabel>Resultado {index + 1}</IonLabel>
-              <IonLabel>{/* Muestra los detalles del resultado, por ejemplo, rendimiento financiero, etc. */}</IonLabel>
-            </IonItem>
-          ))}
-        </IonList>
+      <IonList>
+      {resultados.map((resultado, index) => (
+  <IonItem key={index}>
+    <IonLabel>Corrida {index + 1}</IonLabel>
+    <IonLabel>
+      Rendimiento: {resultado.rendimiento}
+    </IonLabel>
+    <IonList lines="none">
+      <IonItem lines="none">
+        <IonLabel>Año</IonLabel>
+        <IonLabel>Inversión Inicial</IonLabel>
+        <IonLabel>Flujo Neto</IonLabel>
+      </IonItem>
+      <IonItem lines="none">
+        <IonLabel>0</IonLabel>
+        <IonLabel>{-resultado.inversionInicial}</IonLabel>
+        <IonLabel>0</IonLabel>
+      </IonItem>
+      {Array.from({ length: parseInt(numeroAnios, 10) }, (_, year) => {
+        const flujoNetoAnio = calcularFlujoNeto();
+        return (
+          <IonItem lines="none" key={year + 1}>
+            <IonLabel>{year + 1}</IonLabel>
+            <IonLabel>{resultado.inversionInicial}</IonLabel>
+            <IonLabel>
+              {flujoNetoAnio}
+            </IonLabel>
+          </IonItem>
+        );
+      })}
+    </IonList>
+    <IonLabel>TIR: {resultado.tir}</IonLabel>
+  </IonItem>
+))}
+
+</IonList>
       </IonContent>
     </IonPage>
   );
