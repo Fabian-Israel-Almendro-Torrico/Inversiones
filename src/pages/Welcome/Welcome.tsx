@@ -10,7 +10,7 @@ const Welcome: React.FC = () => {
 
   const handleStartButtonClick = () => {
     // Redirige a la ruta "/resolver-problema" al hacer clic en el botón
-    history.push('/resolver-problema');
+    history.push('/inicio');
   };
 
   return (

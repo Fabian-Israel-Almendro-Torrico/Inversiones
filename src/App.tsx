@@ -1,9 +1,12 @@
+// src/App.tsx
+
+import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
-import Welcome from './pages/Welcome/Welcome';
-import ResolverProblema from './pages/ResolverProblema/ResolverProblema';
+import Inicio from './pages/Inicio/Inicio';
+import Corridas from './pages/Corridas/Corridas';
+import Resultados from './pages/Resultados/Resultados';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -30,13 +33,14 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route path="/home" component={Home} exact />
-        <Route path="/bienvenida" component={Welcome} exact />
-        <Route path="/resolver-problema" component={ResolverProblema} exact />
-        <Redirect exact from="/" to="/bienvenida" />
+        <Route path="/inicio" component={Inicio} exact />
+        <Route path="/corridas" component={Corridas} exact />
+        <Route path="/resultados" component={Resultados} exact />
+        <Redirect exact from="/" to="/inicio" />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
 );
 
 export default App;
+
