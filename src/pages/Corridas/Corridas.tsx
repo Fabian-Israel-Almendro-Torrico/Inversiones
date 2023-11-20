@@ -1,32 +1,85 @@
-// src/pages/Corridas/Corridas.tsx
+// Importa las bibliotecas necesarias
+import React, { useEffect, useState } from 'react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons } from '@ionic/react';
+import { useParams } from 'react-router-dom';
 
-import React, { useState, useEffect } from 'react';
-import { IonPage, IonContent, IonTitle, IonList, IonItem, IonLabel } from '@ionic/react';
+  interface CorridasParams {
+    trema: string;
+    porcentajeAceptacion: string;
+    numeroCorridas: string;
+    numeroAnios: string;
+    valorMinimoInversion: string;
+    valorMaximoInversion: string;
+    valorProbableInversion: string;
+    valorMinimoFlujoNeto: string;
+    valorMaximoFlujoNeto: string;
+    valorProbableFlujoNeto: string;
+  }
+  
+  const Corridas: React.FC = () => {
+    // Obtén los parámetros de la URL usando useParams de React Router
+    const {
+      trema,
+      porcentajeAceptacion,
+      numeroCorridas,
+      numeroAnios,
+      valorMinimoInversion,
+      valorMaximoInversion,
+      valorProbableInversion,
+      valorMinimoFlujoNeto,
+      valorMaximoFlujoNeto,
+      valorProbableFlujoNeto,
+    } = useParams<CorridasParams>();
 
-const Corridas: React.FC = () => {
-  const [corridasData, setCorridasData] = useState<number[][]>([]);
+  // Estados para almacenar los resultados de las corridas
+  const [resultados, setResultados] = useState<{ rendimiento: number }[]>([]);
 
+  // Función para realizar los cálculos de las corridas
+  const simularCorridas = () => {
+    // Realiza los cálculos según tus necesidades y actualiza los resultados
+    // Puedes utilizar los parámetros obtenidos de la URL
+    // Guarda los resultados en el estado resultados usando setResultados
+    const resultadosSimulados = [];
+    for (let i = 0; i < parseInt(numeroCorridas, 10); i++) {
+      const resultado = {
+        // Agrega los detalles del resultado según tus cálculos
+        rendimiento: Math.random() * 100, // Un ejemplo hipotético de rendimiento
+        // ...
+      };
+      resultadosSimulados.push(resultado);
+    }
+  
+    // Actualiza el estado con los resultados simulados
+    setResultados(resultadosSimulados);
+  };
+
+  // Utiliza useEffect para simular las corridas cuando el componente se monta
   useEffect(() => {
-    // Aquí deberías calcular y establecer los datos de las corridas
-    // Puedes usar tu lógica de cálculo de Inversión Inicial, Flujo Neto y TIR aquí
-  }, []);
+    simularCorridas();
+  }, []); // Asegúrate de ajustar las dependencias según tus necesidades
 
   return (
     <IonPage>
-      <IonContent className="ion-padding">
-        <IonTitle>Detalle de Corridas</IonTitle>
+      <IonHeader>
+        <IonToolbar>
+
+        <IonButtons slot="start">
+            <IonBackButton defaultHref="/" /> {/* Puedes ajustar "defaultHref" según la ruta a la que deseas volver */}
+          </IonButtons>
+
+          <IonTitle>Resultados de Corridas</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
         <IonList>
-          {corridasData.map((corridaData, index) => (
+          {/* Muestra los resultados obtenidos de las corridas */}
+          {resultados.map((resultado, index) => (
             <IonItem key={index}>
-              <IonLabel>
-                <h2>{index + 1}° Corrida</h2>
-                {/* Mostrar datos de la corrida actual */}
-                {/* Año, Inversión Inicial, Flujo Neto, TIR, etc. */}
-              </IonLabel>
+              <IonLabel>Resultado {index + 1}</IonLabel>
+              <IonLabel>{/* Muestra los detalles del resultado, por ejemplo, rendimiento financiero, etc. */}</IonLabel>
             </IonItem>
           ))}
         </IonList>
-        {/* Botón para ir a la vista de Resultados */}
       </IonContent>
     </IonPage>
   );
