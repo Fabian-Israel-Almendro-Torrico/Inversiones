@@ -108,13 +108,23 @@ const ResolverProblema: React.FC = () => {
             <IonInput type="number" value={inversionMin} onIonChange={(e) => setInversionMin(parseFloat(e.detail.value!))}></IonInput>
           </IonItem>
 
-          {/* Repite lo mismo para los demás campos de inversión y flujo neto (máximo y probable) */}
-          
+          <IonItem>
+            <IonLabel position="stacked">Inversión Inicial - Valor Máximo:</IonLabel>
+            <IonInput type="number" value={inversionMax} onIonChange={(e) => setInversionMax(parseFloat(e.detail.value!))}></IonInput>
+          </IonItem>
+
+          <IonItem>
+            <IonLabel position="stacked">Inversión Inicial - Valor Probable:</IonLabel>
+            <IonInput type="number" value={inversionProbable} onIonChange={(e) => setInversionProbable(parseFloat(e.detail.value!))}></IonInput>
+          </IonItem>
+
           <IonItem>
             <IonLabel position="stacked">Total de Años:</IonLabel>
             <IonInput type="number" value={numYears} onIonChange={(e) => setNumYears(parseInt(e.detail.value!, 10))}></IonInput>
           </IonItem>
 
+          {/* Repite lo mismo para los demás campos de inversión y flujo neto (máximo y probable) */}
+          
           <IonItem>
             <IonLabel position="stacked">TREMA (%):</IonLabel>
             <IonInput type="number" value={trema} onIonChange={(e) => setTREMA(parseFloat(e.detail.value!))}></IonInput>
