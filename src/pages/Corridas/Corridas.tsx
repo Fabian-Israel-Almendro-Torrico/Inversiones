@@ -38,7 +38,13 @@ import { useParams } from 'react-router-dom';
 
   // Función para realizar los cálculos de las corridas
   const simularCorridas = () => {
-    const resultadosSimulados = [];
+    const resultadosSimulados: {
+        rendimiento: number;
+        inversionInicial: number;
+        flujoNeto: number;
+        tir: number;
+      }[] = [];
+
     for (let i = 0; i < parseInt(numeroCorridas, 10); i++) {
         const inversionInicial = calcularInversionInicial();
         const flujoNeto = calcularFlujoNeto();
@@ -53,9 +59,13 @@ import { useParams } from 'react-router-dom';
       resultadosSimulados.push(resultado);
     }
   
+    // Agrega console.log para verificar los resultados simulados
+    console.log('Resultados Simulados:', resultadosSimulados);
+
     // Actualiza el estado con los resultados simulados
     setResultados(resultadosSimulados);
   };
+
 
   const calcularInversionInicial = () => {
     const aleatorio = Math.random();
@@ -96,7 +106,26 @@ import { useParams } from 'react-router-dom';
 };
 
   useEffect(() => {
+    try {
+        // Convertir los parámetros a números
+        const tremaValue = parseFloat(trema);
+        const porcentajeAceptacionValue = parseFloat(porcentajeAceptacion);
+        const numeroCorridasValue = parseInt(numeroCorridas, 10);
+        const numeroAniosValue = parseInt(numeroAnios, 10);
+        const valorMinimoInversionValue = parseFloat(valorMinimoInversion);
+        const valorMaximoInversionValue = parseFloat(valorMaximoInversion);
+        const valorProbableInversionValue = parseFloat(valorProbableInversion);
+        const valorMinimoFlujoNetoValue = parseFloat(valorMinimoFlujoNeto);
+        const valorMaximoFlujoNetoValue = parseFloat(valorMaximoFlujoNeto);
+        const valorProbableFlujoNetoValue = parseFloat(valorProbableFlujoNeto);
+  
+        // Realizar tus cálculos utilizando estas variables
     simularCorridas();
+    } catch (error) {
+    console.error("Error al convertir los parámetros:", error);
+    // Manejo de error al convertir los parámetros
+    // Puedes mostrar un mensaje de error en la interfaz o redirigir a una página de error
+  }
   }, []); 
 
   return (
