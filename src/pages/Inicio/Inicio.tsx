@@ -29,7 +29,8 @@ const Inicio: React.FC = () => {
 
 
   const [showSuccessToast, setShowSuccessToast] = useState(false);
-
+  const [showErrorToast, setShowErrorToast] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const history = useHistory();
   const handleSimularClick = () => {
@@ -47,9 +48,19 @@ const Inicio: React.FC = () => {
             valorProbableFlujoNeto <= 0
         ) {
             // Mostrar un mensaje de error o hacer lo que sea necesario
-            console.error('Todos los campos son obligatorios y deben ser mayores que 0');
+            setErrorMessage('Todos los campos son obligatorios y deben ser mayores que 0');
+            setShowErrorToast(true);
             return;
         }
+
+        // Validar que los porcentajes estén en el rango permitido (1% - 100%)
+        if (trema < 1 || trema > 100 || porcentajeAceptacion < 1 || porcentajeAceptacion > 100) {
+            // Mostrar un mensaje de error si algún porcentaje está fuera del rango permitido
+            setErrorMessage('Los porcentajes deben estar entre 1% y 100%');
+            setShowErrorToast(true);
+            return;
+          }
+
 
     // Realizar cálculos según las fórmulas proporcionadas
     // Por ejemplo, para la inversión inicial
@@ -99,6 +110,9 @@ return (
                 max={100}  // Valor máximo permitido
                 onIonChange={(e) => setTrema(parseFloat(e.detail.value!))}
               />
+            {trema < 1 || trema > 100 ? (
+              <IonLabel color="danger">El TREMA debe estar entre 1% y 100%</IonLabel>
+            ) : null}
             </IonCol>
             <IonCol>
               <IonLabel>Porcentaje de Proyecto Aceptado (%)</IonLabel>
@@ -110,6 +124,9 @@ return (
                 max={100}  // Valor máximo permitido
                 onIonChange={(e) => setPorcentajeAceptacion(parseFloat(e.detail.value!))}
               />
+            {porcentajeAceptacion < 1 || porcentajeAceptacion > 100 ? (
+              <IonLabel color="danger">El porcentaje de aceptación debe estar entre 1% y 100%</IonLabel>
+            ) : null}
             </IonCol>
           </IonRow>
 
@@ -207,6 +224,15 @@ return (
             position="top"
             color="success"  // Puedes ajustar el color según tu estilo
             />
+
+            <IonToast
+                isOpen={showErrorToast}
+                onDidDismiss={() => setShowErrorToast(false)}
+                message={errorMessage}
+                duration={3000}
+                position="top" 
+                color="danger"
+             />
 
           <IonButton expand="full" onClick={handleSimularClick}>
             Simular Proyecto
