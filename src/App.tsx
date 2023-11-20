@@ -33,7 +33,7 @@ const App: React.FC = () => (
         <Route path="/home" component={Home} exact />
         <Route path="/bienvenida" component={Welcome} exact />
         <Route path="/resolver-problema" component={ResolverProblema} exact />
-        <Redirect exact from="/" to="/home" />
+        <Redirect exact from="/" to="/bienvenida" />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
