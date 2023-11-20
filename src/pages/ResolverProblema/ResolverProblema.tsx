@@ -1,31 +1,99 @@
 // src/pages/ResolverProblema/ResolverProblema.tsx
 
 import React, { useState } from 'react';
-import { IonContent, IonPage, IonTitle, IonLabel, IonInput, IonButton } from '@ionic/react';
+import {
+  IonContent,
+  IonPage,
+  IonTitle,
+  IonLabel,
+  IonInput,
+  IonButton,
+  IonList,
+  IonItem,
+} from '@ionic/react';
 import './ResolverProblema.css';
 
 const ResolverProblema: React.FC = () => {
-  const [minValue, setMinValue] = useState<number>(0);
-  const [maxValue, setMaxValue] = useState<number>(0);
-  const [modalValue, setModalValue] = useState<number>(0);
+  const [inversionInicial, setInversionInicial] = useState<number>(0);
   const [numYears, setNumYears] = useState<number>(5);
-  const [trema, setTREMA] = useState<number>(0.3);
-  const [simulationResults, setSimulationResults] = useState<number[]>([]);
+  const [trema, setTREMA] = useState<number>(30);
+  const [porcentajeAceptacion, setPorcentajeAceptacion] = useState<number>(90);
+  const [corridas, setCorridas] = useState<number>(10);
+  const [tirResults, setTIRResults] = useState<number[]>([]);
 
-  const simulateProject = () => {
-    // Lógica de simulación aquí usando transformada inversa
+  const [inversionMin, setInversionMin] = useState<number>(0);
+  const [inversionMax, setInversionMax] = useState<number>(0);
+  const [inversionProbable, setInversionProbable] = useState<number>(0);
+
+  const [flujoMin, setFlujoMin] = useState<number>(0);
+  const [flujoMax, setFlujoMax] = useState<number>(0);
+  const [flujoProbable, setFlujoProbable] = useState<number>(0);
+
+  const calcularInversionInicial = (): number[] => {
+    const inversionInicialArray: number[] = [inversionInicial];
+
+    for (let i = 1; i <= numYears; i++) {
+      const valorInversion = calcularValorDistribucionTriangular(inversionMin, inversionMax, inversionProbable);
+      inversionInicialArray.push(valorInversion);
+    }
+
+    return inversionInicialArray;
+  };
+
+  const calcularFlujoNeto = (inversionInicialArray: number[]): number[] => {
+    const flujoNetoArray: number[] = [-inversionInicialArray[0]];
+
+    for (let i = 1; i <= numYears; i++) {
+      const valorFlujo = calcularValorDistribucionTriangular(flujoMin, flujoMax, flujoProbable);
+      flujoNetoArray.push(valorFlujo);
+    }
+
+    return flujoNetoArray;
+  };
+
+  const calcularValorDistribucionTriangular = (min: number, max: number, moda: number): number => {
+    // Implementar la lógica de la transformada inversa de la distribución triangular
     // ...
 
-    // Ejemplo: Generación de 5 valores aleatorios entre minValue y maxValue utilizando la distribución triangular
-    const simulatedValues = Array.from({ length: numYears }, () => {
-      const U = Math.random();
-      const F = (modalValue - minValue) / (maxValue - minValue);
-      return U <= F ? minValue + Math.sqrt(U * (maxValue - minValue) * (modalValue - minValue)) : 
-                      maxValue - Math.sqrt((1 - U) * (maxValue - minValue) * (maxValue - modalValue));
-    });
+    // Este es solo un ejemplo, ajusta según tus necesidades
+    const U = Math.random();
+    const F = (moda - min) / (max - min);
+    return U <= F ? min + Math.sqrt(U * (max - min) * (moda - min)) :
+                    max - Math.sqrt((1 - U) * (max - min) * (max - moda));
+  };
 
-    // Mostrar los resultados de la simulación
-    setSimulationResults(simulatedValues);
+  const calcularTIR = (flujoNetoArray: number[]): number => {
+    // Implementar la lógica de cálculo de TIR aquí
+    // ...
+
+    // Este es solo un ejemplo, ajusta según tus necesidades
+    const tir = Math.random() * 100; // Simulación de la TIR
+
+    return tir;
+  };
+
+  const verificarAceptacion = (tir: number): boolean => {
+    return tir > trema;
+  };
+
+  const simularProyecto = (): void => {
+    const resultadosTIR: number[] = [];
+
+    for (let i = 0; i < corridas; i++) {
+      const inversionInicialArray = calcularInversionInicial();
+      const flujoNetoArray = calcularFlujoNeto(inversionInicialArray);
+      const tir = calcularTIR(flujoNetoArray);
+      resultadosTIR.push(tir);
+    }
+
+    // Evaluar porcentaje de TIR > TREMA
+    const porcentajeAceptacionReal = (resultadosTIR.filter(tir => tir > trema).length / corridas) * 100;
+
+    // Evaluar si el porcentaje supera el porcentaje de aceptación ingresado por el usuario
+    const proyectoAceptado = porcentajeAceptacionReal >= porcentajeAceptacion;
+
+    // Actualizar el estado
+    setTIRResults(resultadosTIR);
   };
 
   return (
@@ -33,30 +101,17 @@ const ResolverProblema: React.FC = () => {
       <IonContent className="ion-padding">
         <IonTitle className="resolver-title">Simulación de Proyecto de Inversión</IonTitle>
 
-        <IonLabel position="stacked">Valor Mínimo:</IonLabel>
-        <IonInput type="number" value={minValue} onIonChange={(e) => setMinValue(parseFloat(e.detail.value!))}></IonInput>
+        {/* ... Resto de la interfaz de usuario ... */}
 
-        <IonLabel position="stacked">Valor Máximo:</IonLabel>
-        <IonInput type="number" value={maxValue} onIonChange={(e) => setMaxValue(parseFloat(e.detail.value!))}></IonInput>
-
-        <IonLabel position="stacked">Valor Modal:</IonLabel>
-        <IonInput type="number" value={modalValue} onIonChange={(e) => setModalValue(parseFloat(e.detail.value!))}></IonInput>
-
-        <IonLabel position="stacked">Número de Años:</IonLabel>
-        <IonInput type="number" value={numYears} onIonChange={(e) => setNumYears(parseInt(e.detail.value!, 10))}></IonInput>
-
-        <IonLabel position="stacked">TREMA:</IonLabel>
-        <IonInput type="number" value={trema} onIonChange={(e) => setTREMA(parseFloat(e.detail.value!))}></IonInput>
-
-        <IonButton onClick={simulateProject}>Simular Proyecto</IonButton>
+        <IonButton onClick={simularProyecto}>Simular Proyecto</IonButton>
 
         {/* Mostrar los resultados de la simulación */}
-        {simulationResults.length > 0 && (
+        {tirResults.length > 0 && (
           <div>
             <h2>Resultados de la Simulación:</h2>
             <ul>
-              {simulationResults.map((value, index) => (
-                <li key={index}>Año {index + 1}: {value}</li>
+              {tirResults.map((tir, index) => (
+                <li key={index}>Corrida {index + 1}: TIR {tir.toFixed(2)}%</li>
               ))}
             </ul>
           </div>
