@@ -92,13 +92,47 @@ interface DatosCorridasType {
   return flujoNeto;
   };
 
-  const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
+ /* const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
     // Utiliza la función irr para calcular la TIR
     const cashflows = [-inversionInicial, flujoNeto];
     const tir = irr(cashflows);
 
   return tir * 100; // Multiplica por 100 para obtener el porcentaje
+}; */
+
+const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
+  const maxIteraciones = 1000;
+  const tolerancia = 0.0001;
+
+  let tir = 0.1; // Supongamos una tasa inicial
+  let vpn = vpnFlujos(inversionInicial, flujoNeto, tir);
+
+  for (let i = 0; i < maxIteraciones; i++) {
+    const derivada = derivadaVPNFlujos(inversionInicial, flujoNeto, tir);
+    tir = tir - vpn / derivada;
+
+    vpn = vpnFlujos(inversionInicial, flujoNeto, tir);
+
+    if (Math.abs(vpn) < tolerancia) {
+      // Se alcanzó la tolerancia deseada
+      break;
+    }
+  }
+
+  return tir * 100;
 };
+
+// Función para calcular el Valor Presente Neto (VPN) de los flujos de efectivo
+const vpnFlujos = (inversionInicial: number, flujoNeto: number, tir: number) => {
+  return -inversionInicial + flujoNeto / (1 + tir);
+};
+
+// Función para calcular la derivada del VPN respecto a la tasa
+const derivadaVPNFlujos = (inversionInicial: number, flujoNeto: number, tir: number) => {
+  return -flujoNeto / Math.pow(1 + tir, 2);
+};
+
+
 
   useEffect(() => {
     try {
