@@ -194,8 +194,17 @@ const derivadaVPNFlujos = (inversionInicial: number, flujoNeto: number, tir: num
     return (
       <IonItem lines="none" key={year}>
         <IonLabel>{year}</IonLabel>
-        <IonLabel>{resultado.inversionInicial}</IonLabel>
-        <IonLabel>{-resultado.inversionInicial}</IonLabel>
+        {year === 0 ? (
+          <>
+            <IonLabel>{resultado.inversionInicial > 0 ? resultado.inversionInicial : 0}</IonLabel>
+            <IonLabel>{resultado.inversionInicial < 0 ? -resultado.inversionInicial : 0}</IonLabel>
+          </>
+        ) : (
+          <>
+            <IonLabel>0</IonLabel>
+            <IonLabel>{calcularFlujoNeto()}</IonLabel>
+          </>
+        )}
       </IonItem>
     );
   }
