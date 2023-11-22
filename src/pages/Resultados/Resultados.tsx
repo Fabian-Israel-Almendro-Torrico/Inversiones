@@ -58,3 +58,5 @@ const Resultados: React.FC = () => {
     </IonPage>
   );
 };
+
+export default Resultados;
