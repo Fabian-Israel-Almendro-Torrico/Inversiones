@@ -89,9 +89,26 @@ const Inicio: React.FC = () => {
     // Redirige a la vista de Corridas y pasa los parámetros como parte del estado de la ubicación
 
   // Ejemplo de redirección a la vista de Corridas utilizando useHistory
-    history.push(`/corridas/${trema}/${porcentajeAceptacion}/${numeroCorridas}/${numeroAnios}/${valorMinimoInversion}/${valorMaximoInversion}/${valorProbableInversion}/${valorMinimoFlujoNeto}/${valorMaximoFlujoNeto}/${valorProbableFlujoNeto}`);
-    
-    setShowSuccessToast(true);
+  const datosCorridas = {
+    trema,
+    porcentajeAceptacion,
+    numeroCorridas,
+    numeroAnios,
+    valorMinimoInversion,
+    valorMaximoInversion,
+    valorProbableInversion,
+    valorMinimoFlujoNeto,
+    valorMaximoFlujoNeto,
+    valorProbableFlujoNeto,
+  };
+  
+  
+  history.push({
+    pathname: "/corridas",
+    state: { datosCorridas },
+  });
+      
+  setShowSuccessToast(true);
 
 };
 

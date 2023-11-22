@@ -1,37 +1,29 @@
 // Importa las bibliotecas necesarias
+import { useLocation } from 'react-router-dom';
 import * as finance from 'financejs';
 import irr from 'irr';
 import React, { useEffect, useState } from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons } from '@ionic/react';
 import { useParams } from 'react-router-dom';
 
-  interface CorridasParams {
-    trema: string;
-    porcentajeAceptacion: string;
-    numeroCorridas: string;
-    numeroAnios: string;
-    valorMinimoInversion: string;
-    valorMaximoInversion: string;
-    valorProbableInversion: string;
-    valorMinimoFlujoNeto: string;
-    valorMaximoFlujoNeto: string;
-    valorProbableFlujoNeto: string;
-  }
+interface DatosCorridasType {
+  trema: number;
+  porcentajeAceptacion: number;
+  numeroCorridas: number;
+  numeroAnios: number;
+  valorMinimoInversion: number;
+  valorMaximoInversion: number;
+  valorProbableInversion: number;
+  valorMinimoFlujoNeto: number;
+  valorMaximoFlujoNeto: number;
+  valorProbableFlujoNeto: number;
+}
   
   const Corridas: React.FC = () => {
-    // Obtén los parámetros de la URL usando useParams de React Router
-    const {
-      trema,
-      porcentajeAceptacion,
-      numeroCorridas,
-      numeroAnios,
-      valorMinimoInversion,
-      valorMaximoInversion,
-      valorProbableInversion,
-      valorMinimoFlujoNeto,
-      valorMaximoFlujoNeto,
-      valorProbableFlujoNeto,
-    } = useParams<CorridasParams>();
+
+  // Obtén la ubicación actual
+  const location = useLocation();
+  const datosCorridas = (location.state as { datosCorridas?: DatosCorridasType })?.datosCorridas;
 
   // Estados para almacenar los resultados de las corridas
   const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujoNeto: number, tir: number }[]>([]);
@@ -45,7 +37,7 @@ import { useParams } from 'react-router-dom';
         tir: number;
       }[] = [];
 
-    for (let i = 0; i < parseInt(numeroCorridas, 10); i++) {
+      for (let i = 0; i < (datosCorridas?.numeroCorridas || 0); i++) {
         const inversionInicial = calcularInversionInicial();
         const flujoNeto = calcularFlujoNeto();
         const tir = calcularTIR(inversionInicial, flujoNeto);
@@ -70,14 +62,16 @@ import { useParams } from 'react-router-dom';
   const calcularInversionInicial = () => {
     const aleatorio = Math.random();
 
+    const valorMinimoInversion = datosCorridas?.valorMinimoInversion || 0;
+    const valorMaximoInversion = datosCorridas?.valorMaximoInversion || 1;
+    const valorProbableInversion = datosCorridas?.valorProbableInversion || 0;
+
     const inversionInicial =
-      aleatorio <= (parseFloat(valorProbableInversion) - parseFloat(valorMinimoInversion)) / (parseFloat(valorMaximoInversion) - parseFloat(valorMinimoInversion))
-        ? parseFloat(valorMinimoInversion) +
-          Math.sqrt(aleatorio * (parseFloat(valorMaximoInversion) - parseFloat(valorMinimoInversion)) * (parseFloat(valorProbableInversion) - parseFloat(valorMinimoInversion)))
-        : parseFloat(valorMaximoInversion) -
-          Math.sqrt(
-            (1 - aleatorio) * (parseFloat(valorMaximoInversion) - parseFloat(valorMinimoInversion)) * (parseFloat(valorMaximoInversion) - parseFloat(valorProbableInversion))
-          );
+    aleatorio <= (valorProbableInversion - valorMinimoInversion) / (valorMaximoInversion - valorMinimoInversion)
+    ? valorMinimoInversion + Math.sqrt(aleatorio * (valorMaximoInversion - valorMinimoInversion) * (valorProbableInversion - valorMinimoInversion))
+    : valorMaximoInversion -
+      Math.sqrt((1 - aleatorio) * (valorMaximoInversion - valorMinimoInversion) * (valorMaximoInversion - valorProbableInversion));
+
   
     return inversionInicial;
   };
@@ -85,22 +79,23 @@ import { useParams } from 'react-router-dom';
   const calcularFlujoNeto = () => {
     const aleatorio = Math.random();
 
+    const valorMinimoFlujoNeto = datosCorridas?.valorMinimoFlujoNeto || 0;
+    const valorMaximoFlujoNeto = datosCorridas?.valorMaximoFlujoNeto || 1;
+    const valorProbableFlujoNeto = datosCorridas?.valorProbableFlujoNeto || 0;
+
     const flujoNeto =
-      aleatorio <= (parseFloat(valorProbableFlujoNeto) - parseFloat(valorMinimoFlujoNeto)) / (parseFloat(valorMaximoFlujoNeto) - parseFloat(valorMinimoFlujoNeto))
-        ? parseFloat(valorMinimoFlujoNeto) +
-          Math.sqrt(aleatorio * (parseFloat(valorMaximoFlujoNeto) - parseFloat(valorMinimoFlujoNeto)) * (parseFloat(valorProbableFlujoNeto) - parseFloat(valorMinimoFlujoNeto)))
-        : parseFloat(valorMaximoFlujoNeto) -
-          Math.sqrt(
-            (1 - aleatorio) * (parseFloat(valorMaximoFlujoNeto) - parseFloat(valorMinimoFlujoNeto)) * (parseFloat(valorMaximoFlujoNeto) - parseFloat(valorProbableFlujoNeto))
-          );
-  
-    return flujoNeto;
+    aleatorio <= (valorProbableFlujoNeto - valorMinimoFlujoNeto) / (valorMaximoFlujoNeto - valorMinimoFlujoNeto)
+    ? valorMinimoFlujoNeto + Math.sqrt(aleatorio * (valorMaximoFlujoNeto - valorMinimoFlujoNeto) * (valorProbableFlujoNeto - valorMinimoFlujoNeto))
+    : valorMaximoFlujoNeto -
+      Math.sqrt((1 - aleatorio) * (valorMaximoFlujoNeto - valorMinimoFlujoNeto) * (valorMaximoFlujoNeto - valorProbableFlujoNeto));
+
+  return flujoNeto;
   };
 
   const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
-  // Utiliza la función irr para calcular la TIR
-  const cashflows = [-inversionInicial, flujoNeto];
-  const tir = irr(cashflows);
+    // Utiliza la función irr para calcular la TIR
+    const cashflows = [-inversionInicial, flujoNeto];
+    const tir = irr(cashflows);
 
   return tir * 100; // Multiplica por 100 para obtener el porcentaje
 };
@@ -108,16 +103,16 @@ import { useParams } from 'react-router-dom';
   useEffect(() => {
     try {
         // Convertir los parámetros a números
-        const tremaValue = parseFloat(trema);
-        const porcentajeAceptacionValue = parseFloat(porcentajeAceptacion);
-        const numeroCorridasValue = parseInt(numeroCorridas, 10);
-        const numeroAniosValue = parseInt(numeroAnios, 10);
-        const valorMinimoInversionValue = parseFloat(valorMinimoInversion);
-        const valorMaximoInversionValue = parseFloat(valorMaximoInversion);
-        const valorProbableInversionValue = parseFloat(valorProbableInversion);
-        const valorMinimoFlujoNetoValue = parseFloat(valorMinimoFlujoNeto);
-        const valorMaximoFlujoNetoValue = parseFloat(valorMaximoFlujoNeto);
-        const valorProbableFlujoNetoValue = parseFloat(valorProbableFlujoNeto);
+        const trema = datosCorridas?.trema;
+        const porcentajeAceptacion = datosCorridas?.porcentajeAceptacion;
+        const numeroCorridas = datosCorridas?.numeroCorridas;
+        const numeroAnios = datosCorridas?.numeroAnios;
+        const valorMinimoInversion = datosCorridas?.valorMinimoInversion;
+        const valorMaximoInversion = datosCorridas?.valorMaximoInversion;
+        const valorProbableInversion = datosCorridas?.valorProbableInversion;
+        const valorMinimoFlujoNeto = datosCorridas?.valorMinimoFlujoNeto;
+        const valorMaximoFlujoNeto = datosCorridas?.valorMaximoFlujoNeto;
+        const valorProbableFlujoNeto = datosCorridas?.valorProbableFlujoNeto
   
         // Realizar tus cálculos utilizando estas variables
     simularCorridas();
@@ -126,7 +121,7 @@ import { useParams } from 'react-router-dom';
     // Manejo de error al convertir los parámetros
     // Puedes mostrar un mensaje de error en la interfaz o redirigir a una página de error
   }
-  }, []); 
+  }, [datosCorridas]); 
 
   return (
     <IonPage>
@@ -159,7 +154,7 @@ import { useParams } from 'react-router-dom';
         <IonLabel>{-resultado.inversionInicial}</IonLabel>
         <IonLabel>0</IonLabel>
       </IonItem>
-      {Array.from({ length: parseInt(numeroAnios, 10) }, (_, year) => {
+      {Array.from({ length: datosCorridas?.numeroAnios || 0 }, (_, year) => {
         const flujoNetoAnio = calcularFlujoNeto();
         return (
           <IonItem lines="none" key={year + 1}>
