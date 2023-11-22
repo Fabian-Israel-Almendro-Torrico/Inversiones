@@ -1,7 +1,6 @@
 // Importa las bibliotecas necesarias
 import { useLocation } from 'react-router-dom';
 import * as finance from 'financejs';
-import irr from 'irr';
 import React, { useEffect, useState } from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons } from '@ionic/react';
 import { useParams } from 'react-router-dom';
@@ -40,8 +39,9 @@ interface DatosCorridasType {
       for (let i = 0; i < (datosCorridas?.numeroCorridas || 0); i++) {
         const inversionInicial = calcularInversionInicial();
         const flujoNeto = calcularFlujoNeto();
-        const tir = calcularTIR(inversionInicial, flujoNeto);
-      
+        /*const tir = calcularTIR(inversionInicial, [flujoNeto]);*/
+        const tir = calcularTIR(inversionInicial, [inversionInicial, ...Array.from({ length: datosCorridas?.numeroAnios || 0 }, () => flujoNeto)]);
+
         const resultado = {
             rendimiento: Math.random() * 100,
             inversionInicial,
@@ -100,18 +100,22 @@ interface DatosCorridasType {
   return tir * 100; // Multiplica por 100 para obtener el porcentaje
 }; */
 
-const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
+const calcularTIR = (inversionInicial: number, flujosNetos: number[]) => {
   const maxIteraciones = 1000;
   const tolerancia = 0.0001;
 
   let tir = 0.1; // Supongamos una tasa inicial
-  let vpn = vpnFlujos(inversionInicial, flujoNeto, tir);
 
   for (let i = 0; i < maxIteraciones; i++) {
-    const derivada = derivadaVPNFlujos(inversionInicial, flujoNeto, tir);
-    tir = tir - vpn / derivada;
+    const vpn = vpnFlujos(inversionInicial, flujosNetos, tir);
+    const derivada = derivadaVPNFlujos(inversionInicial, flujosNetos, tir);
 
-    vpn = vpnFlujos(inversionInicial, flujoNeto, tir);
+    if (derivada === 0) {
+      // Evitar división por cero
+      break;
+    }
+
+    tir = tir - vpn / derivada;
 
     if (Math.abs(vpn) < tolerancia) {
       // Se alcanzó la tolerancia deseada
@@ -119,20 +123,31 @@ const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
     }
   }
 
+  // Limitar el rango de la tasa de retorno a un valor razonable
+  tir = Math.min(Math.max(tir, -1), 1);
+
   return tir * 100;
 };
 
-// Función para calcular el Valor Presente Neto (VPN) de los flujos de efectivo
-const vpnFlujos = (inversionInicial: number, flujoNeto: number, tir: number) => {
-  return -inversionInicial + flujoNeto / (1 + tir);
+const vpnFlujos = (inversionInicial: number, flujosNetos: number[], tir: number) => {
+  let vpn = -inversionInicial;
+
+  for (let i = 0; i < flujosNetos.length; i++) {
+    vpn += flujosNetos[i] / Math.pow(1 + tir, i + 1);
+  }
+
+  return vpn;
 };
 
-// Función para calcular la derivada del VPN respecto a la tasa
-const derivadaVPNFlujos = (inversionInicial: number, flujoNeto: number, tir: number) => {
-  return -flujoNeto / Math.pow(1 + tir, 2);
+const derivadaVPNFlujos = (inversionInicial: number, flujosNetos: number[], tir: number) => {
+  let derivada = 0;
+
+  for (let i = 0; i < flujosNetos.length; i++) {
+    derivada -= (i + 1) * flujosNetos[i] / Math.pow(1 + tir, i + 2);
+  }
+
+  return derivada;
 };
-
-
 
   useEffect(() => {
     try {
