@@ -164,14 +164,14 @@ const ResolverProblema: React.FC = () => {
 
         {/* Mostrar los resultados de la simulación */}
         {tirResults.length > 0 && (
-          <div>
+          <IonItem>
             <h2>Resultados de la Simulación:</h2>
             <ul>
               {tirResults.map((tir, index) => (
                 <li key={index}>Corrida {index + 1}: TIR {tir.toFixed(2)}%</li>
               ))}
             </ul>
-          </div>
+          </IonItem>
         )}
       </IonContent>
     </IonPage>
