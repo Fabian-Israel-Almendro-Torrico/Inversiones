@@ -102,12 +102,13 @@ const Inicio: React.FC = () => {
     valorProbableFlujoNeto,
   };
   
-  
+  console.log('Datos de corridas antes de la redirección:', datosCorridas);
+
   history.push({
     pathname: "/corridas",
     state: { datosCorridas },
   });
-      
+
   setShowSuccessToast(true);
 
 };
