@@ -6,6 +6,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem,
 const Resultados: React.FC = () => {
   // Obtén la ubicación actual
   const location = useLocation();
+  const { resultadosSimulados } = (location.state as { resultadosSimulados?: any }) || {};
   const datosCorridas = (location.state as { datosCorridas?: DatosCorridasType })?.datosCorridas;
 
   // Estados para almacenar los resultados de las corridas
@@ -27,8 +28,15 @@ const Resultados: React.FC = () => {
 
   // UseEffect para simular corridas al cargar la vista
   useEffect(() => {
-    // Resto del código...
-  }, [datosCorridas]);
+    const simularCorridas = () => {
+      // Código para simular las corridas (similar a lo que tienes en Corridas.tsx)
+      // ...
+      // Después de obtener los resultados simulados, actualiza el estado
+      setResultados(resultadosSimulados);
+    };
+  
+    simularCorridas();
+  }, [datosCorridas, resultadosSimulados]);
 
   return (
     <IonPage>
