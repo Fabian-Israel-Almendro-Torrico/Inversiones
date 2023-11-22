@@ -26,37 +26,10 @@ interface DatosCorridasType {
   const datosCorridas = (location.state as { datosCorridas?: DatosCorridasType })?.datosCorridas;
 
   // Estados para almacenar los resultados de las corridas
-  const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujoNeto: number, tir: number }[]>([]);
+  const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujos: number[], tir: number }[]>([]);
 
   // Función para realizar los cálculos de las corridas
-  const simularCorridas = () => {
-    const resultadosSimulados: {
-        rendimiento: number;
-        inversionInicial: number;
-        flujoNeto: number;
-        tir: number;
-      }[] = [];
 
-      for (let i = 0; i < (datosCorridas?.numeroCorridas || 0); i++) {
-        const inversionInicial = calcularInversionInicial();
-        const flujoNeto = calcularFlujoNeto();
-        const tir = calcularTIR(inversionInicial, flujoNeto);
-      
-        const resultado = {
-            rendimiento: Math.random() * 100,
-            inversionInicial,
-            flujoNeto,
-            tir,
-      };
-      resultadosSimulados.push(resultado);
-    }
-  
-    // Agrega console.log para verificar los resultados simulados
-    console.log('Resultados Simulados:', resultadosSimulados);
-
-    // Actualiza el estado con los resultados simulados
-    setResultados(resultadosSimulados);
-  };
 
 
   const calcularInversionInicial = () => {
@@ -100,18 +73,18 @@ interface DatosCorridasType {
   return tir * 100; // Multiplica por 100 para obtener el porcentaje
 }; */
 
-const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
+const calcularTIR = (inversionInicial: number, flujos: number[]) => {
   const maxIteraciones = 1000;
   const tolerancia = 0.0001;
 
   let tir = 0.1; // Supongamos una tasa inicial
-  let vpn = vpnFlujos(inversionInicial, flujoNeto, tir);
+  let vpn = vpnFlujos(inversionInicial, flujos, tir);
 
   for (let i = 0; i < maxIteraciones; i++) {
-    const derivada = derivadaVPNFlujos(inversionInicial, flujoNeto, tir);
+    const derivada = derivadaVPNFlujos(inversionInicial, flujos, tir);
     tir = tir - vpn / derivada;
 
-    vpn = vpnFlujos(inversionInicial, flujoNeto, tir);
+    vpn = vpnFlujos(inversionInicial, flujos, tir);
 
     if (Math.abs(vpn) < tolerancia) {
       // Se alcanzó la tolerancia deseada
@@ -123,15 +96,52 @@ const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
 };
 
 // Función para calcular el Valor Presente Neto (VPN) de los flujos de efectivo
-const vpnFlujos = (inversionInicial: number, flujoNeto: number, tir: number) => {
-  return -inversionInicial + flujoNeto / (1 + tir);
+const vpnFlujos = (inversionInicial: number, flujos: number[], tir: number) => {
+  let suma = 0;
+  for (let t = 0; t < flujos.length; t++) {
+    suma += flujos[t] / Math.pow(1 + tir, t + 1);
+  }
+  return -inversionInicial + suma;
 };
 
 // Función para calcular la derivada del VPN respecto a la tasa
-const derivadaVPNFlujos = (inversionInicial: number, flujoNeto: number, tir: number) => {
-  return -flujoNeto / Math.pow(1 + tir, 2);
+const derivadaVPNFlujos = (inversionInicial: number, flujos: number[], tir: number) => {
+  let suma = 0;
+  for (let t = 0; t < flujos.length; t++) {
+    suma += -flujos[t] * (t + 1) / Math.pow(1 + tir, t + 2);
+  }
+  return suma;
 };
+const simularCorridas = () => {
+  const resultadosSimulados: {
+      rendimiento: number;
+      inversionInicial: number;
+      flujos: number[];
+      tir: number;
+    }[] = [];
 
+    for (let i = 0; i < (datosCorridas?.numeroCorridas || 0); i++) {
+      const inversionInicial = calcularInversionInicial();
+      const flujos: number[] = []; // Array para guardar los flujos de efectivo
+      for (let j = 0; j < (datosCorridas?.numeroAnios || 0); j++) {
+        const flujoNeto = calcularFlujoNeto();
+        flujos.push(flujoNeto); // Agregar el flujo de efectivo al array
+      }
+      const tir = calcularTIR(inversionInicial, flujos);
+    
+      const resultado = {
+          rendimiento: Math.random() * 100,
+          inversionInicial,
+          flujos,
+          tir,
+    };
+    resultadosSimulados.push(resultado);
+  }
+    // Agrega console.log para verificar los resultados simulados
+    console.log('Resultados Simulados:', resultadosSimulados);
+  // Actualiza el estado con los resultados simulados
+  setResultados(resultadosSimulados);
+};
 
 
   useEffect(() => {
