@@ -1,9 +1,10 @@
 // Importa las bibliotecas necesarias
 import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 import * as finance from 'financejs';
-import irr from 'irr';
 import React, { useEffect, useState } from 'react';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons, IonButton } from '@ionic/react';
 import { useParams } from 'react-router-dom';
 
 interface DatosCorridasType {
@@ -20,6 +21,7 @@ interface DatosCorridasType {
 }
   
   const Corridas: React.FC = () => {
+  const history = useHistory();
 
   // Obtén la ubicación actual
   const location = useLocation();
@@ -141,6 +143,7 @@ const simularCorridas = () => {
     console.log('Resultados Simulados:', resultadosSimulados);
   // Actualiza el estado con los resultados simulados
   setResultados(resultadosSimulados);
+  
 };
 
 
@@ -164,6 +167,7 @@ const simularCorridas = () => {
     console.error("Error al convertir los parámetros:", error);
     // Manejo de error al convertir los parámetros
     // Puedes mostrar un mensaje de error en la interfaz o redirigir a una página de error
+    
   }
   }, [datosCorridas]); 
 
@@ -217,6 +221,9 @@ const simularCorridas = () => {
 ))}
 
 </IonList>
+      <IonButton expand="full" onClick={() => history.push('/resultados')}>
+          Ver Resultados
+      </IonButton>
       </IonContent>
     </IonPage>
   );

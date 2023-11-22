@@ -1,34 +1,60 @@
-// src/pages/Resultados/Resultados.tsx
-
+import { useLocation } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import { IonPage, IonContent, IonTitle, IonList, IonItem, IonLabel } from '@ionic/react';
+import { DatosCorridasType } from '../types';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons } from '@ionic/react';
 
 const Resultados: React.FC = () => {
-  const [tirResults, setTIRResults] = useState<number[]>([]);
+  // Obtén la ubicación actual
+  const location = useLocation();
+  const datosCorridas = (location.state as { datosCorridas?: DatosCorridasType })?.datosCorridas;
 
+  // Estados para almacenar los resultados de las corridas
+  const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujos: number[], tir: number }[]>([]);
+
+  // Función para calcular la TIR promedio
+  const calcularPromedioTIR = () => {
+    const sumaTIR = resultados.reduce((suma, resultado) => suma + resultado.tir, 0);
+    const promedioTIR = sumaTIR / resultados.length;
+    return promedioTIR;
+  };
+
+  // Función para verificar si la TIR promedio es aceptada
+  const esTIRaceptado = () => {
+    const promedioTIR = calcularPromedioTIR();
+    const trema = datosCorridas?.trema || 0;
+    return promedioTIR > trema;
+  };
+
+  // UseEffect para simular corridas al cargar la vista
   useEffect(() => {
-    // Aquí deberías calcular y establecer los resultados de TIR
-    // y porcentaje de TIR > TREMA
-  }, []);
+    // Resto del código...
+  }, [datosCorridas]);
 
   return (
     <IonPage>
-      <IonContent className="ion-padding">
-        <IonTitle>Resultados</IonTitle>
-        <IonList>
-          {tirResults.map((tir, index) => (
-            <IonItem key={index}>
-              <IonLabel>
-                <h2>{index + 1}° Corrida</h2>
-                {/* Mostrar TIR de la corrida actual */}
-              </IonLabel>
-            </IonItem>
-          ))}
-        </IonList>
-        {/* Mostrar porcentaje de TIR > TREMA y si el proyecto es aceptado o rechazado */}
+      <IonHeader>
+        {/* Resto del código... */}
+      </IonHeader>
+      <IonContent>
+        {/* Resto del código... */}
+        
+        {/* Muestra las TIR de cada corrida */}
+        {resultados.map((resultado, index) => (
+          <div key={index}>
+            <p>Corrida {index + 1}: TIR = {resultado.tir}%</p>
+          </div>
+        ))}
+
+        {/* Muestra el promedio TIR */}
+        <p>Promedio TIR: {calcularPromedioTIR()}%</p>
+
+        {/* Muestra el resultado de aceptación o rechazo */}
+        {esTIRaceptado() ? (
+          <p>¡El proyecto es ACEPTADO!</p>
+        ) : (
+          <p>El proyecto es RECHAZADO</p>
+        )}
       </IonContent>
     </IonPage>
   );
 };
-
-export default Resultados;
