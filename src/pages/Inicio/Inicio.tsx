@@ -33,6 +33,21 @@ const Inicio: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const history = useHistory();
+
+    // Función para establecer automáticamente los valores predeterminados
+    const setValoresPredeterminados = () => {
+      setTrema(30);
+      setPorcentajeAceptacion(90);
+      setNumeroCorridas(5);
+      setNumeroAnios(5);
+      setValorMinimoInversion(95000);
+      setValorMaximoInversion(105000);
+      setValorProbableInversion(100000);
+      setValorMinimoFlujoNeto(27000);
+      setValorMaximoFlujoNeto(33000);
+      setValorProbableFlujoNeto(30000);
+    };
+
   const handleSimularClick = () => {
         // Validar que todos los campos necesarios estén completos y no tengan el valor 0
         if (
@@ -259,6 +274,9 @@ return (
 
           <IonButton expand="full" onClick={handleSimularClick}>
             Simular Proyecto
+          </IonButton>
+          <IonButton expand="full" onClick={setValoresPredeterminados}>
+            Valores Predeterminados
           </IonButton>
         </IonGrid>
       </IonContent>
