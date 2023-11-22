@@ -40,13 +40,13 @@ const Resultados: React.FC = () => {
         
         {/* Muestra las TIR de cada corrida */}
         {resultados.map((resultado, index) => (
-          <div key={index}>
-            <p>Corrida {index + 1}: TIR = {resultado.tir}%</p>
-          </div>
-        ))}
+      <div key={index}>
+       <p>Corrida {index + 1}: TIR = {resultado.tir.toFixed(2)}%</p>
+      </div>
+      ))}
 
         {/* Muestra el promedio TIR */}
-        <p>Promedio TIR: {calcularPromedioTIR()}%</p>
+        <p>Promedio TIR: {calcularPromedioTIR().toFixed(2)}%</p>
 
         {/* Muestra el resultado de aceptación o rechazo */}
         {esTIRaceptado() ? (
