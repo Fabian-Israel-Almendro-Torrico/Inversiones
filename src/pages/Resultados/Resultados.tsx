@@ -13,8 +13,16 @@ const Resultados: React.FC = () => {
 
   // Función para calcular la TIR promedio
   const calcularPromedioTIR = () => {
-    const sumaTIR = resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.tir, 0);
-    const promedioTIR = sumaTIR / resultadosCorridas.length;
+    const tirValidas = resultadosCorridas.filter((resultado: any) => !isNaN(resultado.tir));
+    
+    if (tirValidas.length === 0) {
+      // No hay TIR válidas, puedes manejar este caso como desees
+      return 0; // O cualquier otro valor predeterminado
+    }
+  
+    const sumaTIR = tirValidas.reduce((suma: number, resultado: any) => suma + resultado.tir, 0);
+    const promedioTIR = sumaTIR / tirValidas.length;
+  
     return promedioTIR;
   };
 
