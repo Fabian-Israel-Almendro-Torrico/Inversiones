@@ -6,29 +6,29 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem,
 const Resultados: React.FC = () => {
   // Obtén la ubicación actual
   const location = useLocation();
-  const datosCorridas = (location.state as { datosCorridas?: DatosCorridasType })?.datosCorridas;
+  const resultadosCorridas = (location.state as { resultados?: any })?.resultados || [];
 
   // Estados para almacenar los resultados de las corridas
-  const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujos: number[], tir: number }[]>([]);
+  /*const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujos: number[], tir: number }[]>([]); */
 
   // Función para calcular la TIR promedio
   const calcularPromedioTIR = () => {
-    const sumaTIR = resultados.reduce((suma, resultado) => suma + resultado.tir, 0);
-    const promedioTIR = sumaTIR / resultados.length;
+    const sumaTIR = resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.tir, 0);
+    const promedioTIR = sumaTIR / resultadosCorridas.length;
     return promedioTIR;
   };
 
   // Función para verificar si la TIR promedio es aceptada
-  const esTIRaceptado = () => {
+  const esProyectoAceptado = () => {
     const promedioTIR = calcularPromedioTIR();
-    const trema = datosCorridas?.trema || 0;
+    const trema = resultadosCorridas[0]?.trema || 0; // asumimos que el TREMA es el mismo para todas las corridas
     return promedioTIR > trema;
   };
 
   // UseEffect para simular corridas al cargar la vista
-  useEffect(() => {
+  /*useEffect(() => {
     // Resto del código...
-  }, [datosCorridas]);
+  }, [datosCorridas]); */
 
   return (
     <IonPage>
@@ -39,7 +39,7 @@ const Resultados: React.FC = () => {
         {/* Resto del código... */}
         
         {/* Muestra las TIR de cada corrida */}
-        {resultados.map((resultado, index) => (
+        {resultadosCorridas.map((resultado: any, index: number) => (
           <div key={index}>
             <p>Corrida {index + 1}: TIR = {resultado.tir}%</p>
           </div>
@@ -49,7 +49,7 @@ const Resultados: React.FC = () => {
         <p>Promedio TIR: {calcularPromedioTIR()}%</p>
 
         {/* Muestra el resultado de aceptación o rechazo */}
-        {esTIRaceptado() ? (
+        {esProyectoAceptado() ? (
           <p>¡El proyecto es ACEPTADO!</p>
         ) : (
           <p>El proyecto es RECHAZADO</p>
