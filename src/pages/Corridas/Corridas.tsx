@@ -188,18 +188,15 @@ const derivadaVPNFlujos = (inversionInicial: number, flujoNeto: number, tir: num
         <IonLabel>{-resultado.inversionInicial}</IonLabel>
         <IonLabel>0</IonLabel>
       </IonItem>
-      {Array.from({ length: datosCorridas?.numeroAnios || 0 }, (_, year) => {
-  const flujoNetoAnio = calcularFlujoNeto();
+      {Array.from({ length: datosCorridas?.numeroAnios || 0 }, (_, index) => {
+  const year = index + 1; // Ajustar el año para comenzar desde 1 en lugar de 0
+  const flujoNetoAnio = year === 1 ? -resultado.inversionInicial : calcularFlujoNeto();
 
   return (
     <IonItem lines="none" key={year}>
       <IonLabel>{year}</IonLabel>
-      <IonLabel>
-        {year === 0 ? resultado.inversionInicial : 0}
-      </IonLabel>
-      <IonLabel>
-        {year === 0 ? -resultado.inversionInicial : flujoNetoAnio}
-      </IonLabel>
+      <IonLabel>{year === 1 ? resultado.inversionInicial : 0}</IonLabel>
+      <IonLabel>{flujoNetoAnio}</IonLabel>
     </IonItem>
   );
 })}
