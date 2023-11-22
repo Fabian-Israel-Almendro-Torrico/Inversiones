@@ -6,7 +6,6 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem,
 const Resultados: React.FC = () => {
   // Obtén la ubicación actual
   const location = useLocation();
-  const { resultadosSimulados } = (location.state as { resultadosSimulados?: any }) || {};
   const datosCorridas = (location.state as { datosCorridas?: DatosCorridasType })?.datosCorridas;
 
   // Estados para almacenar los resultados de las corridas
@@ -28,15 +27,8 @@ const Resultados: React.FC = () => {
 
   // UseEffect para simular corridas al cargar la vista
   useEffect(() => {
-    const simularCorridas = () => {
-      // Código para simular las corridas (similar a lo que tienes en Corridas.tsx)
-      // ...
-      // Después de obtener los resultados simulados, actualiza el estado
-      setResultados(resultadosSimulados);
-    };
-  
-    simularCorridas();
-  }, [datosCorridas, resultadosSimulados]);
+    // Resto del código...
+  }, [datosCorridas]);
 
   return (
     <IonPage>
@@ -48,13 +40,13 @@ const Resultados: React.FC = () => {
         
         {/* Muestra las TIR de cada corrida */}
         {resultados.map((resultado, index) => (
-      <div key={index}>
-       <p>Corrida {index + 1}: TIR = {resultado.tir.toFixed(2)}%</p>
-      </div>
-      ))}
+          <div key={index}>
+            <p>Corrida {index + 1}: TIR = {resultado.tir}%</p>
+          </div>
+        ))}
 
         {/* Muestra el promedio TIR */}
-        <p>Promedio TIR: {calcularPromedioTIR().toFixed(2)}%</p>
+        <p>Promedio TIR: {calcularPromedioTIR()}%</p>
 
         {/* Muestra el resultado de aceptación o rechazo */}
         {esTIRaceptado() ? (

@@ -1,5 +1,7 @@
 // Importa las bibliotecas necesarias
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 import * as finance from 'financejs';
 import React, { useEffect, useState } from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons, IonButton } from '@ionic/react';
@@ -20,7 +22,6 @@ interface DatosCorridasType {
   
   const Corridas: React.FC = () => {
   const history = useHistory();
-  const [showSuccessToast, setShowSuccessToast] = useState(false); // Agregado estado para el Toast
 
   // Obtén la ubicación actual
   const location = useLocation();
@@ -114,32 +115,36 @@ const derivadaVPNFlujos = (inversionInicial: number, flujos: number[], tir: numb
   return suma;
 };
 const simularCorridas = () => {
-  const resultadosSimulados = [];
-  for (let i = 0; i < (datosCorridas?.numeroCorridas || 0); i++) {
-    const inversionInicial = calcularInversionInicial();
-    const flujos: number[] = [];
-    for (let j = 0; j < (datosCorridas?.numeroAnios || 0); j++) {
-      const flujoNeto = calcularFlujoNeto();
-      flujos.push(flujoNeto);
-    }
-    const tir = calcularTIR(inversionInicial, flujos);
-  
-    const resultado = {
-      rendimiento: Math.random() * 100,
-      inversionInicial,
-      flujos,
-      tir,
+  const resultadosSimulados: {
+      rendimiento: number;
+      inversionInicial: number;
+      flujos: number[];
+      tir: number;
+    }[] = [];
+
+    for (let i = 0; i < (datosCorridas?.numeroCorridas || 0); i++) {
+      const inversionInicial = calcularInversionInicial();
+      const flujos: number[] = []; // Array para guardar los flujos de efectivo
+      for (let j = 0; j < (datosCorridas?.numeroAnios || 0); j++) {
+        const flujoNeto = calcularFlujoNeto();
+        flujos.push(flujoNeto); // Agregar el flujo de efectivo al array
+      }
+      const tir = calcularTIR(inversionInicial, flujos);
+    
+      const resultado = {
+          rendimiento: Math.random() * 100,
+          inversionInicial,
+          flujos,
+          tir,
     };
     resultadosSimulados.push(resultado);
   }
     // Agrega console.log para verificar los resultados simulados
     console.log('Resultados Simulados:', resultadosSimulados);
-    history.push({
-      pathname: "/resultados",
-      state: { resultadosSimulados }, // Solo pasamos los resultados simulados
-    });
-    setShowSuccessToast(true);
-  };
+  // Actualiza el estado con los resultados simulados
+  setResultados(resultadosSimulados);
+  
+};
 
 
   useEffect(() => {
