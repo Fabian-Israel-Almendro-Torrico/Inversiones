@@ -210,6 +210,10 @@ const derivadaVPNFlujos = (inversionInicial: number, flujoNeto: number, tir: num
     </IonItem>
   );
 })}
+    </IonList>
+    <IonLabel>TIR: {resultado.tir}</IonLabel>
+  </IonItem>
+))}
 
 </IonList>
       </IonContent>
