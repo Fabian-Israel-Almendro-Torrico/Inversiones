@@ -184,7 +184,7 @@ const derivadaVPNFlujos = (inversionInicial: number, flujoNeto: number, tir: num
         <IonLabel>Flujo Neto</IonLabel>
       </IonItem>
       <IonItem lines="none">
-        <IonLabel>0</IonLabel>
+      <IonLabel>0</IonLabel>
         <IonLabel>{-resultado.inversionInicial}</IonLabel>
         <IonLabel>0</IonLabel>
       </IonItem>
