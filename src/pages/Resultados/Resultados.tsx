@@ -8,15 +8,22 @@ const Resultados: React.FC = () => {
   const location = useLocation();
   const resultadosCorridas = (location.state as { resultados?: any })?.resultados || [];
 
+
+  console.log('Resultados Corridas:', resultadosCorridas);
+
   // Estados para almacenar los resultados de las corridas
   /*const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujos: number[], tir: number }[]>([]); */
 
   // Función para calcular la TIR promedio
   const calcularPromedioTIR = () => {
+    console.log('TIR de cada corrida:', resultadosCorridas.map((resultado: any) => resultado.tir));
+
     const tirValidas = resultadosCorridas.filter((resultado: any) => !isNaN(resultado.tir));
     
     if (tirValidas.length === 0) {
       // No hay TIR válidas, puedes manejar este caso como desees
+      console.log('No hay TIR válidas');
+
       return 0; // O cualquier otro valor predeterminado
     }
   
@@ -28,6 +35,7 @@ const Resultados: React.FC = () => {
 
   // Función para verificar si la TIR promedio es aceptada
   const esProyectoAceptado = () => {
+    console.log('¿Proyecto aceptado?', esProyectoAceptado());
     const promedioTIR = calcularPromedioTIR();
     const trema = resultadosCorridas[0]?.trema || 0; // asumimos que el TREMA es el mismo para todas las corridas
     return promedioTIR > trema;
