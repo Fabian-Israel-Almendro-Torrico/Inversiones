@@ -35,7 +35,7 @@ const Resultados: React.FC = () => {
 
   // Función para verificar si la TIR promedio es aceptada
   const esProyectoAceptado = () => {
-    console.log('¿Proyecto aceptado?', esProyectoAceptado());
+    
     const promedioTIR = calcularPromedioTIR();
     const trema = resultadosCorridas[0]?.trema || 0; // asumimos que el TREMA es el mismo para todas las corridas
     return promedioTIR > trema;
