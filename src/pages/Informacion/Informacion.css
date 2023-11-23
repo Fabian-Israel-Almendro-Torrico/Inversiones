@@ -1,1 +1,88 @@
-/* src/pages/Informacion/Informacion.css */
+.head{
+    width: 100%;
+    height: 40px;
+    flex-shrink: 0;
+    background-color: #050B32;
+}
+  .titleh{
+  width: 20%;
+  height: 31px;
+  flex-shrink: 0;
+  color: rgba(243, 242, 247, 0.94);
+  font-family: Luckiest Guy;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  float: inline-start;
+  margin-top: -3%;
+  }
+  .botona{
+    float: inline-start;
+  } 
+  .logoH{
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    float: inline-end;
+    margin-right: 10px;
+    margin-top: -3.5%;
+    border-radius: 50px;
+  }
+ion-header {
+  background-color: #2C3E50; 
+  color: white; 
+  text-align: center; 
+  font-family: 'Archivo Black', sans-serif; 
+}
+
+
+ion-title {
+  font-size: 1.8em; 
+}
+
+
+ion-content {
+  background-color: white; 
+  padding: 20px; 
+}
+
+
+h1 {
+  font-size: 2.5em; 
+  font-family: 'Archivo Black', sans-serif; 
+}
+
+
+h2 {
+  font-size: 1.5em; 
+  font-family: 'Archivo', sans-serif; 
+}
+
+
+p {
+  font-size: 1em; 
+  font-family: 'Roboto', sans-serif; 
+}
+
+
+img {
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+
+ion-footer ion-button {
+  background-color: #2C3E50; 
+  color: white; 
+  padding: 5px 10px; 
+  font-size: 0.8em; 
+}
+
+
+ion-footer ion-grid {
+  max-width: 100%; 
+}
