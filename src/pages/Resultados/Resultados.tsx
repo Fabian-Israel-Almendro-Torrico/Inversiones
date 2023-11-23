@@ -93,6 +93,13 @@ const Resultados: React.FC = () => {
         ) : (
           <p>El proyecto es RECHAZADO</p>
         )}
+
+        <IonButton expand="full" onClick={redirectToWelcome}>
+          VOLVER
+        </IonButton>
+        <IonButton expand="full" onClick={redirectToInicio}>
+          CALCULAR
+        </IonButton>
       </IonContent>
       <IonFooter>
         <IonGrid>

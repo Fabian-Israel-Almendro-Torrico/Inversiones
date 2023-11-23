@@ -38,10 +38,10 @@ const Welcome: React.FC = () => {
 
         {/* Botones para redirigir a Inicio e Información */}
         <IonButton expand="full" onClick={redirectToInicio}>
-          Ir a Inicio
+          CALCULAR
         </IonButton>
         <IonButton expand="full" onClick={redirectToInformacion}>
-          Ir a Información
+          INFORMACION
         </IonButton>
       </IonContent>
       <IonFooter>

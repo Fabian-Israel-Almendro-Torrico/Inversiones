@@ -297,10 +297,10 @@ return (
 
           <img src="./src/images/HombreAzul.png" alt="HombreAzul" />
           <IonButton expand="full" onClick={handleSimularClick}>
-            Simular Proyecto
+            SIMULAR
           </IonButton>
           <IonButton expand="full" onClick={setValoresPredeterminados}>
-            Valores Predeterminados
+            DAR VALORES
           </IonButton>
         </IonGrid>
       </IonContent>
