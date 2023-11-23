@@ -135,7 +135,7 @@ const simularCorridas = () => {
       tir: number;
     }[] = [];
 
-    for (let i = 0; i < (datosCorridas?.numeroCorridas || 0); i++) {
+    for (let i = 0; i <= (datosCorridas?.numeroCorridas || 0); i++) {
       const inversionInicial = calcularInversionInicial();
       const flujos: number[] = []; // Array para guardar los flujos de efectivo
       for (let j = 0; j < (datosCorridas?.numeroAnios || 0); j++) {
