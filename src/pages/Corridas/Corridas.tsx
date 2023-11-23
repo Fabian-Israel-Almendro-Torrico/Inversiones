@@ -20,6 +20,13 @@ interface DatosCorridasType {
   valorProbableFlujoNeto: number;
 }
   
+interface ResultadoSimulado {
+  rendimiento: number;
+  inversionInicial: number;
+  flujos: number[];
+  tir: number;
+}
+
   const Corridas: React.FC = () => {
   const history = useHistory();
 
@@ -30,12 +37,12 @@ interface DatosCorridasType {
   // Estados para almacenar los resultados de las corridas
   const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujos: number[], tir: number }[]>([]);
 
-  const [resultadosSimulados, setResultadosSimulados] = useState<{
-    rendimiento: number;
+  const [resultadosSimulados, setResultadosSimulados] = useState<ResultadoSimulado[]>([]);
+    /*rendimiento: number;
     inversionInicial: number;
     flujos: number[];
     tir: number;
-  }[]>([]);
+  }[]>([]);*/
   // Función para realizar los cálculos de las corridas
 
 
@@ -144,7 +151,7 @@ const simularCorridas = () => {
           tir,
     };
 
-    console.log('Resultados Simulados:', resultadosSimulados);
+    /*console.log('Resultados Simulados:', resultadosSimulados);*/
 
     /*resultadosSimulados.push(resultado);*/
     resultadosSimuladosNuevos.push(resultado);
@@ -154,7 +161,7 @@ const simularCorridas = () => {
      // Actualiza el estado con los resultados simulados
   /*setResultados(resultadosSimulados);*/
   setResultadosSimulados(resultadosSimuladosNuevos);
-  console.log('Resultados Simulados:', resultadosSimulados);
+  /*console.log('Resultados Simulados:', resultadosSimulados);*/
 
 };
 
@@ -197,7 +204,7 @@ const simularCorridas = () => {
       </IonHeader>
       <IonContent>
       <IonList>
-      {resultados.map((resultado, index) => (
+      {resultadosSimulados.map((resultado: ResultadoSimulado, index: number) => (
   <IonItem key={index}>
     <IonLabel>Corrida {index + 1}</IonLabel>
     <IonLabel>
