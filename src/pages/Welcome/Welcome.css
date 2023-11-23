@@ -1,101 +1,107 @@
-.head{
-  width: 100%;
-  height: 80px;
-  flex-shrink: 0;
-  background-color: #050B32;
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  height: 10vh;
 }
 
-.titleh{
-width: 10%;
-height: 20%;
-flex-shrink: 0;
-color: rgba(243, 242, 247, 0.94);
-font-family: Luckiest Guy;
-font-size: 10px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-float: inline-start;
-margin-top: 15%;
+.titleh {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 1rem;
 }
 
-.logoH{
-  width: 10%;
-  height: 35px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  float: inline-end;
-  margin-right: 10px;
-  margin-top: 5%;
-  border-radius: 50px;
-}
-.contenido{
-width: 100%;
-height: 10px;
-flex-shrink: 0;
-background: #01072E;
-box-shadow: 0px -0.5px 0px 0px rgba(0, 0, 0, 0.30);
-backdrop-filter: blur(13.591408729553223px);
-}
-.titleC{
-  color: #f7f6f6;
-font-family: Luckiest Guy;
-font-size: 80%;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
-margin-top: 1%;
-margin-left: 3.5%;
-}
-.logoC{
-width: 50%;
-height: 60%;
-flex-shrink: 0;
-text-align: center;
-position: relative;
-margin-left: 25%;
-margin-top: 2px;
-margin-bottom: 5px;
-}
-.BC{
-width: 27%;
-height: 20px;
-flex-shrink: 0;
-background: linear-gradient(180deg, #000641 6.25%, rgba(1, 26, 255, 0.62) 99.97%, rgba(6, 22, 160, 0.07) 99.98%, rgba(0, 15, 147, 0.00) 99.99%);
-float: inline-start;
-margin-left: 25%;
-margin-top: 2%;
-}
-.BI{
-width: 27%;
-height: 20px;
-flex-shrink: 0;
-background: linear-gradient(180deg, #000641 6.25%, rgba(1, 26, 255, 0.62) 99.97%, rgba(6, 22, 160, 0.07) 99.98%, rgba(0, 15, 147, 0.00) 99.99%);
-float: inline-end;
-margin-right: 20%;
-margin-top: 2%;
-}
-.footer{
-  width: 100%;
-height: 70px;
-flex-shrink: 0;
-background: #01072E;
-box-shadow: 0px -0.5px 0px 0px rgba(0, 0, 0, 0.30);
-backdrop-filter: blur(13.591408729553223px);
-}
-.personf{
-  width: 10%;
-  height: 15px;
-  flex-shrink: 0;
-}
-.homef{
-  width: 10%;
-  height: 15px;
-  flex-shrink: 0;
-}
-.calf{
-  width: 10%;
-  height: 15px;
-  flex-shrink: 0;
+.logoH {
+  width: 10rem;
+  height: 10rem;
+  margin-top: 1rem;
 }
 
+.contenido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  height: 80vh;
+}
+
+.titleC {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 1rem;
+}
+
+.logoC {
+  width: 10rem;
+  height: 10rem;
+  margin-top: 1rem;
+}
+
+.BC {
+  margin-top: 1rem;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.BI {
+  margin-top: 1rem;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #ffffff;
+  height: 10vh;
+}
+
+.BPF {
+  margin-right: 1rem;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.personf {
+  width: 3rem;
+  height: 3rem;
+}
+
+.BHF {
+  margin-right: 1rem;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.homef {
+  width: 3rem;
+  height: 3rem;
+}
+
+.BCF {
+  margin-right: 1rem;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.calf {
+  width: 3rem;
+  height: 3rem;
+}
