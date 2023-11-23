@@ -30,7 +30,7 @@ const Welcome: React.FC = () => {
       </IonHeader>
       <IonContent className="ion-padding">
         {/* Agrega tu logo aquí */}
-        <img src="../images/Logo.png" alt="Logo" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+        <img src="./src/images/Logo.png" alt="Logo" style={{ maxWidth: '100%', maxHeight: '200px' }} />
 
         {/* Mensaje de bienvenida */}
         <p>Bienvenido a la aplicación. ¡Esperamos que disfrutes tu experiencia!</p>
