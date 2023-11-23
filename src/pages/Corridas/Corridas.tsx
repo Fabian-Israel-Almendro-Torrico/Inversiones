@@ -215,6 +215,7 @@ const simularCorridas = () => {
           </IonButtons>
 
           <IonTitle>INVERT.IO</IonTitle>
+          <IonImg src="./src/images/Logo.png" alt="Logo" />
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -269,19 +270,19 @@ const simularCorridas = () => {
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton expand="full" onClick={redirectToInformacion}>
-                <IonImg src="../images/person.png" alt="Informacion" />
+                <IonImg src="./src/images/person.png" alt="Informacion" />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton expand="full" onClick={redirectToWelcome}>
-                <IonImg src="../images/home.png" alt="Welcome" />
+                <IonImg src="./src/images/home.png" alt="Welcome" />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton expand="full" onClick={redirectToInicio}>
-                <IonImg src="../images/calculator.png" alt="Inicio" />
+                <IonImg src="./src/images/calculator.png" alt="Inicio" />
               </IonButton>
             </IonCol>
           </IonRow>
