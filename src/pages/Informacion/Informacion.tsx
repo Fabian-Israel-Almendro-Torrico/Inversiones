@@ -58,10 +58,10 @@ const Informacion: React.FC = () => {
         </p>
 
         <IonButton expand="full" onClick={handleWelcomeClick}>
-          Ir a Welcome
+          VOLVER
         </IonButton>
         <IonButton expand="full" onClick={handleInicioClick}>
-          Ir a Inicio
+          CALCULAR
         </IonButton>
       </IonContent>
       <IonFooter>

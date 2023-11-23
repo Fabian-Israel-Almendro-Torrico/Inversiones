@@ -261,7 +261,7 @@ const simularCorridas = () => {
           expand="full"
           onClick={() => history.push('/resultados', { resultados: resultadosSimulados })}
         >
-          Ver Resultados
+          VER RESULTADOS
         </IonButton>
       </IonContent>
       <IonFooter>

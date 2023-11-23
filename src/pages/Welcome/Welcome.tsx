@@ -39,11 +39,11 @@ const Welcome: React.FC = () => {
         {/* Botones para redirigir a Inicio e Información */}
         <img src="./src/images/HombreRosa.png" alt="HombreRosa" />
         <IonButton expand="full" onClick={redirectToInicio}>
-          Ir a Inicio
+          CALCULAR
         </IonButton>
         <img src="./src/images/HombreAzul.png" alt="HombreAzul" />
         <IonButton expand="full" onClick={redirectToInformacion}>
-          Ir a Información
+          INFORMACION
         </IonButton>
       </IonContent>
       <IonFooter>
