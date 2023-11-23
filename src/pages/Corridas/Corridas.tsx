@@ -137,6 +137,9 @@ const simularCorridas = () => {
           flujos,
           tir,
     };
+
+    console.log('Resultados Simulados:', resultadosSimulados);
+
     resultadosSimulados.push(resultado);
   }
     // Agrega console.log para verificar los resultados simulados
