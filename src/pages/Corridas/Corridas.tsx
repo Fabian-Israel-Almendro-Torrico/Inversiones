@@ -149,6 +149,7 @@ const simularCorridas = () => {
           inversionInicial,
           flujos,
           tir,
+          trema: datosCorridas?.trema || 0, // Asegúrate de incluir el TREMA en cada resultado
     };
 
     /*console.log('Resultados Simulados:', resultadosSimulados);*/
