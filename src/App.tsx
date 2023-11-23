@@ -41,7 +41,7 @@ const App: React.FC = () => (
         <Route path="/corridas" component={Corridas} exact />
         <Route path="/resultados" component={Resultados} exact />
         <Route path="/welcome" component={Welcome} exact />
-        <Route path="/info" component={Informacion} exact />
+        <Route path="/informacion" component={Informacion} exact />
 
         <Redirect exact from="/" to="/inicio" />
       </IonRouterOutlet>
