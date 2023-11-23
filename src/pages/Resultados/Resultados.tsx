@@ -65,7 +65,7 @@ const Resultados: React.FC = () => {
         <p>Promedio TIR: {calcularPromedioTIR()}%</p>
 
         {/* Muestra el resultado de aceptación o rechazo */}
-        {calcularPromedioTIR() > 30 ? (
+        {esProyectoAceptado()  ? (
           <p>¡El proyecto es ACEPTADO!</p>
         ) : (
           <p>El proyecto es RECHAZADO</p>
