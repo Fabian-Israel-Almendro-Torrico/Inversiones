@@ -224,9 +224,7 @@ const simularCorridas = () => {
       {resultadosSimulados.map((resultado: ResultadoSimulado, index: number) => (
   <IonItem key={index}>
     <IonLabel>Corrida {index + 1}</IonLabel>
-    <IonLabel>
-      Rendimiento: {resultado.rendimiento}
-    </IonLabel>
+
     <IonList lines="none">
       <IonItem lines="none">
         <IonLabel>Año</IonLabel>
