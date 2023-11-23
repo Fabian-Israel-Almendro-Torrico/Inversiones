@@ -1,6 +1,6 @@
 // Importa las bibliotecas necesarias
 import React from 'react';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons, IonButton, IonFooter, IonGrid, IonRow, IonCol, IonImg } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 
 // Componente de la vista de bienvenida
@@ -15,6 +15,10 @@ const Welcome: React.FC = () => {
   // Función para redirigir a la vista de Información (debes crearla)
   const redirectToInformacion = () => {
     history.push('/informacion');
+  };
+
+  const redirectToWelcome = () => {
+    history.push('/welcome');
   };
 
   return (
@@ -39,6 +43,30 @@ const Welcome: React.FC = () => {
           Ir a Información
         </IonButton>
       </IonContent>
+      <IonFooter>
+        <IonGrid>
+          <IonRow>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToInformacion}>
+                <IonImg src="../images/person.png" alt="Informacion" />
+              </IonButton>
+            </IonCol>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToWelcome}>
+                <IonImg src="../images/home.png" alt="Welcome" />
+              </IonButton>
+            </IonCol>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToInicio}>
+                <IonImg src="../images/calculator.png" alt="Inicio" />
+              </IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+      </IonFooter>
     </IonPage>
   );
 };

@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
+import { IonContent, IonPage, IonInput, IonButtons, IonBackButton, IonButton,IonFooter,IonImg } from '@ionic/react';
 import { IonToast } from '@ionic/react';
 import {
     IonLabel,
@@ -10,9 +11,24 @@ import {
     IonRow,
     IonCol,
   } from '@ionic/react';
-import { IonContent, IonPage, IonInput, IonButton } from '@ionic/react';
+
 
 const Inicio: React.FC = () => {
+
+  // Función para redirigir a la vista de Inicio
+  const redirectToInicio = () => {
+    history.push('/inicio');
+  };
+
+  // Función para redirigir a la vista de Información (debes crearla)
+  const redirectToInformacion = () => {
+    history.push('/informacion');
+  };
+
+  const redirectToWelcome = () => {
+    history.push('/welcome');
+  };
+
   // Estados para almacenar los valores ingresados por el usuario
   const [trema, setTrema] = useState(0);
   const [porcentajeAceptacion, setPorcentajeAceptacion] = useState(0);
@@ -132,10 +148,16 @@ return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Bienvenido a Inver.io</IonTitle>
+
+        <IonButtons slot="start">
+            <IonBackButton defaultHref="/welcome" />
+        </IonButtons>
+
+          <IonTitle>INVERT.IO</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
+        <h1>INICIO</h1>
         <IonGrid>
           <IonRow>
             <IonCol>
@@ -280,6 +302,30 @@ return (
           </IonButton>
         </IonGrid>
       </IonContent>
+      <IonFooter>
+        <IonGrid>
+          <IonRow>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToInformacion}>
+                <IonImg src="../images/person.png" alt="Informacion" />
+              </IonButton>
+            </IonCol>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToWelcome}>
+                <IonImg src="../images/home.png" alt="Welcome" />
+              </IonButton>
+            </IonCol>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToInicio}>
+                <IonImg src="../images/calculator.png" alt="Inicio" />
+              </IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+      </IonFooter>
     </IonPage>
   );
 };

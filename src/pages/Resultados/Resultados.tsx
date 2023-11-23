@@ -1,13 +1,29 @@
 import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { DatosCorridasType } from '../types';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons, IonButton, IonFooter, IonGrid, IonRow, IonCol, IonImg } from '@ionic/react';
 
 const Resultados: React.FC = () => {
   // Obtén la ubicación actual
+
+  // Función para redirigir a la vista de Inicio
+  const redirectToInicio = () => {
+    history.push('/inicio');
+  };
+
+  // Función para redirigir a la vista de Información (debes crearla)
+  const redirectToInformacion = () => {
+    history.push('/informacion');
+  };
+
+  const redirectToWelcome = () => {
+    history.push('/welcome');
+  };
+
   const location = useLocation();
   const resultadosCorridas = (location.state as { resultados?: any })?.resultados || [];
-
 
   console.log('Resultados Corridas:', resultadosCorridas);
 
@@ -49,11 +65,17 @@ const Resultados: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        {/* Resto del código... */}
+      <IonToolbar>
+
+      <IonButtons slot="start">
+          <IonBackButton defaultHref="/corridas" />
+      </IonButtons>
+          
+        <IonTitle>INVERT.IO</IonTitle>
+      </IonToolbar>
       </IonHeader>
       <IonContent>
-        {/* Resto del código... */}
-        
+        <h1>RESULTADOS</h1>
         {/* Muestra las TIR de cada corrida */}
         {resultadosCorridas.map((resultado: any, index: number) => (
           <div key={index}>
@@ -71,6 +93,30 @@ const Resultados: React.FC = () => {
           <p>El proyecto es RECHAZADO</p>
         )}
       </IonContent>
+      <IonFooter>
+        <IonGrid>
+          <IonRow>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToInformacion}>
+                <IonImg src="../images/person.png" alt="Informacion" />
+              </IonButton>
+            </IonCol>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToWelcome}>
+                <IonImg src="../images/home.png" alt="Welcome" />
+              </IonButton>
+            </IonCol>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToInicio}>
+                <IonImg src="../images/calculator.png" alt="Inicio" />
+              </IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+      </IonFooter>
     </IonPage>
   );
 };

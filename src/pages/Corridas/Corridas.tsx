@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import * as finance from 'financejs';
 import React, { useEffect, useState } from 'react';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons, IonButton } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons, IonButton, IonFooter, IonGrid, IonRow, IonCol, IonImg } from '@ionic/react';
 import { useParams } from 'react-router-dom';
 
 interface DatosCorridasType {
@@ -29,6 +29,20 @@ interface ResultadoSimulado {
 
   const Corridas: React.FC = () => {
   const history = useHistory();
+
+  // Función para redirigir a la vista de Inicio
+  const redirectToInicio = () => {
+    history.push('/inicio');
+  };
+
+  // Función para redirigir a la vista de Información (debes crearla)
+  const redirectToInformacion = () => {
+    history.push('/informacion');
+  };
+
+  const redirectToWelcome = () => {
+    history.push('/welcome');
+  };
 
   // Obtén la ubicación actual
   const location = useLocation();
@@ -200,10 +214,11 @@ const simularCorridas = () => {
         <IonBackButton defaultHref="/inicio" />
           </IonButtons>
 
-          <IonTitle>Resultados de Corridas</IonTitle>
+          <IonTitle>INVERT.IO</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
+        <h1>CORRIDAS</h1>
       <IonList>
       {resultadosSimulados.map((resultado: ResultadoSimulado, index: number) => (
   <IonItem key={index}>
@@ -248,6 +263,30 @@ const simularCorridas = () => {
           Ver Resultados
         </IonButton>
       </IonContent>
+      <IonFooter>
+        <IonGrid>
+          <IonRow>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToInformacion}>
+                <IonImg src="../images/person.png" alt="Informacion" />
+              </IonButton>
+            </IonCol>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToWelcome}>
+                <IonImg src="../images/home.png" alt="Welcome" />
+              </IonButton>
+            </IonCol>
+            <IonCol>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToInicio}>
+                <IonImg src="../images/calculator.png" alt="Inicio" />
+              </IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+      </IonFooter>
     </IonPage>
   );
 };
