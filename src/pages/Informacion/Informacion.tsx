@@ -2,7 +2,7 @@
 import React from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons, IonButton, IonFooter, IonGrid, IonRow, IonCol, IonImg } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-
+import './Informacion.css'
 const Informacion: React.FC = () => {
   const history = useHistory();
 
@@ -31,16 +31,12 @@ const Informacion: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-
-        <IonButtons slot="start">
+      <IonHeader className='head'>
+        <IonButtons slot="start" className='botona'>
             <IonBackButton defaultHref="/welcome" />
         </IonButtons>
-            
-          <IonTitle>INVERT.IO</IonTitle>
-          <IonImg src="./src/images/Logo.png" alt="Logo" />
-        </IonToolbar>
+          <IonTitle className='titleh'>INVERT.IO</IonTitle>
+          <IonImg src="./src/images/Logo.png" alt="Logo" className='logoH'/>
       </IonHeader>
       <IonContent>
         <h1>INFORMACION</h1>
