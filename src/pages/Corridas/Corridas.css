@@ -1,99 +1,261 @@
 /* Estilos generales */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
   
-  /* Estilos para el encabezado */
-  .head {
-    background-color: #f0f0f0; /* Color de fondo del encabezado */
-    display: flex; /* Usamos flexbox para alinear los elementos */
-    align-items: center; /* Centramos los elementos verticalmente */
-    justify-content: space-between; /* Distribuimos los elementos horizontalmente */
-    height: 60px; /* Altura fija del encabezado */
-    padding: 10px; /* Espacio entre el borde y los elementos */
+  /* Estilos para el header */
+  .corridas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    height: 60px;
   }
   
-  #ion-buttons {
-    color: #333; /* Color del botón de volver */
+  .corridas-botona {
+    margin-left: 10px;
   }
   
-  #ion-title {
-    font-size: 24px; /* Tamaño de la fuente del título */
-    font-weight: bold; /* Grosor de la fuente del título */
-    color: #333; /* Color de la fuente del título */
+  .corridas-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
   }
   
-  #ion-img {
-    width: 40px; /* Ancho de la imagen del logo */
-    height: 40px; /* Alto de la imagen del logo */
+  .corridas-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
   }
   
   /* Estilos para el contenido */
-  #h1 {
-    font-size: 36px; /* Tamaño de la fuente del encabezado del contenido */
-    font-weight: bold; /* Grosor de la fuente del encabezado del contenido */
-    color: #333; /* Color de la fuente del encabezado del contenido */
-    text-align: center; /* Alineación del texto del encabezado del contenido */
-    margin-top: 20px; /* Margen superior del encabezado del contenido */
+  .corridas-content {
+    padding: 20px;
+    background-color: #fff;
   }
   
-  #ion-list {
-    margin: 20px; /* Margen de la lista de corridas */
+  .corridas-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
   }
   
-  #ion-label {
-    font-size: 18px; /* Tamaño de la fuente de las etiquetas */
-    color: #333; /* Color de la fuente de las etiquetas */
+  /* Estilos para la lista de corridas */
+  .IonList {
+    list-style: none;
   }
   
-  #ion-button {
-    background-color: #333; /* Color de fondo del botón de ver resultados */
-    color: #fff; /* Color de la fuente del botón de ver resultados */
-    font-size: 18px; /* Tamaño de la fuente del botón de ver resultados */
-    font-weight: bold; /* Grosor de la fuente del botón de ver resultados */
-    margin: 20px; /* Margen del botón de ver resultados */
+  .IonItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
   }
   
-  /* Estilos para el pie de página */
-  ion-footer {
-    background-color: #f0f0f0; /* Color de fondo del pie de página */
-    height: 60px; /* Altura fija del pie de página */
+  .IonLabel {
+    font-size: 16px;
+    color: #333;
   }
   
-  #ion-grid {
-    display: flex; /* Usamos flexbox para alinear los elementos */
-    align-items: center; /* Centramos los elementos verticalmente */
-    justify-content: space-around; /* Distribuimos los elementos horizontalmente */
+  /* Estilos para la tabla de datos */
+  .IonList > .IonItem > .IonList {
+    display: table;
+    width: 100%;
   }
   
-  #ion-col {
-    width: 33%; /* Ancho de cada columna */
+  .IonList > .IonItem > .IonList > .IonItem {
+    display: table-row;
   }
   
-  #ion-button {
-    background-color: transparent; /* Color de fondo transparente para los botones del pie de página */
-    color: #333; /* Color de la fuente de los botones del pie de página */
+  .IonList > .IonItem > .IonList > .IonItem > .IonLabel {
+    display: table-cell;
+    text-align: center;
+    padding: 5px;
   }
   
-  #ion-img {
-    width: 40px; /* Ancho de las imágenes de los botones del pie de página */
-    height: 40px; /* Alto de las imágenes de los botones del pie de página */
+  #anio {
+    font-weight: bold;
   }
   
-  /* Estilos para pantallas pequeñas */
-  @media (max-width: 600px) {
-    #h1 {
-      font-size: 24px; /* Reducimos el tamaño de la fuente del encabezado del contenido */
+  #Inver {
+    font-weight: bold;
+  }
+  
+  #neto {
+    font-weight: bold;
+  }
+  
+  /* Estilos para el botón de ver resultados */
+  .corridas-btn-ver-resultados {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para el footer */
+  .corridas-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    height: 60px;
+  }
+  
+  /* Estilos para los botones del footer */
+  .corridas-btn-person {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .corridas-btn-home {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .corridas-btn-calculator {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+  }
+  
+  /* Estilos para las imágenes de los botones del footer */
+  .IonImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Media queries para diferentes tamaños de pantalla */
+  @media (min-width: 768px) {
+    /* Estilos para el header */
+    .corridas-header {
+      height: 80px;
     }
   
-    #ion-label {
-      font-size: 16px; /* Reducimos el tamaño de la fuente de las etiquetas */
+    .corridas-title {
+      font-size: 32px;
     }
   
-    #ion-button {
-      font-size: 16px; /* Reducimos el tamaño de la fuente del botón de ver resultados */
+    .corridas-logo {
+      width: 70px;
+      height: 70px;
+    }
+  
+    /* Estilos para el contenido */
+    .corridas-content {
+      padding: 40px;
+    }
+  
+    .corridas-heading {
+      font-size: 48px;
+    }
+  
+    /* Estilos para la lista de corridas */
+    .IonLabel {
+      font-size: 18px;
+    }
+  
+    /* Estilos para el botón de ver resultados */
+    .corridas-btn-ver-resultados {
+      font-size: 24px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+  
+    /* Estilos para el footer */
+    .corridas-footer {
+      height: 80px;
+    }
+  
+    /* Estilos para los botones del footer */
+    .corridas-btn-person {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .corridas-btn-home {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .corridas-btn-calculator {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    /* Estilos para el header */
+    .corridas-header {
+      height: 100px;
+    }
+  
+    .corridas-title {
+      font-size: 40px;
+    }
+  
+    .corridas-logo {
+      width: 90px;
+      height: 90px;
+    }
+  
+    /* Estilos para el contenido */
+    .corridas-content {
+      padding: 60px;
+    }
+  
+    .corridas-heading {
+      font-size: 64px;
+    }
+  
+    /* Estilos para la lista de corridas */
+    .IonLabel {
+      font-size: 20px;
+    }
+  
+    /* Estilos para el botón de ver resultados */
+    .corridas-btn-ver-resultados {
+      font-size: 28px;
+      padding: 20px;
+      border-radius: 15px;
+    }
+  
+    /* Estilos para el footer */
+    .corridas-footer {
+      height: 100px;
+    }
+  
+    /* Estilos para los botones del footer */
+    .corridas-btn-person {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .corridas-btn-home {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .corridas-btn-calculator {
+      width: 80px;
+      height: 80px;
     }
   }
   

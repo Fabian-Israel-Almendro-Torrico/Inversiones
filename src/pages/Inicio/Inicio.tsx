@@ -11,7 +11,7 @@ import {
     IonRow,
     IonCol,
   } from '@ionic/react';
-
+import './Inicio.css';
 
 const Inicio: React.FC = () => {
 
@@ -147,15 +147,12 @@ const Inicio: React.FC = () => {
 return (
     <IonPage>
     <IonHeader id='inicio-header' className='head'>
-        <IonToolbar>
-
-        <IonButtons slot="start">
+        <IonButtons slot="start" className='botona'>
           <IonBackButton defaultHref="/welcome" />
         </IonButtons>
-
         <IonTitle id='inicio-title'>INVERTI.IO</IonTitle>
-        <IonImg id='inicio-logo' src="./src/images/Logo.png" alt="Logo" className='logoH'/>
-        </IonToolbar>
+        {/*<IonImg  src="./src/images/Logo.png" alt="Logo" className='logoH'/>*/}
+        
       </IonHeader>
       <IonContent id='inicio-content' className="contenido">
         <h1>INICIO</h1>
@@ -295,7 +292,7 @@ return (
                 color="danger"
              />
 
-          <img src="./src/images/HombreAzul.png" alt="HombreAzul" />
+          {/*<img src="./src/images/HombreAzul.png" alt="HombreAzul" className='info-image'/>*/}
           <IonButton expand="full" onClick={handleSimularClick} id='inicio-btn-simu'>
             SIMULAR
           </IonButton>
