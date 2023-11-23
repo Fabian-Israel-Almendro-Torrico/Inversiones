@@ -151,10 +151,10 @@ const simularCorridas = () => {
 
   }
     // Agrega console.log para verificar los resultados simulados
-    console.log('Resultados Simulados:', resultadosSimulados);
-  // Actualiza el estado con los resultados simulados
+     // Actualiza el estado con los resultados simulados
   /*setResultados(resultadosSimulados);*/
   setResultadosSimulados(resultadosSimuladosNuevos);
+  console.log('Resultados Simulados:', resultadosSimulados);
 
 };
 
