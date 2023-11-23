@@ -2,7 +2,7 @@
 import React from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons, IonButton, IonFooter, IonGrid, IonRow, IonCol, IonImg } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-
+import './Welcome.css'
 // Componente de la vista de bienvenida
 const Welcome: React.FC = () => {
   const history = useHistory();
@@ -23,25 +23,23 @@ const Welcome: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className='head'>
         <IonToolbar>
           <IonTitle>Bienvenido</IonTitle>
-          <IonImg src="./src/images/Logo.png" alt="Logo"  />
+          <IonImg src="./src/images/Logo.png" alt="Logo" className='logoH'/>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         {/* Agrega tu logo aquí */}
-        <img src="./src/images/Logo.png" alt="Logo" />
+        <img src="./src/images/Logo.png" alt="Logo"/>
 
         {/* Mensaje de bienvenida */}
         <p>Bienvenido a la aplicación. ¡Esperamos que disfrutes tu experiencia!</p>
 
         {/* Botones para redirigir a Inicio e Información */}
-        <img src="./src/images/HombreRosa.png" alt="HombreRosa" />
         <IonButton expand="full" onClick={redirectToInicio}>
           Ir a Inicio
         </IonButton>
-        <img src="./src/images/HombreAzul.png" alt="HombreAzul" />
         <IonButton expand="full" onClick={redirectToInformacion}>
           Ir a Información
         </IonButton>
@@ -52,7 +50,7 @@ const Welcome: React.FC = () => {
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton expand="full" onClick={redirectToInformacion}>
-                <IonImg src="./src/images/person.png" alt="Informacion"  />
+                <IonImg src="./src/images/person.png" alt="Informacion" />
               </IonButton>
             </IonCol>
             <IonCol>
