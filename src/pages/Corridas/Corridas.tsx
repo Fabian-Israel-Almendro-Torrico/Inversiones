@@ -121,7 +121,7 @@ const derivadaVPNFlujos = (inversionInicial: number, flujos: number[], tir: numb
   return suma;
 };
 const simularCorridas = () => {
-  const resultadosSimulados: {
+  const resultadosSimuladosNuevos: {
       rendimiento: number;
       inversionInicial: number;
       flujos: number[];
@@ -146,13 +146,16 @@ const simularCorridas = () => {
 
     console.log('Resultados Simulados:', resultadosSimulados);
 
-    resultadosSimulados.push(resultado);
+    /*resultadosSimulados.push(resultado);*/
+    resultadosSimuladosNuevos.push(resultado);
+
   }
     // Agrega console.log para verificar los resultados simulados
     console.log('Resultados Simulados:', resultadosSimulados);
   // Actualiza el estado con los resultados simulados
-  setResultados(resultadosSimulados);
-  
+  /*setResultados(resultadosSimulados);*/
+  setResultadosSimulados(resultadosSimuladosNuevos);
+
 };
 
 
