@@ -7,7 +7,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem,
 
 const Resultados: React.FC = () => {
   // Obtén la ubicación actual
-
+  const history = useHistory();
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
     history.push('/inicio');
