@@ -26,12 +26,12 @@ const Welcome: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Bienvenido</IonTitle>
-          <IonImg src="./src/images/Logo.png" alt="Logo" />
+          <IonImg src="./src/images/Logo.png" alt="Logo" style={{width:'50px'}} />
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         {/* Agrega tu logo aquí */}
-        <img src="./src/images/Logo.png" alt="Logo" />
+        <img src="./src/images/Logo.png" alt="Logo" style={{width:'50px'}}/>
 
         {/* Mensaje de bienvenida */}
         <p>Bienvenido a la aplicación. ¡Esperamos que disfrutes tu experiencia!</p>
@@ -50,19 +50,19 @@ const Welcome: React.FC = () => {
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton expand="full" onClick={redirectToInformacion}>
-                <IonImg src="./src/images/person.png" alt="Informacion" />
+                <IonImg src="./src/images/person.png" alt="Informacion" style={{width:'20px'}} />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton expand="full" onClick={redirectToWelcome}>
-                <IonImg src="./src/images/home.png" alt="Welcome" />
+                <IonImg src="./src/images/home.png" alt="Welcome"style={{width:'20px'}} />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton expand="full" onClick={redirectToInicio}>
-                <IonImg src="./src/images/calculator.png" alt="Inicio" />
+                <IonImg src="./src/images/calculator.png" alt="Inicio"style={{width:'20px'}} />
               </IonButton>
             </IonCol>
           </IonRow>
