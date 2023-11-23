@@ -1,55 +1,110 @@
-/* Informacion.css */
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Estilo para el pie de página */
+/* Estilos para el encabezado */
+.head {
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 10px;
+}
+
+.botona {
+  color: #333;
+}
+
+#header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+#header-logo {
+  width: 40px;
+  height: 40px;
+}
+
+/* Estilos para el contenido */
+h1, h2, p {
+  text-align: center;
+}
+
+#info-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+#info-image {
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+}
+
+#problem-title, #solution-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+#problem-text, #solution-text {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 20px;
+}
+
+#back-button, #calculate-button {
+  background-color: #333;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+/* Estilos para el pie de página */
 ion-footer {
-    background-color: #2C3E50;
+  background-color: #f0f0f0;
+  height: 60px;
+}
+
+#info-button-informacion, #info-button-welcome, #info-button-inicio {
+  background-color: transparent;
+  color: #333;
+}
+
+ion-img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 600px) {
+  #info-title {
+    font-size: 24px;
   }
-  
-  /* Estilo para los botones del pie de página */
-  #info-button-informacion,
-  #info-button-welcome,
-  #info-button-inicio {
-    width: 30%;
-    margin: 0 auto;
+
+  #info-image {
+    width: 200px;
+    height: 200px;
   }
-  
-  #info-button-informacion ion-icon,
-  #info-button-welcome ion-icon,
-  #info-button-inicio ion-icon {
-    font-size: 1.2em;
+
+  #problem-title, #solution-title {
+    font-size: 20px;
   }
-  
-  /* Estilo para el encabezado (toolbar) */
-  ion-toolbar {
-    background-color: #34495E;
-    color: #ECF0F1; /* Color del texto */
-    font-family: 'Arial', sans-serif; /* Tipo de letra */
+
+  #problem-text, #solution-text {
+    font-size: 16px;
   }
-  
-  /* Estilo para el título del encabezado */
-  ion-title {
-    font-size: 1.5em;
+
+  #back-button, #calculate-button {
+    font-size: 16px;
   }
-  
-  /* Estilo para el contenido */
-  ion-content {
-    background-color: #FFFFFF; /* Fondo blanco */
-  }
-  
-  /* Estilo para el título "INFORMACION" */
-  h1 {
-    font-size: 2em;
-  }
-  
-  /* Estilo para los títulos "Problema" y "Solucion" */
-  h2 {
-    font-size: 1.5em;
-  }
-  
-  /* Estilo para el texto "FABIAN PTO" y "CHRIS PTO" */
-  p {
-    font-size: 1em;
-  }
-  
-  /* Ajusta los estilos según tus preferencias */
-  
+}
