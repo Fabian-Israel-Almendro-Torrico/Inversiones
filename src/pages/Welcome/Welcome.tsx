@@ -1,34 +1,42 @@
-// src/pages/Welcome/Welcome.tsx
-
+// Importa las bibliotecas necesarias
 import React from 'react';
-import { IonContent, IonButton, IonPage, IonTitle } from '@ionic/react';
-import { useHistory } from 'react-router-dom'; // Importa useHistory
-import './Welcome.css';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/react';
+import { useHistory } from 'react-router-dom';
 
+// Componente de la vista de bienvenida
 const Welcome: React.FC = () => {
-  const history = useHistory(); // Inicializa useHistory
+  const history = useHistory();
 
-  const handleStartButtonClick = () => {
-    // Redirige a la ruta "/resolver-problema" al hacer clic en el botón
+  // Función para redirigir a la vista de Inicio
+  const redirectToInicio = () => {
     history.push('/inicio');
+  };
+
+  // Función para redirigir a la vista de Información (debes crearla)
+  const redirectToInformacion = () => {
+    history.push('/informacion');
   };
 
   return (
     <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Bienvenido</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonContent className="ion-padding">
-        <IonTitle className="app-title">IonicApp</IonTitle>
-        <div className="header">
-          <h1>Bienvenido a Invertir.IO</h1>
-          <p>¿No sabes si invertir o no?</p>
-        </div>
+        {/* Agrega tu logo aquí */}
+        <img src="../images/Logo.png" alt="Logo" style={{ maxWidth: '100%', maxHeight: '200px' }} />
 
-        <div className="logo">
-          {/* Asegúrate de cambiar 'path/a/tu/logo.png' con la ruta correcta a tu logo */}
-          <img src="path/a/tu/logo.png" alt="Logo de Invertir.IO" />
-        </div>
+        {/* Mensaje de bienvenida */}
+        <p>Bienvenido a la aplicación. ¡Esperamos que disfrutes tu experiencia!</p>
 
-        <IonButton className="start-button" expand="full" onClick={handleStartButtonClick}>
-          Empezar Prueba
+        {/* Botones para redirigir a Inicio e Información */}
+        <IonButton expand="full" onClick={redirectToInicio}>
+          Ir a Inicio
+        </IonButton>
+        <IonButton expand="full" onClick={redirectToInformacion}>
+          Ir a Información
         </IonButton>
       </IonContent>
     </IonPage>
