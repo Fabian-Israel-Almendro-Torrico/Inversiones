@@ -1,1 +1,90 @@
-/* src/pages/Informacion/Informacion.css */
+/* Informacion.css */
+
+/* Estilo base para el encabezado */
+ ion-header {
+    background-color: #2C3E50;
+    color: white;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+  }
+  
+  /* Estilo base para el título en el encabezado */
+  ion-title {
+    font-size: 1.8em;
+  }
+  
+  /* Estilo base para el contenido */
+  ion-content {
+    background-color: white;
+    padding: 20px;
+  }
+  
+  /* Estilo base para el título 'INFORMACION' */
+  h1 {
+    font-size: 2.5em;
+    font-family: 'Archivo Black', sans-serif;
+  }
+  
+  /* Estilo base para los títulos 'Problema' y 'Solucion' */
+  h2 {
+    font-size: 1.5em;
+    font-family: 'Archivo', sans-serif;
+  }
+  
+  /* Estilo base para los textos 'FABIAN PTO' y 'CHRIS PTO' */
+  .p {
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Estilo base para la imagen */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Estilo base para los botones en el pie de página */
+  ion-footer .ion-button {
+    background-color: #2C3E50;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8em;
+  }
+  
+  /* Estilo base para la cuadrícula en el pie de página */
+  ion-footer2 ion-grid {
+    max-width: 100%;
+  }
+  
+  /* Media queries para dispositivos móviles */
+  
+  /* Pantallas más pequeñas, como teléfonos */
+  @media only screen and (max-width: 600px) {
+    /* Ajusta el tamaño del título en el encabezado */
+    ion-title {
+      font-size: 1.5em;
+    }
+  
+    /* Ajusta el tamaño del título 'INFORMACION' */
+    h1 {
+      font-size: 2em;
+    }
+  
+    /* Ajusta el tamaño de los títulos 'Problema' y 'Solucion' */
+    h2 {
+      font-size: 1.2em;
+    }
+  
+    /* Ajusta el tamaño de los textos 'FABIAN PTO' y 'CHRIS PTO' */
+    p {
+      font-size: 0.8em;
+    }
+  
+    /* Ajusta el tamaño de los botones en el pie de página */
+    ion-footer ion-button {
+      padding: 3px 8px;
+      font-size: 0.7em;
+    }
+  }
