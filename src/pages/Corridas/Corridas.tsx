@@ -30,6 +30,12 @@ interface DatosCorridasType {
   // Estados para almacenar los resultados de las corridas
   const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujos: number[], tir: number }[]>([]);
 
+  const [resultadosSimulados, setResultadosSimulados] = useState<{
+    rendimiento: number;
+    inversionInicial: number;
+    flujos: number[];
+    tir: number;
+  }[]>([]);
   // Función para realizar los cálculos de las corridas
 
 
@@ -224,9 +230,12 @@ const simularCorridas = () => {
 ))}
 
 </IonList>
-      <IonButton expand="full" onClick={() => history.push('/resultados')}>
+        <IonButton
+          expand="full"
+          onClick={() => history.push('/resultados', { resultados: resultadosSimulados })}
+        >
           Ver Resultados
-      </IonButton>
+        </IonButton>
       </IonContent>
     </IonPage>
   );
