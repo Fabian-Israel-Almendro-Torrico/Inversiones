@@ -207,15 +207,15 @@ const simularCorridas = () => {
 
   return (
     <IonPage>
-      <IonHeader className='head'>
-        <IonButtons slot="start" className='botona'>
-        <IonBackButton defaultHref="/inicio" />
+    <IonHeader className='corridas-header'>
+    <IonButtons slot="start" className='corridas-botona'>
+    <IonBackButton defaultHref="/inicio" />
           </IonButtons>
-          <IonTitle>INVERT.IO</IonTitle>
-          <IonImg src="./src/images/Logo.png" alt="Logo" />
+          <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
+          <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
       </IonHeader>
-      <IonContent>
-        <h1>CORRIDAS</h1>
+      <IonContent id='corridas-content'>
+      <h1 id='corridas-heading'>CORRIDAS</h1>
       <IonList>
       {resultadosSimulados.map((resultado: ResultadoSimulado, index: number) => (
   <IonItem key={index}>
@@ -223,9 +223,9 @@ const simularCorridas = () => {
 
     <IonList lines="none">
       <IonItem lines="none">
-        <IonLabel>Año</IonLabel>
-        <IonLabel>Inversión Inicial</IonLabel>
-        <IonLabel>Flujo Neto</IonLabel>
+        <IonLabel id='anio' >Año</IonLabel>
+        <IonLabel id='Inver'>Inversión Inicial</IonLabel>
+        <IonLabel id='neto'>Flujo Neto</IonLabel>
       </IonItem>
       <IonItem lines="none">
       <IonLabel>0</IonLabel>
@@ -254,28 +254,29 @@ const simularCorridas = () => {
         <IonButton
           expand="full"
           onClick={() => history.push('/resultados', { resultados: resultadosSimulados })}
+          id='corridas-btn-ver-resultados'
         >
           VER RESULTADOS
         </IonButton>
       </IonContent>
-      <IonFooter>
+      <IonFooter id='corridas-footer'>
         <IonGrid>
           <IonRow>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInformacion}>
+              <IonButton expand="full" onClick={redirectToInformacion} id='corridas-btn-person'>
                 <IonImg src="./src/images/person.png" alt="Informacion" />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToWelcome}>
+              <IonButton expand="full" onClick={redirectToWelcome} id='corridas-btn-home'>
                 <IonImg src="./src/images/home.png" alt="Welcome" />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInicio}>
+              <IonButton expand="full" onClick={redirectToInicio} id='corridas-btn-calculator'>
                 <IonImg src="./src/images/calculator.png" alt="Inicio" />
               </IonButton>
             </IonCol>
