@@ -35,28 +35,24 @@ const Informacion: React.FC = () => {
         <IonButtons slot="start" className='botona'>
             <IonBackButton defaultHref="/welcome" />
         </IonButtons>
-          <IonTitle className='titleh'>INVERT.IO</IonTitle>
-          <IonImg src="./src/images/Logo.png" alt="Logo" className='logoH'/>
+        <IonTitle id="header-title">INVERT.IO</IonTitle>
+        <IonImg id="header-logo" src="./src/images/Logo.png" alt="Logo" />
       </IonHeader>
       <IonContent>
-        <h1>INFORMACION</h1>
-        <img src="./src/images/HombreRosa.png" alt="HombreRosa" />
-        <h2>Problema</h2>
-        <p>
-          {/* Agrega tu párrafo sobre el problema aquí */}
-          FABIAN PTO
-        </p>
+      <h1 id="info-title">INFORMACION</h1>
+      <img id="info-image" src="./src/images/HombreRosa.png" alt="HombreRosa" />
+      <h2 id="problem-title">Problema</h2>
+      <p id="problem-text">FABIAN PTO</p>
 
-        <h2>Solución</h2>
-        <p>
-          {/* Agrega tu párrafo sobre la solución aquí */}
-          CHRIS PTO
-        </p>
 
-        <IonButton expand="full" onClick={handleWelcomeClick}>
+      <h2 id="solution-title">Solucion</h2>
+      <p id="solution-text">CHRIS PTO</p>
+
+
+      <IonButton id="back-button" expand="full" onClick={handleWelcomeClick}>
           VOLVER
         </IonButton>
-        <IonButton expand="full" onClick={handleInicioClick}>
+        <IonButton id="calculate-button" expand="full" onClick={handleInicioClick}>
           CALCULAR
         </IonButton>
       </IonContent>
@@ -65,20 +61,20 @@ const Informacion: React.FC = () => {
           <IonRow>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInformacion}>
-                <IonImg src="./src/images/person.png" alt="Informacion" />
+              <IonButton id="info-button-informacion" expand="full" onClick={redirectToInformacion}>
+              <IonImg src="./src/images/person.png" alt="Informacion" />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToWelcome}>
-                <IonImg src="./src/images/home.png" alt="Welcome" />
+              <IonButton id="info-button-welcome" expand="full" onClick={redirectToWelcome}>
+              <IonImg src="./src/images/home.png" alt="Welcome" />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInicio}>
-                <IonImg src="./src/images/calculator.png" alt="Inicio" />
+              <IonButton id="info-button-inicio" expand="full" onClick={redirectToInicio}>
+              <IonImg src="./src/images/calculator.png" alt="Inicio" />
               </IonButton>
             </IonCol>
           </IonRow>

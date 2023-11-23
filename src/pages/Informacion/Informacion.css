@@ -87,5 +87,130 @@ ion-header {
       padding: 3px 8px;
       font-size: 0.7em;
     }
+
+/* Informacion.css */
+
+/* Estilo para el encabezado */
+#header-title {
+  background-color: #2C3E50;
+  color: white;
+  text-align: center;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.8em;
+}
+
+#header-logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Estilo para el contenido */
+#info-title {
+  font-size: 2.5em;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+#info-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#problem-title,
+#solution-title {
+  font-size: 1.5em;
+  font-family: 'Archivo', sans-serif;
+}
+
+#problem-text,
+#solution-text {
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo para los botones en el pie de página */
+#back-button,
+#calculate-button {
+  background-color: #2C3E50;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.8em;
+}
+
+/* ... Otros estilos para el pie de página según sea necesario */
+/* Informacion.css */
+
+/* Estilo para el encabezado */
+#header-title {
+    background-color: #2C3E50;
+    color: white;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.8em;
+  }
+  
+  #header-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Estilo para el contenido */
+  #info-title {
+    font-size: 2.5em;
+    font-family: 'Archivo Black', sans-serif;
+  }
+  
+  #info-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  #problem-title,
+  #solution-title {
+    font-size: 1.5em;
+    font-family: 'Archivo', sans-serif;
+  }
+  
+  #problem-text,
+  #solution-text {
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Estilo para los botones en el pie de página */
+  #back-button,
+  #calculate-button {
+    background-color: #2C3E50;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8em;
+  }
+  
+  ion-footer {
+    background-color: #2C3E50;
+  }
+  
+  /* Estilo para los botones del pie de página */
+  #info-button-informacion,
+  #info-button-welcome,
+  #info-button-inicio {
+    width: 30%;
+    margin: 0 auto;
+  }
+  
+  #info-button-informacion ion-icon,
+  #info-button-welcome ion-icon,
+  #info-button-inicio ion-icon {
+    font-size: 1.2em;
+  }
+  /* ... Otros estilos para el pie de página según sea necesario */ 
+
   }
   
