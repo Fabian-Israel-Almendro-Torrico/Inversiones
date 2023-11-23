@@ -97,6 +97,7 @@ const Resultados: React.FC = () => {
       <IonFooter>
         <IonGrid>
           <IonRow>
+          <img src="./src/images/Senior.png" alt="Senior" />
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton expand="full" onClick={redirectToInformacion}>

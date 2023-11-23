@@ -44,6 +44,7 @@ const Informacion: React.FC = () => {
       </IonHeader>
       <IonContent>
         <h1>INFORMACION</h1>
+        <img src="./src/images/HombreRosa.png" alt="HombreRosa" />
         <h2>Problema</h2>
         <p>
           {/* Agrega tu párrafo sobre el problema aquí */}

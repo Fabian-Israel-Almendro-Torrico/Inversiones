@@ -295,6 +295,7 @@ return (
                 color="danger"
              />
 
+          <img src="./src/images/HombreAzul.png" alt="HombreAzul" />
           <IonButton expand="full" onClick={handleSimularClick}>
             Simular Proyecto
           </IonButton>
