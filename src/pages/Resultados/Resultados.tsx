@@ -64,62 +64,62 @@ const Resultados: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
+    <IonHeader id='resultados-header'>
       <IonToolbar>
 
       <IonButtons slot="start">
           <IonBackButton defaultHref="/corridas" />
       </IonButtons>
           
-        <IonTitle>INVERT.IO</IonTitle>
-        <IonImg src="./src/images/Logo.png" alt="Logo" />
+      <IonTitle id='resultados-title'>INVERTI.IO</IonTitle>
+      <IonImg id='resultados-logo' src="./src/images/Logo.png" alt="Logo" />
       </IonToolbar>
       </IonHeader>
-      <IonContent>
-        <h1>RESULTADOS</h1>
+      <IonContent id='resultados-content'>
+      <h1 id='resultados-heading'>RESULTADOS</h1>
         {/* Muestra las TIR de cada corrida */}
         {resultadosCorridas.map((resultado: any, index: number) => (
           <div key={index}>
-            <p>Corrida {index + 1}: TIR = {resultado.tir}%</p>
+            <p id='corridas'>Corrida {index + 1}: TIR = {resultado.tir}%</p>
           </div>
         ))}
 
         {/* Muestra el promedio TIR */}
-        <p>Promedio TIR: {calcularPromedioTIR()}%</p>
+        <p id='resultados-promedio'>Promedio TIR: {calcularPromedioTIR()}%</p>
 
         {/* Muestra el resultado de aceptación o rechazo */}
         {esProyectoAceptado()  ? (
-          <p>¡El proyecto es ACEPTADO!</p>
+        <p id='resultados-aceptado'>¡El proyecto es ACEPTADO!</p>
         ) : (
-          <p>El proyecto es RECHAZADO</p>
-        )}
+          <p id='resultados-rechazado'>El proyecto es RECHAZADO</p>
+          )}
 
-        <IonButton expand="full" onClick={redirectToWelcome}>
+<IonButton expand="full" onClick={redirectToWelcome} id='resultados-btn-volver'>
           VOLVER
         </IonButton>
-        <IonButton expand="full" onClick={redirectToInicio}>
+        <IonButton expand="full" onClick={redirectToInicio} id='resultados-btn-calcular'>
           CALCULAR
         </IonButton>
       </IonContent>
-      <IonFooter>
+      <IonFooter id='resultados-footer'>
         <IonGrid>
           <IonRow>
           <img src="./src/images/Senior.png" alt="Senior" />
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInformacion}>
-                <IonImg src="./src/images/person.png" alt="Informacion" />
+              <IonButton expand="full" onClick={redirectToInformacion} id='resultados-btn-person'>
+              <IonImg src="./src/images/person.png" alt="Informacion" />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToWelcome}>
+              <IonButton expand="full" onClick={redirectToWelcome} id='resultados-btn-home'>
                 <IonImg src="./src/images/home.png" alt="Welcome" />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInicio}>
+              <IonButton expand="full" onClick={redirectToInicio} id='resultados-btn-calculator'>
                 <IonImg src="./src/images/calculator.png" alt="Inicio" />
               </IonButton>
             </IonCol>
