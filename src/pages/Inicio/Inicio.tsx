@@ -146,23 +146,23 @@ const Inicio: React.FC = () => {
 
 return (
     <IonPage>
-      <IonHeader>
+    <IonHeader id='inicio-header' className='head'>
         <IonToolbar>
 
         <IonButtons slot="start">
-            <IonBackButton defaultHref="/welcome" />
+          <IonBackButton defaultHref="/welcome" />
         </IonButtons>
 
-          <IonTitle>INVERT.IO</IonTitle>
-          <IonImg src="./src/images/Logo.png" alt="Logo" />
+        <IonTitle id='inicio-title'>INVERTI.IO</IonTitle>
+        <IonImg id='inicio-logo' src="./src/images/Logo.png" alt="Logo" className='logoH'/>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+      <IonContent id='inicio-content' className="contenido">
         <h1>INICIO</h1>
         <IonGrid>
-          <IonRow>
+        <IonRow id='inicio-input-row'>
             <IonCol>
-              <IonLabel>TREMA (%)</IonLabel>
+            <IonLabel id='inicio-label-trema'>TREMA (%)</IonLabel>
               <IonInput
                 type="number"
                 value={trema}
@@ -172,7 +172,7 @@ return (
                 onIonChange={(e) => setTrema(parseFloat(e.detail.value!))}
               />
             {trema < 1 || trema > 100 ? (
-              <IonLabel color="danger">El TREMA debe estar entre 1% y 100%</IonLabel>
+            <IonLabel id='inicio-label-error' color="danger">El TREMA debe estar entre 1% y 100%</IonLabel>
             ) : null}
             </IonCol>
             <IonCol>
@@ -296,10 +296,10 @@ return (
              />
 
           <img src="./src/images/HombreAzul.png" alt="HombreAzul" />
-          <IonButton expand="full" onClick={handleSimularClick}>
+          <IonButton expand="full" onClick={handleSimularClick} id='inicio-btn-simu'>
             SIMULAR
           </IonButton>
-          <IonButton expand="full" onClick={setValoresPredeterminados}>
+          <IonButton expand="full" onClick={setValoresPredeterminados} id='inicio-btn-valores'>
             DAR VALORES
           </IonButton>
         </IonGrid>
@@ -309,20 +309,20 @@ return (
           <IonRow>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInformacion}>
-                <IonImg src="./src/images/person.png" alt="Informacion" />
+              <IonButton expand="full" onClick={redirectToInformacion} id='inicio-btn-person'>
+              <IonImg src="./src/images/person.png" alt="Informacion" />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToWelcome}>
-                <IonImg src="./src/images/home.png" alt="Welcome" />
+              <IonButton expand="full" onClick={redirectToWelcome} id='inicio-btn-home'>
+              <IonImg src="./src/images/home.png" alt="Welcome" />
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInicio}>
-                <IonImg src="./src/images/calculator.png" alt="Inicio" />
+              <IonButton expand="full" onClick={redirectToInicio} id='inicio-btn-calculator'>
+              <IonImg src="./src/images/calculator.png" alt="Inicio" />
               </IonButton>
             </IonCol>
           </IonRow>
