@@ -6,7 +6,7 @@ import * as finance from 'financejs';
 import React, { useEffect, useState } from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons, IonButton, IonFooter, IonGrid, IonRow, IonCol, IonImg } from '@ionic/react';
 import { useParams } from 'react-router-dom';
-
+import './Corridas.css';
 interface DatosCorridasType {
   trema: number;
   porcentajeAceptacion: number;
@@ -207,16 +207,12 @@ const simularCorridas = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-
-        <IonButtons slot="start">
+      <IonHeader className='head'>
+        <IonButtons slot="start" className='botona'>
         <IonBackButton defaultHref="/inicio" />
           </IonButtons>
-
           <IonTitle>INVERT.IO</IonTitle>
           <IonImg src="./src/images/Logo.png" alt="Logo" />
-        </IonToolbar>
       </IonHeader>
       <IonContent>
         <h1>CORRIDAS</h1>

@@ -1,1 +1,99 @@
-/* src/pages/Corridas/Corridas.css */
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos para el encabezado */
+  .head {
+    background-color: #f0f0f0; /* Color de fondo del encabezado */
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    align-items: center; /* Centramos los elementos verticalmente */
+    justify-content: space-between; /* Distribuimos los elementos horizontalmente */
+    height: 60px; /* Altura fija del encabezado */
+    padding: 10px; /* Espacio entre el borde y los elementos */
+  }
+  
+  #ion-buttons {
+    color: #333; /* Color del botón de volver */
+  }
+  
+  #ion-title {
+    font-size: 24px; /* Tamaño de la fuente del título */
+    font-weight: bold; /* Grosor de la fuente del título */
+    color: #333; /* Color de la fuente del título */
+  }
+  
+  #ion-img {
+    width: 40px; /* Ancho de la imagen del logo */
+    height: 40px; /* Alto de la imagen del logo */
+  }
+  
+  /* Estilos para el contenido */
+  #h1 {
+    font-size: 36px; /* Tamaño de la fuente del encabezado del contenido */
+    font-weight: bold; /* Grosor de la fuente del encabezado del contenido */
+    color: #333; /* Color de la fuente del encabezado del contenido */
+    text-align: center; /* Alineación del texto del encabezado del contenido */
+    margin-top: 20px; /* Margen superior del encabezado del contenido */
+  }
+  
+  #ion-list {
+    margin: 20px; /* Margen de la lista de corridas */
+  }
+  
+  #ion-label {
+    font-size: 18px; /* Tamaño de la fuente de las etiquetas */
+    color: #333; /* Color de la fuente de las etiquetas */
+  }
+  
+  #ion-button {
+    background-color: #333; /* Color de fondo del botón de ver resultados */
+    color: #fff; /* Color de la fuente del botón de ver resultados */
+    font-size: 18px; /* Tamaño de la fuente del botón de ver resultados */
+    font-weight: bold; /* Grosor de la fuente del botón de ver resultados */
+    margin: 20px; /* Margen del botón de ver resultados */
+  }
+  
+  /* Estilos para el pie de página */
+  ion-footer {
+    background-color: #f0f0f0; /* Color de fondo del pie de página */
+    height: 60px; /* Altura fija del pie de página */
+  }
+  
+  #ion-grid {
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    align-items: center; /* Centramos los elementos verticalmente */
+    justify-content: space-around; /* Distribuimos los elementos horizontalmente */
+  }
+  
+  #ion-col {
+    width: 33%; /* Ancho de cada columna */
+  }
+  
+  #ion-button {
+    background-color: transparent; /* Color de fondo transparente para los botones del pie de página */
+    color: #333; /* Color de la fuente de los botones del pie de página */
+  }
+  
+  #ion-img {
+    width: 40px; /* Ancho de las imágenes de los botones del pie de página */
+    height: 40px; /* Alto de las imágenes de los botones del pie de página */
+  }
+  
+  /* Estilos para pantallas pequeñas */
+  @media (max-width: 600px) {
+    #h1 {
+      font-size: 24px; /* Reducimos el tamaño de la fuente del encabezado del contenido */
+    }
+  
+    #ion-label {
+      font-size: 16px; /* Reducimos el tamaño de la fuente de las etiquetas */
+    }
+  
+    #ion-button {
+      font-size: 16px; /* Reducimos el tamaño de la fuente del botón de ver resultados */
+    }
+  }
+  
