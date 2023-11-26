@@ -22,45 +22,45 @@ const Welcome: React.FC = () => {
   };
 
   return (
-    <IonPage>
-    <IonHeader>
-      <IonToolbar>
-        <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
-        <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
+    <IonPage id='page'>
+    <IonHeader id='head'>
+      <IonToolbar id='tbh'>
+        <IonTitle id='welcome-title'>INVERTI.IO</IonTitle>
+        <IonImg id='welcome-logo' src="./src/images/Logo.png" alt="Logo" />
       </IonToolbar>
     </IonHeader>
-    <IonContent className="contenido">
+    <IonContent id="content">
       {/* Mensaje de bienvenida */}
-      <p id='welcome-message' className='titleC'>Bienvenido a la aplicación. ¡Esperamos que disfrutes tu experiencia!</p>
+      <p id='welcome-message'>Bienvenido a la aplicación. ¡Esperamos que disfrutes tu experiencia!</p>
       {/* Agrega tu logo aquí */}
-      <img src="./src/images/Logo.png" alt="Logo" className='logoC'/>
+      <img src="./src/images/Logo.png" alt="Logo" id='logo-content'/>
       {/* Botones para redirigir a Inicio e Información */}
-      <IonButton expand="full" onClick={redirectToInicio} id='welcome-btn-calcular' className='BC'>
+      <IonButton expand="full" onClick={redirectToInicio} id='btn-calcular'>
         CALCULAR
       </IonButton>
-      <IonButton expand="full" onClick={redirectToInformacion} id='welcome-btn-informacion' className='BI'>
+      <IonButton expand="full" onClick={redirectToInformacion} id='btn-informacion'>
         INFORMACION
       </IonButton>
     </IonContent>
-    <IonFooter className='footer'>
-      <IonGrid>
-        <IonRow>
-          <IonCol>
+    <IonFooter id='footer'>
+      <IonGrid id='grid-footer'>
+        <IonRow id='row1-footer'>
+          <IonCol id='col1-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
-            <IonButton expand="full" onClick={redirectToInformacion} id='welcome-btn-person'>
-              <IonImg src="./src/images/person.png" alt="Informacion" className='personf'/>
+            <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
+              <IonImg src="./src/images/person.png" alt="Informacion" id='personf'/>
             </IonButton>
           </IonCol>
-          <IonCol>
+          <IonCol id='col2-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
-            <IonButton expand="full" onClick={redirectToWelcome} id='welcome-btn-home'>
-              <IonImg src="./src/images/home.png" alt="Welcome" className='homef'/>
+            <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
+              <IonImg src="./src/images/home.png" alt="Welcome" id='homef'/>
             </IonButton>
           </IonCol>
-          <IonCol>
+          <IonCol id='col3-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
-            <IonButton expand="full" onClick={redirectToInicio} id='welcome-btn-calculator'>
-              <IonImg src="./src/images/calculator.png" alt="Inicio" className='calf'/>
+            <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
+              <IonImg src="./src/images/calculator.png" alt="Inicio" id='calf'/>
             </IonButton>
           </IonCol>
         </IonRow>

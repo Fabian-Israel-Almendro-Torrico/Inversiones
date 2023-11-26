@@ -63,22 +63,22 @@ const Resultados: React.FC = () => {
   }, [datosCorridas]); */
 
   return (
-    <IonPage>
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
+    <IonPage id='page'>
+    <IonHeader id='head'>
+      <IonToolbar id='tbh'>
+        <IonButtons slot="start" id='btnt'>
           <IonBackButton defaultHref="/corridas" />
         </IonButtons>
-        <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
-        <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
+        <IonTitle id='resultados-title'>INVERTI.IO</IonTitle>
+        <IonImg id='resultados-logo' src="./src/images/Logo.png" alt="Logo" />
       </IonToolbar>
     </IonHeader>
       <IonContent id='resultados-content'>
-      <h1 id='resultados-heading'>RESULTADOS</h1>
+      <h1 id='resultados-content-title'>RESULTADOS</h1>
         {/* Muestra las TIR de cada corrida */}
         {resultadosCorridas.map((resultado: any, index: number) => (
-          <div key={index}>
-            <p id='corridas'>Corrida {index + 1}: TIR = {resultado.tir}%</p>
+          <div key={index} id='div-resultados'>
+            <p id='resultados-corridas'>Corrida {index + 1}: TIR = {resultado.tir}%</p>
           </div>
         ))}
 
@@ -99,26 +99,26 @@ const Resultados: React.FC = () => {
           CALCULAR
         </IonButton>
       </IonContent>
-      <IonFooter id='resultados-footer'>
-        <IonGrid>
-          <IonRow>
-          <img src="./src/images/Senior.png" alt="Senior" />
-            <IonCol>
+      <IonFooter id='footer'>
+        <IonGrid id='grid-footer'>
+          <IonRow id='row1-footer'>
+          <img id='senior1' src="./src/images/Senior.png" alt="Senior" />
+            <IonCol id='col1-footer'>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInformacion} id='resultados-btn-person'>
-              <IonImg src="./src/images/person.png" alt="Informacion" />
+              <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person1'>
+              <IonImg src="./src/images/person.png" alt="Informacion" id='personf'/>
+              </IonButton>
+            </IonCol>
+            <IonCol id='col2-footer'>
+              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              <IonButton expand="full" onClick={redirectToWelcome} id='home-btn'>
+                <IonImg src="./src/images/home.png" alt="Welcome"  id='homef'/>
               </IonButton>
             </IonCol>
             <IonCol>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToWelcome} id='resultados-btn-home'>
-                <IonImg src="./src/images/home.png" alt="Welcome" />
-              </IonButton>
-            </IonCol>
-            <IonCol>
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInicio} id='resultados-btn-calculator'>
-                <IonImg src="./src/images/calculator.png" alt="Inicio" />
+              <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
+                <IonImg src="./src/images/calculator.png" alt="Inicio" id='calf'/>
               </IonButton>
             </IonCol>
           </IonRow>
