@@ -294,10 +294,10 @@ return (
              />
 
           {/*<img src="./src/images/HombreAzul.png" alt="HombreAzul" className='info-image'/>*/}
-          <IonButton id="IdButtonSim" expand="full" onClick={handleSimularClick} id='inicio-btn-simu'>
+          <IonButton id="IdButtonSim" expand="full" onClick={handleSimularClick}>
             SIMULAR
           </IonButton>
-          <IonButton id="IdButtonValor" expand="full" onClick={setValoresPredeterminados} id='inicio-btn-valores'>
+          <IonButton id="IdButtonValor" expand="full" onClick={setValoresPredeterminados}>
             DAR VALORES
           </IonButton>
         </IonGrid>
