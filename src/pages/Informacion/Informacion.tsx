@@ -30,17 +30,17 @@ const Informacion: React.FC = () => {
   };
 
   return (
-    <IonPage>
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
+    <IonPage id='page'>
+    <IonHeader id = "head">
+      <IonToolbar id = "tbh">
+        <IonButtons slot="start" id='btnt'>
           <IonBackButton defaultHref="/welcome" />
         </IonButtons>
-        <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
-        <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
+        <IonTitle id='info-titulo'>INVERTI.IO</IonTitle>
+        <IonImg id='info-logo' src="./src/images/Logo.png" alt="Logo" />
       </IonToolbar>
     </IonHeader>
-      <IonContent>
+      <IonContent id='conte'>
       <h1 id="info-title">INFORMACION</h1>
       <img id="info-image" src="./src/images/HombreRosa.png" alt="HombreRosa" />
       <h2 id="problem-title">Problema</h2>
@@ -58,25 +58,25 @@ const Informacion: React.FC = () => {
           CALCULAR
         </IonButton>
       </IonContent>
-      <IonFooter>
-        <IonGrid>
-          <IonRow>
-            <IonCol>
+      <IonFooter id='footer'>
+        <IonGrid id='grid-footer'>
+          <IonRow id='row-footer'>
+            <IonCol id='col1-footer'>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton id="info-button-informacion" expand="full" onClick={redirectToInformacion}>
-              <IonImg src="./src/images/person.png" alt="Informacion" />
+              <IonImg id='info-imagen' src="./src/images/person.png" alt="Informacion" />
               </IonButton>
             </IonCol>
-            <IonCol>
+            <IonCol id='col2-footer'>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton id="info-button-welcome" expand="full" onClick={redirectToWelcome}>
-              <IonImg src="./src/images/home.png" alt="Welcome" />
+              <IonImg id='home-image' src="./src/images/home.png" alt="Welcome" />
               </IonButton>
             </IonCol>
-            <IonCol>
+            <IonCol id='col3-footer'>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton id="info-button-inicio" expand="full" onClick={redirectToInicio}>
-              <IonImg src="./src/images/calculator.png" alt="Inicio" />
+              <IonButton id="info-button-calculate" expand="full" onClick={redirectToInicio}>
+              <IonImg  id='cal-image'  src="./src/images/calculator.png" alt="Inicio" />
               </IonButton>
             </IonCol>
           </IonRow>
