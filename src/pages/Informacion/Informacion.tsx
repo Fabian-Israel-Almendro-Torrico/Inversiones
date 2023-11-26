@@ -31,13 +31,15 @@ const Informacion: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader className='head'>
-        <IonButtons slot="start" className='botona'>
-            <IonBackButton defaultHref="/welcome" />
+    <IonHeader>
+      <IonToolbar>
+        <IonButtons slot="start">
+          <IonBackButton defaultHref="/welcome" />
         </IonButtons>
-        <IonTitle id="header-title">INVERT.IO</IonTitle>
-        {/*<IonImg id="header-logo" src="./src/images/Logo.png" alt="Logo" />*/}
-      </IonHeader>
+        <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
+        <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
+      </IonToolbar>
+    </IonHeader>
       <IonContent>
       <h1 id="info-title">INFORMACION</h1>
       <img id="info-image" src="./src/images/HombreRosa.png" alt="HombreRosa" />

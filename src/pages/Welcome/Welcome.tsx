@@ -23,9 +23,11 @@ const Welcome: React.FC = () => {
 
   return (
     <IonPage>
-    <IonHeader className='head'>
-      <IonTitle id='welcome-title' className='titleh'>INVERTI.IO</IonTitle>
-      {/*<IonImg id='welcome-logo' src="./src/images/Logo.png" alt="Logo" className='logoH'/>*/}
+    <IonHeader>
+      <IonToolbar>
+        <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
+        <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
+      </IonToolbar>
     </IonHeader>
     <IonContent className="contenido">
       {/* Mensaje de bienvenida */}

@@ -207,13 +207,15 @@ const simularCorridas = () => {
 
   return (
     <IonPage>
-    <IonHeader className='corridas-header'>
-    <IonButtons slot="start" className='corridas-botona'>
-    <IonBackButton defaultHref="/inicio" />
-          </IonButtons>
-          <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
-          <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
-      </IonHeader>
+    <IonHeader>
+      <IonToolbar>
+        <IonButtons slot="start">
+          <IonBackButton defaultHref="/inicio" />
+        </IonButtons>
+        <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
+        <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
+      </IonToolbar>
+    </IonHeader>
       <IonContent id='corridas-content'>
       <h1 id='corridas-heading'>CORRIDAS</h1>
       <IonList>

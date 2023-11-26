@@ -146,14 +146,15 @@ const Inicio: React.FC = () => {
 
 return (
     <IonPage>
-    <IonHeader id='inicio-header' className='head'>
-        <IonButtons slot="start" className='botona'>
+    <IonHeader>
+      <IonToolbar>
+        <IonButtons slot="start">
           <IonBackButton defaultHref="/welcome" />
         </IonButtons>
-        <IonTitle id='inicio-title'>INVERTI.IO</IonTitle>
-        {/*<IonImg  src="./src/images/Logo.png" alt="Logo" className='logoH'/>*/}
-        
-      </IonHeader>
+        <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
+        <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
+      </IonToolbar>
+    </IonHeader>
       <IonContent id='inicio-content' className="contenido">
         <h1>INICIO</h1>
         <IonGrid>

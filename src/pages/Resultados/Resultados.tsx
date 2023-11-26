@@ -64,17 +64,15 @@ const Resultados: React.FC = () => {
 
   return (
     <IonPage>
-    <IonHeader id='resultados-header'>
+    <IonHeader>
       <IonToolbar>
-
-      <IonButtons slot="start">
+        <IonButtons slot="start">
           <IonBackButton defaultHref="/corridas" />
-      </IonButtons>
-          
-      <IonTitle id='resultados-title'>INVERTI.IO</IonTitle>
-      <IonImg id='resultados-logo' src="./src/images/Logo.png" alt="Logo" />
+        </IonButtons>
+        <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
+        <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
       </IonToolbar>
-      </IonHeader>
+    </IonHeader>
       <IonContent id='resultados-content'>
       <h1 id='resultados-heading'>RESULTADOS</h1>
         {/* Muestra las TIR de cada corrida */}
