@@ -1,299 +1,130 @@
-/* Estilos generales */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Estilos para la página */
 #pageIni {
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-/* Estilos para el encabezado */
 #HeadIni {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #3498db;
+  color: #ffffff;
 }
 
-/* Estilos para el título */
+#ToolIni {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #TitulCorri {
-  color: #000000;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
+  font-size: 1.5rem;
 }
 
-/* Estilos para el logo */
 #CorridasLogo {
-  height: 40px;
-  width: 40px;
-  margin-left: 10px;
+  max-width: 50px;
+  max-height: 50px;
 }
 
-/* Estilos para el botón de volver */
-#btonReturn {
-  color: #000000;
-}
-
-/* Estilos para el contenido */
 #InicioContent {
+  flex: 1;
   padding: 20px;
 }
 
-/* Estilos para el título principal */
 #H1Ini {
-  color: #000000;
-  font-size: 36px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
-/* Estilos para la rejilla del contenido */
 #IniGrid1 {
-  border: 2px solid #000000;
-  border-radius: 10px;
   margin-bottom: 20px;
 }
 
-/* Estilos para la fila del contenido */
-#IniRow, #IniRow3, #IniRow4, #IniRow5 {
+#IniRow {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
 
-/* Estilos para las columnas del contenido */
-#IniCol, #IniCol2, #IniCol4, #IniCol5, #IniCol6, #IniCol7, #IniCol8, #IniCol9, #IniCol10, #IniCol11, #IniCol12 {
-  padding: 10px;
+#IniCol,
+#IniCol2 {
+  flex: 1;
 }
 
-/* Estilos para las etiquetas del TREMA */
-#IniLabelTrema, #IniInpu {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
+#IniLabelTrema,
+#IniLabelPor,
+#IniLabelNum,
+#IniLabelAnios,
+#IniLaelMinInver,
+#IniLabelMaxInv,
+#IniLabelValProInver,
+#IniLabelValMinFlu,
+#IniLabelValMaxFlu,
+#IniLabelValProFlu {
+  font-size: 1rem;
+  margin-bottom: 5px;
 }
 
-/* Estilos para las etiquetas del porcentaje de aceptación */
-#IniLabelPor, #IniInpu2 {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
+#IniInpu,
+#IniInpu2,
+#IniInput5,
+#IniInput6,
+#IniInput7,
+#IniInpu8,
+#IniInput9,
+#IniInput10,
+#IniInput11,
+#IniInput12 {
+  width: 100%;
 }
 
-/* Estilos para las etiquetas del número de corridas */
-#IniLabelNum, #IniInput5 {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
+#IniLaberError,
+#IniLabelAcepS {
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 
-/* Estilos para las etiquetas del número de años */
-#IniLabelAnios, #IniInput6 {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
+#IniRow4,
+#IniRow5 {
+  margin-top: 20px;
 }
 
-/* Estilos para el párrafo de la inversión inicial */
-#IniInverIni {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
-  margin-bottom: 10px;
+#IniCol6,
+#IniCol7,
+#IniCol8,
+#IniCol9,
+#IniInput11,
+#IniCol13,
+#IniCol14,
+#IniCol15 {
+  flex: 1;
 }
 
-/* Estilos para las etiquetas del valor mínimo de la inversión */
-#IniLaelMinInver, #IniInput7 {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Estilos para las etiquetas del valor máximo de la inversión */
-#IniLabelMaxInv, #IniInpu8 {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Estilos para las etiquetas del valor probable de la inversión */
-#IniLabelValProInver, #IniInpu9 {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Estilos para el párrafo del flujo neto */
-#IniFlujoNeto {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-/* Estilos para las etiquetas del valor mínimo del flujo neto */
-#IniLabelValMinFlu, #IniInput10 {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Estilos para las etiquetas del valor máximo del flujo neto */
-#IniLabelValMaxFlu, #IniInput11 {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Estilos para las etiquetas del valor probable del flujo neto */
-#IniLabelValProFlu, #IniInput12 {
-  color: #000000;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Estilos para las tostadas de éxito y error */
-#IniToast, #IniToast1 {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* Estilos para el botón de simular */
-#IdButtonSim {
-  background-color: #000000;
-  color: #ffffff;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* Estilos para el botón de dar valores */
-#IdButtonValor {
-  background-color: #ffffff;
-  color: #000000;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* Estilos para el pie de página */
 #IniFooter {
-  background-color: #ffffff;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #3498db;
+  color: #ffffff;
 }
 
-/* Estilos para la rejilla del pie de página */
 #IniGrid2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   height: 100%;
 }
 
-/* Estilos para la fila del pie de página */
 #IniRow6 {
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  text-align: center;
 }
 
-/* Estilos para las columnas del pie de página */
-#IniCol13, #IniCol14, #IniCol15 {
-  padding: 10px;
+#IniButtonReuturnInfo,
+#IniButtonReturnWel,
+#IniButtonReturnIni {
+  max-width: 30px;
+  max-height: 30px;
 }
 
-/* Estilos para los botones del pie de página */
-#IniButtonReuturnInfo, #IniButtonReturnWel, #IniButtonReturnIni {
-  background-color: transparent;
-  border: none;
-}
-
-/* Estilos para las imágenes del pie de página */
-#IniImaInfo, #IniImgWel, #IniImgIni {
-  height: 40px;
-  width: 40px;
-}
-
-/* Media queries para adaptar el diseño a diferentes tamaños de pantalla */
-@media screen and (max-width: 768px) {
-  /* Estilos para el título */
-  #TitulCorri {
-    font-size: 20px;
-  }
-
-  /* Estilos para el título principal */
-  #H1Ini {
-    font-size: 28px;
-  }
-
-  /* Estilos para las etiquetas del TREMA */
-  #IniLabelTrema, #IniInpu {
-    font-size: 16px;
-  }
-
-  /* Estilos para las etiquetas del porcentaje de aceptación */
-  #IniLabelPor, #IniInpu2 {
-    font-size: 16px;
-  }
-
-  /* Estilos para las etiquetas del número de corridas */
-  #IniLabelNum, #IniInput5 {
-    font-size: 16px;
-  }
-
-  /* Estilos para las etiquetas del número de años */
-  #IniLabelAnios, #IniInput6 {
-    font-size: 16px;
-  }
-
-  /* Estilos para el párrafo de la inversión inicial */
-  #IniInverIni {
-    font-size: 16px;
-  }
-
-  /* Estilos para las etiquetas del valor mínimo de la inversión */
-  #IniLaelMinInver, #IniInput7 {
-    font-size: 16px;
-  }
-
-  /* Estilos para las etiquetas del valor máximo de la inversión */
-  #IniLabelMaxInv, #IniInpu8 {
-    font-size: 16px;
-  }
-
-  /* Estilos para las etiquetas del valor probable de la inversión */
-  #IniLabelValProInver, #IniInpu9 {
-    font-size: 16px;
-  }
-
-  /* Estilos para el párrafo del flujo neto */
-  #IniFlujoNeto {
-    font-size: 16px;
-  }
-
-  /* Estilos para las etiquetas del valor mínimo del flujo neto */
-  #IniLabelValMinFlu, #IniInput10 {
-    font-size: 16px;
-  }
-
-  /* Estilos para las etiquetas del valor máximo del flujo neto */
-  #IniLabelValMaxFlu, #IniInput11 {
-    font-size: 16px;
-  }
-
+#IniImaInfo,
+#IniImgWel,
+#IniImgIni {
+  max-width: 100%;
+  height: auto;
 }
