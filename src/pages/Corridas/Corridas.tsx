@@ -206,80 +206,79 @@ const simularCorridas = () => {
   }, [datosCorridas]); 
 
   return (
-    <IonPage>
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
+    <IonPage id="CorriPage">
+    <IonHeader id="CorriHeader">
+      <IonToolbar id="CorriToolbar">
+        <IonButtons id="CorriButtonRet" slot="start">
           <IonBackButton defaultHref="/inicio" />
         </IonButtons>
-        <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
-        <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
+        <IonTitle id='CorriInver'>INVERTI.IO</IonTitle>
+        <IonImg id='CorriLogo' src="./src/images/Logo.png" alt="Logo" />
       </IonToolbar>
     </IonHeader>
-      <IonContent id='corridas-content'>
-      <h1 id='corridas-heading'>CORRIDAS</h1>
-      <IonList>
+      <IonContent id='CorriContent'>
+      <h1 id='H1Corri'>CORRIDAS</h1>
+      <IonList id="CorriList1">
       {resultadosSimulados.map((resultado: ResultadoSimulado, index: number) => (
-  <IonItem key={index}>
-    <IonLabel>Corrida {index + 1}</IonLabel>
+  <IonItem id="CorriItem1" key={index}>
+    <IonLabel id="CorriLabelCori" >Corrida {index + 1}</IonLabel>
 
-    <IonList lines="none">
-      <IonItem lines="none">
-        <IonLabel id='anio' >Año</IonLabel>
-        <IonLabel id='Inver'>Inversión Inicial</IonLabel>
-        <IonLabel id='neto'>Flujo Neto</IonLabel>
+    <IonList id="CorriList2" lines="none">
+      <IonItem id="CorriItem2" lines="none">
+        <IonLabel id="CorriLabelAnio">Año</IonLabel>
+        <IonLabel id="CorriInverIni">Inversión Inicial</IonLabel>
+        <IonLabel id="CorriNeto">Flujo Neto</IonLabel>
       </IonItem>
-      <IonItem lines="none">
-      <IonLabel>0</IonLabel>
-        <IonLabel>{resultado.inversionInicial}</IonLabel>
-        <IonLabel>{-resultado.inversionInicial}</IonLabel>
+      <IonItem id="CorriItem3" lines="none">
+      <IonLabel id="CorriLabel0">0</IonLabel>
+        <IonLabel id="CorriLabelResultInverIni">{resultado.inversionInicial}</IonLabel>
+        <IonLabel id="CorriLabelResultMInverIni">{-resultado.inversionInicial}</IonLabel>
       </IonItem>
       {Array.from({ length: datosCorridas?.numeroAnios || 0 }, (_, year) => {
   const flujoNetoAnio = calcularFlujoNeto();
   const inversionInicialAnio = year === 0 ? resultado.inversionInicial : 0;
   return (
-    <IonItem lines="none" key={year + 1}>
-      <IonLabel>{year + 1}</IonLabel>
-      <IonLabel>{0}</IonLabel>
-      <IonLabel>
+    <IonItem id="CorriItem3" lines="none" key={year + 1}>
+      <IonLabel id="CorriLabelYear">{year + 1}</IonLabel>
+      <IonLabel id="CorriLabelYear0">{0}</IonLabel>
+      <IonLabel id="CorriLabelFlujoNetoAnio">
         {flujoNetoAnio}
       </IonLabel>
     </IonItem>
   );
 })}
     </IonList>
-    <IonLabel>TIR: {resultado.tir}</IonLabel>
+    <IonLabel id="CorriTirResult">TIR: {resultado.tir}</IonLabel>
   </IonItem>
 ))}
 
 </IonList>
-        <IonButton
+        <IonButton id="ButtonVerResultados"
           expand="full"
           onClick={() => history.push('/resultados', { resultados: resultadosSimulados })}
-          id='corridas-btn-ver-resultados'
         >
           VER RESULTADOS
         </IonButton>
       </IonContent>
-      <IonFooter id='corridas-footer'>
-        <IonGrid>
-          <IonRow>
-            <IonCol>
+      <IonFooter id="CorriFooter">
+        <IonGrid id="CorriGrid2">
+          <IonRow id="CorriRow2">
+            <IonCol id="CorriCol2">
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInformacion} id='corridas-btn-person'>
-                <IonImg src="./src/images/person.png" alt="Informacion" />
+              <IonButton id="CorriBttonReturnInfo" expand="full" onClick={redirectToInformacion}>
+                <IonImg id="CorriImgInfo" src="./src/images/person.png" alt="Informacion" />
               </IonButton>
             </IonCol>
-            <IonCol>
+            <IonCol id="CorriCol3">
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToWelcome} id='corridas-btn-home'>
-                <IonImg src="./src/images/home.png" alt="Welcome" />
+              <IonButton id="CorriBttonReturnWel" expand="full" onClick={redirectToWelcome} >
+                <IonImg id="CorriImgWel" src="./src/images/home.png" alt="Welcome" />
               </IonButton>
             </IonCol>
-            <IonCol>
+            <IonCol id="CorriCol4">
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInicio} id='corridas-btn-calculator'>
-                <IonImg src="./src/images/calculator.png" alt="Inicio" />
+              <IonButton id="CorriBttonReturnIni" expand="full" onClick={redirectToInicio} >
+                <IonImg id="CorriImgIni" src="./src/images/calculator.png" alt="Inicio" />
               </IonButton>
             </IonCol>
           </IonRow>

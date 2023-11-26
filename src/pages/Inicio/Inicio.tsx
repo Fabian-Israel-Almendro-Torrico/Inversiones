@@ -145,23 +145,23 @@ const Inicio: React.FC = () => {
 };
 
 return (
-    <IonPage>
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
+    <IonPage id="pageIni">
+    <IonHeader id="HeadIni">
+      <IonToolbar id="ToolIni">
+        <IonButtons id="btonReturn" slot="start">
           <IonBackButton defaultHref="/welcome" />
         </IonButtons>
-        <IonTitle id='corridas-title'>INVERTI.IO</IonTitle>
-        <IonImg id='corridas-logo' src="./src/images/Logo.png" alt="Logo" />
+        <IonTitle id='TitulCorri'>INVERTI.IO</IonTitle>
+        <IonImg id='CorridasLogo' src="./src/images/Logo.png" alt="Logo" />
       </IonToolbar>
     </IonHeader>
-      <IonContent id='inicio-content' className="contenido">
-        <h1>INICIO</h1>
-        <IonGrid>
-        <IonRow id='inicio-input-row'>
-            <IonCol>
-            <IonLabel id='inicio-label-trema'>TREMA (%)</IonLabel>
-              <IonInput
+      <IonContent id='InicioContent' className="contenido">
+        <h1 id="H1Ini">INICIO</h1>
+        <IonGrid id="IniGrid1">
+        <IonRow id='IniRow'>
+            <IonCol id="IniCol">
+            <IonLabel id='IniLabelTrema'>TREMA (%)</IonLabel>
+              <IonInput id="IniInpu"
                 type="number"
                 value={trema}
                 placeholder="Ingrese TREMA"
@@ -170,12 +170,12 @@ return (
                 onIonChange={(e) => setTrema(parseFloat(e.detail.value!))}
               />
             {trema < 1 || trema > 100 ? (
-            <IonLabel id='inicio-label-error' color="danger">El TREMA debe estar entre 1% y 100%</IonLabel>
+            <IonLabel id='IniLaberError' color="danger">El TREMA debe estar entre 1% y 100%</IonLabel>
             ) : null}
             </IonCol>
-            <IonCol>
-              <IonLabel>Porcentaje de Proyecto Aceptado (%)</IonLabel>
-              <IonInput
+            <IonCol id="IniCol2">
+              <IonLabel id="IniLabelPor">Porcentaje de Proyecto Aceptado (%)</IonLabel>
+              <IonInput id="IniInpu2"
                 type="number"
                 value={porcentajeAceptacion}
                 placeholder="Ingrese Porcentaje de Aceptación"
@@ -184,24 +184,24 @@ return (
                 onIonChange={(e) => setPorcentajeAceptacion(parseFloat(e.detail.value!))}
               />
             {porcentajeAceptacion < 1 || porcentajeAceptacion > 100 ? (
-              <IonLabel color="danger">El porcentaje de aceptación debe estar entre 1% y 100%</IonLabel>
+              <IonLabel id="IniLabelAcepS" color="danger">El porcentaje de aceptación debe estar entre 1% y 100%</IonLabel>
             ) : null}
             </IonCol>
           </IonRow>
 
-          <IonRow>
-            <IonCol>
-                <IonLabel>Número de Corridas</IonLabel>
-                <IonInput
+          <IonRow id="IniRow3">
+            <IonCol id="IniCol4">
+                <IonLabel id="IniLabelNum">Número de Corridas</IonLabel>
+                <IonInput id="IniInput5"
                 type="number"
                 value={numeroCorridas}
                 placeholder="Ingrese Número de Corridas"
                 onIonChange={(e) => setNumeroCorridas(parseInt(e.detail.value!, 10))}
                 />
             </IonCol>
-            <IonCol>
-                <IonLabel>Número de Años</IonLabel>
-                <IonInput
+            <IonCol id="IniCol5">
+                <IonLabel id="IniLabelAnios">Número de Años</IonLabel>
+                <IonInput id="IniInput6"
                 type="number"
                 value={numeroAnios}
                 placeholder="Ingrese Número de Años"
@@ -211,29 +211,29 @@ return (
             </IonRow>
 
           {/* Campos de entrada para datos de Inversión */}
-          <p> Inversion Inicial </p>
-          <IonRow>
-            <IonCol>
-              <IonLabel>Valor Mínimo Inversión</IonLabel>
-              <IonInput
+          <p id="IniInverIni"> Inversion Inicial </p>
+          <IonRow id="IniRow4">
+            <IonCol id="IniCol6">
+              <IonLabel id="IniLaelMinInver">Valor Mínimo</IonLabel>
+              <IonInput id="IniInput7"
                 type="number"
                 value={valorMinimoInversion}
                 placeholder="Ingrese Valor Mínimo Inversión"
                 onIonChange={(e) => setValorMinimoInversion(parseFloat(e.detail.value!))}
               />
             </IonCol>
-            <IonCol>
-              <IonLabel>Valor Máximo Inversión</IonLabel>
-              <IonInput
+            <IonCol id="IniCol7">
+              <IonLabel id="IniLabelMaxInv">Valor Máximo</IonLabel>
+              <IonInput id="IniInpu8"
                 type="number"
                 value={valorMaximoInversion}
                 placeholder="Ingrese Valor Máximo Inversión"
                 onIonChange={(e) => setValorMaximoInversion(parseFloat(e.detail.value!))}
               />
             </IonCol>
-            <IonCol>
-              <IonLabel>Valor Probable Inversión</IonLabel>
-              <IonInput
+            <IonCol id="IniCol8">
+              <IonLabel id="IniLabelValProInver">Valor Probable</IonLabel>
+              <IonInput id="IniInpu9"
                 type="number"
                 value={valorProbableInversion}
                 placeholder="Ingrese Valor Probable Inversión"
@@ -242,30 +242,30 @@ return (
             </IonCol>
           </IonRow>
 
-          <p> Flujo Neto </p>
+          <p id="IniFlujoNeto"> Flujo Neto </p>
           {/* Campos de entrada para datos de Flujo Neto */}
-          <IonRow>
-            <IonCol>
-              <IonLabel>Valor Mínimo Flujo Neto</IonLabel>
-              <IonInput
+          <IonRow id="IniRow5">
+            <IonCol id="IniCol9">
+              <IonLabel id="IniLabelValMinFlu">Valor Mínimo</IonLabel>
+              <IonInput id="IniInput10"
                 type="number"
                 value={valorMinimoFlujoNeto}
                 placeholder="Ingrese Valor Mínimo Flujo Neto"
                 onIonChange={(e) => setValorMinimoFlujoNeto(parseFloat(e.detail.value!))}
               />
             </IonCol>
-            <IonCol>
-              <IonLabel>Valor Máximo Flujo Neto</IonLabel>
-              <IonInput
+            <IonCol id="IniInput11">
+              <IonLabel id="IniLabelValMaxFlu">Valor Máximo</IonLabel>
+              <IonInput id="IniInput11"
                 type="number"
                 value={valorMaximoFlujoNeto}
                 placeholder="Ingrese Valor Máximo Flujo Neto"
                 onIonChange={(e) => setValorMaximoFlujoNeto(parseFloat(e.detail.value!))}
               />
             </IonCol>
-            <IonCol>
-              <IonLabel>Valor Probable Flujo Neto</IonLabel>
-              <IonInput
+            <IonCol id="IniInput12">
+              <IonLabel id="IniLabelValProFlu">Valor Probable</IonLabel>
+              <IonInput id="IniInput12"
                 type="number"
                 value={valorProbableFlujoNeto}
                 placeholder="Ingrese Valor Probable Flujo Neto"
@@ -275,7 +275,7 @@ return (
 
           </IonRow>
 
-            <IonToast
+            <IonToast id="IniToast"
             isOpen={showSuccessToast}
             onDidDismiss={() => setShowSuccessToast(false)}
             message="Simulación realizada con éxito. Redirigiendo a la vista de corridas..."
@@ -284,7 +284,7 @@ return (
             color="success"  // Puedes ajustar el color según tu estilo
             />
 
-            <IonToast
+            <IonToast id="IniToast1"
                 isOpen={showErrorToast}
                 onDidDismiss={() => setShowErrorToast(false)}
                 message={errorMessage}
@@ -294,33 +294,33 @@ return (
              />
 
           {/*<img src="./src/images/HombreAzul.png" alt="HombreAzul" className='info-image'/>*/}
-          <IonButton expand="full" onClick={handleSimularClick} id='inicio-btn-simu'>
+          <IonButton id="IdButtonSim" expand="full" onClick={handleSimularClick} id='inicio-btn-simu'>
             SIMULAR
           </IonButton>
-          <IonButton expand="full" onClick={setValoresPredeterminados} id='inicio-btn-valores'>
+          <IonButton id="IdButtonValor" expand="full" onClick={setValoresPredeterminados} id='inicio-btn-valores'>
             DAR VALORES
           </IonButton>
         </IonGrid>
       </IonContent>
-      <IonFooter>
-        <IonGrid>
-          <IonRow>
-            <IonCol>
+      <IonFooter id="IniFooter">
+        <IonGrid id="IniGrid2">
+          <IonRow id="IniRow6">
+            <IonCol id="IniCol13">
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInformacion} id='inicio-btn-person'>
-              <IonImg src="./src/images/person.png" alt="Informacion" />
+              <IonButton id="IniButtonReuturnInfo" expand="full" onClick={redirectToInformacion}>
+              <IonImg id="IniImaInfo" src="./src/images/person.png" alt="Informacion" />
               </IonButton>
             </IonCol>
-            <IonCol>
+            <IonCol id="IniCol14">
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToWelcome} id='inicio-btn-home'>
-              <IonImg src="./src/images/home.png" alt="Welcome" />
+              <IonButton id="IniButtonReturnWel" expand="full" onClick={redirectToWelcome}>
+              <IonImg id="IniImgWel" src="./src/images/home.png" alt="Welcome" />
               </IonButton>
             </IonCol>
-            <IonCol>
+            <IonCol id="IniCol15">
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton expand="full" onClick={redirectToInicio} id='inicio-btn-calculator'>
-              <IonImg src="./src/images/calculator.png" alt="Inicio" />
+              <IonButton id="IniButtonReturnIni" expand="full" onClick={redirectToInicio}>
+              <IonImg id="IniImgIni" src="./src/images/calculator.png" alt="Inicio" />
               </IonButton>
             </IonCol>
           </IonRow>
