@@ -54,7 +54,6 @@
 
 /* Estilos para la lista principal */
 #CorriList1 {
-  border: 2px solid #000000;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -75,7 +74,7 @@
 
 /* Estilos para la lista secundaria */
 #CorriList2 {
-  border: 2px solid #000000;
+
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -92,7 +91,7 @@
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  width: 20%;
+  width: 10% !important;
 }
 
 /* Estilos para las etiquetas de la inversión inicial */
@@ -101,7 +100,7 @@
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  width: 40%;
+  width: 40% !important;
 }
 
 /* Estilos para las etiquetas del flujo neto */
@@ -110,7 +109,7 @@
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  width: 40%;
+  width: 40% !important;
 }
 
 /* Estilos para las etiquetas del TIR */
@@ -122,15 +121,18 @@
   margin-bottom: 10px;
 }
 
+
 /* Estilos para el botón de ver resultados */
 #ButtonVerResultados {
-  background-color: #000000;
+  background-color: #ffffff;
   color: #ffffff;
-  border: 2px solid #000000;
   border-radius: 10px;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
+  padding: 8px 16px;
+  margin-left: 25%;
 }
 
 /* Estilos para el pie de página */
