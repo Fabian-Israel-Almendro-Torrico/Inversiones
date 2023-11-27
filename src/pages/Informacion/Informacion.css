@@ -8,7 +8,7 @@
 /* Estilos para la página */
 #page {
   background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
+  font-family: Luckiest Guy !important;
 }
 
 /* Estilos para el encabezado */
@@ -34,7 +34,7 @@
 
 /* Estilos para el botón de volver */
 #btnt {
-  color: #000000;
+  color: #ffffff;
 }
 
 /* Estilos para el contenido */
@@ -49,11 +49,12 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
+  font-family: Luckiest Guy !important;
 }
 
 /* Estilos para la imagen del hombre rosa */
 #info-image {
-  height: 200px;
+  height: 200px !important;
   width: 200px;
   display: block;
   margin: 0 auto;
@@ -65,16 +66,20 @@
   color: #000000;
   font-size: 28px;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   margin-bottom: 10px;
+  font-family: Luckiest Guy;
 }
 
 /* Estilos para el texto del problema */
 #problem-text {
   color: #000000;
-  font-size: 18px;
-  text-align: justify;
+  font-size: 20px !important;
+  text-align:justify;
   margin-bottom: 20px;
+  font-family: Luckiest Guy !important;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 /* Estilos para el título de la solución */
@@ -82,38 +87,50 @@
   color: #000000;
   font-size: 28px;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   margin-bottom: 10px;
+  font-family: Luckiest Guy !important;
 }
 
 /* Estilos para el texto de la solución */
 #solution-text {
   color: #000000;
-  font-size: 18px;
-  text-align: justify;
+  font-size: 20px !important;
+  text-align: center;
   margin-bottom: 20px;
+  text-align: center;
+  font-family: Luckiest Guy !important;
+}
+
+#contenedorBoot{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Estilos para el botón de volver */
 #back-button {
   background-color: #ffffff;
-  color: #000000;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  font-size: 18px;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 10px !important;
+  font-size: 20px !important;
   font-weight: bold;
   margin-bottom: 10px;
+  margin-left: 10% !important;
+  font-family: Luckiest Guy !important;
 }
 
 /* Estilos para el botón de calcular */
 #calculate-button {
   background-color: #000000;
   color: #ffffff;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  font-size: 18px;
+  border: 2px solid #ffffff;
+  border-radius: 10px !important;
+  font-size: 20px !important;
   font-weight: bold;
   margin-bottom: 10px;
+  margin-right: 10% !important;
+  font-family: Luckiest Guy !important;
 }
 
 /* Estilos para el pie de página */

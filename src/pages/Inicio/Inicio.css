@@ -3,12 +3,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Luckiest Guy !important;
 }
 
 /* Estilos para la página */
 #pageIni {
   background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
+  font-family: Luckiest Guy !important;
 }
 
 /* Estilos para el encabezado */
@@ -53,7 +54,6 @@
 
 /* Estilos para la rejilla del contenido */
 #IniGrid1 {
-  border: 2px solid #000000;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -66,48 +66,78 @@
 
 /* Estilos para las columnas del contenido */
 #IniCol, #IniCol2, #IniCol4, #IniCol5, #IniCol6, #IniCol7, #IniCol8, #IniCol9, #IniCol10, #IniCol11, #IniCol12 {
-  padding: 10px;
+  padding: 20px;
 }
 
 /* Estilos para las etiquetas del TREMA */
-#IniLabelTrema, #IniInpu {
+#IniLabelTrema{
   color: #000000;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+}
+
+#IniInpu{
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 20%;
 }
 
 /* Estilos para las etiquetas del porcentaje de aceptación */
-#IniLabelPor, #IniInpu2 {
+#IniLabelPor {
   color: #000000;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+}
+
+#IniInpu2{
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 35%;
 }
 
 /* Estilos para las etiquetas del número de corridas */
-#IniLabelNum, #IniInput5 {
+#IniLabelNum {
   color: #000000;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
 }
 
+#IniInput5{
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 40%;
+}
+
 /* Estilos para las etiquetas del número de años */
-#IniLabelAnios, #IniInput6 {
+#IniLabelAnios{
   color: #000000;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+}
+
+#IniInput6{
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 30%;
 }
 
 /* Estilos para el párrafo de la inversión inicial */
 #IniInverIni {
   color: #000000;
+  font-style:italic;
   font-size: 18px;
   font-weight: bold;
   text-align: left;
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 /* Estilos para las etiquetas del valor mínimo de la inversión */
@@ -127,11 +157,19 @@
 }
 
 /* Estilos para las etiquetas del valor probable de la inversión */
-#IniLabelValProInver, #IniInpu9 {
+#IniLabelValProInver {
   color: #000000;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+}
+
+#IniInpu9{
+  color: #000000;
+  font-weight: bold;
+  margin-left: 25% !important;
+  margin-bottom: 15% !important;
+
 }
 
 /* Estilos para el párrafo del flujo neto */
@@ -140,7 +178,9 @@
   font-size: 18px;
   font-weight: bold;
   text-align: left;
+  font-style:italic;
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 /* Estilos para las etiquetas del valor mínimo del flujo neto */
@@ -157,14 +197,23 @@
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+
 }
 
 /* Estilos para las etiquetas del valor probable del flujo neto */
-#IniLabelValProFlu, #IniInput12 {
+#IniLabelValProFlu {
   color: #000000;
-  font-size: 18px;
+  font-size: 16px !important;
   font-weight: bold;
   text-align: center;
+}
+
+#IniInput12{
+  color: #000000;
+  font-weight: bold;
+  margin-left: 25% !important;
+  margin-bottom: 15% !important;
+
 }
 
 /* Estilos para las tostadas de éxito y error */
@@ -173,36 +222,45 @@
   font-weight: bold;
 }
 
+#contenedorBotones{
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Estilos para el botón de simular */
 #IdButtonSim {
-  background-color: #000000;
+  background-color: #ffffff;
   color: #ffffff;
-  border: 2px solid #000000;
   border-radius: 10px;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
+  padding: 8px 16px;
 }
 
 /* Estilos para el botón de dar valores */
 #IdButtonValor {
   background-color: #ffffff;
-  color: #000000;
-  border: 2px solid #000000;
+  color: #ffffff;
   border-radius: 10px;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
+  padding: 8px 16px;
 }
 
 #IdButtonReset {
   background-color: #ffffff;
-  color: #000000;
-  border: 2px solid #000000;
+  color: #ffffff;
   border-radius: 10px;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
+  padding: 8px 16px;
+  margin-left: 18% !important;
 }
 
 /* Estilos para el pie de página */
@@ -262,14 +320,23 @@
   }
 
   /* Estilos para las etiquetas del número de corridas */
-  #IniLabelNum, #IniInput5 {
+  #IniLabelNum{
     font-size: 16px;
   }
 
+  #IniInput5{
+    font-size: 16px;
+    margin-right: 70px !important;
+  }
+  
   /* Estilos para las etiquetas del número de años */
-  #IniLabelAnios, #IniInput6 {
+  #IniLabelAnios {
     font-size: 16px;
   }
+
+ #IniInput6{
+  font-size: 16px;
+ }
 
   /* Estilos para el párrafo de la inversión inicial */
   #IniInverIni {

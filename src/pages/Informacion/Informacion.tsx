@@ -33,57 +33,59 @@ const Informacion: React.FC = () => {
 
   return (
     <IonPage id='page'>
-    <IonHeader id = "head">
-      <IonToolbar id = "tbh">
-        <IonButtons slot="start" id='btnt'>
-          <IonBackButton defaultHref="/welcome" />
-        </IonButtons>
-        <IonTitle id='info-titulo'>INVERTI.IO</IonTitle>
-        <IonImg id='info-logo' src="./src/images/Logo.png" alt="Logo" />
-      </IonToolbar>
+    <IonHeader id='head'>
+      <div id='tbh'>
+      <IonButtons slot="start" id='btnt' >
+      <IonBackButton defaultHref="/welcome" />
+      </IonButtons>
+        <IonTitle id='welcome-title'>INVERTI.IO</IonTitle>
+        <IonImg id='welcome-logo' src="./src/images/Logo.png" alt="Logo" />
+      </div>
     </IonHeader>
       <IonContent id='conte'>
-      <h1 id="info-title">INFORMACION</h1>
+      <h1 id="info-title">INFORMACIÓN</h1>
       <img id="info-image" src="./src/images/HombreRosa.png" alt="HombreRosa" />
-      <h2 id="problem-title">Problema</h2>
-      <p id="problem-text">"Imagina que una empresa está pensando en invertir en algo nuevo. Quieren asegurarse de que esta inversión sea rentable. Para decidirlo, usan algo llamado TIR, que mide cuánto dinero ganarán con esta inversión. Tienen una regla que dice que solo harán la inversión si hay al menos un 90% de posibilidad de que ganen más de lo que esperan, que es un 30%. Así que básicamente están calculando si este nuevo proyecto tiene una alta probabilidad de ser rentable, y solo lo harán si están bastante seguros de que harán más dinero de lo que esperan en los próximos 5 años. No están considerando ningún valor de rescate al final, solo quieren estar seguros de que valdrá la pena."</p>
+      <h2 id="problem-title">PROBLEMA</h2>
+      <p id="problem-text">Una empresa usa el TIR para evaluar si una inversión nueva les dará más ganancias de lo esperado, con una probabilidad de certeza. 
+      Solo invierten si el TIR es alto y probable. No les importa el valor de rescate, solo el beneficio en un determinado tiempo.</p>
 
 
-      <h2 id="solution-title">Solucion</h2>
-      <p id="solution-text">METODO DE LA TRANSFORMADA INVERSA DE DISTRIBUCION TIRANGULAR </p>
+      <h2 id="solution-title">SOLUCIÓN</h2>
+      <p id="solution-text">Simulación del Sistema aplicando el Metodo "Transformada Inversa de Distribución Triangular"</p>
 
-
+      <div id="contenedorBoot">
       <IonButton id="back-button" expand="full" onClick={handleWelcomeClick}>
           VOLVER
         </IonButton>
         <IonButton id="calculate-button" expand="full" onClick={handleInicioClick}>
           CALCULAR
         </IonButton>
+        </div>
       </IonContent>
       <IonFooter id='footer'>
-        <IonGrid id='grid-footer'>
-          <IonRow id='row-footer'>
-            <IonCol id='col1-footer'>
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton id="info-button-informacion" expand="full" onClick={redirectToInformacion}>
-              <IonImg id='info-imagen' src="./src/images/person.png" alt="Informacion" />
-              </IonButton>
-            </IonCol>
-            <IonCol id='col2-footer'>
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton id="info-button-welcome" expand="full" onClick={redirectToWelcome}>
-              <IonImg id='home-image' src="./src/images/home.png" alt="Welcome" />
-              </IonButton>
-            </IonCol>
-            <IonCol id='col3-footer'>
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton id="info-button-calculate" expand="full" onClick={redirectToInicio}>
-              <IonImg  id='cal-image'  src="./src/images/calculator.png" alt="Inicio" />
-              </IonButton>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
-      </IonFooter>
+      <IonGrid id='grid-footer'>
+        <IonRow id='row1-footer'>
+          <IonCol id='col1-footer'>
+            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
+              <IonImg src="./src/images/person.png" alt="Informacion" id='personf'/>
+            </IonButton>
+          </IonCol>
+          <IonCol id='col2-footer'>
+            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
+              <IonImg src="./src/images/home.png" alt="Welcome" id='homef'/>
+            </IonButton>
+          </IonCol>
+          <IonCol id='col3-footer'>
+            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
+              <IonImg src="./src/images/calculator.png" alt="Inicio" id='calf'/>
+            </IonButton>
+          </IonCol>
+        </IonRow>
+      </IonGrid>
+    </IonFooter>
     </IonPage>
   );
 };

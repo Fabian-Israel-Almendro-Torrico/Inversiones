@@ -11,25 +11,36 @@
   font-family: Arial, sans-serif;
 }
 
+#tbh{
+  display: flex !important;
+  align-items: center !important;
+}
+
 /* Estilos para el encabezado */
 #head {
-  background-color: #ffffff;
+  background-color: #050B32 !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 /* Estilos para el título */
 #welcome-title {
-  color: #000000;
-  font-size: 24px;
+  color: #ffffff;
+  font-family: Luckiest Guy !important;
+  font-size: 26px !important;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
+  margin-left: 4%;
 }
 
 /* Estilos para el logo */
 #welcome-logo {
-  height: 40px;
-  width: 40px;
-  margin-left: 10px;
+  height: 40px !important;
+  width: 40px !important;
+  margin-left: auto;
+  margin-right: 1% !important;
+  border: 2px solid #ffffff; /* Ancho y color del borde */
+  border-radius: 10px;
 }
 
 /* Estilos para el contenido */
@@ -40,46 +51,73 @@
 /* Estilos para el mensaje de bienvenida */
 #welcome-message {
   color: #000000;
-  font-size: 18px;
+  font-size: 27px !important;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 5%;
+  font-family: Luckiest Guy !important;
 }
 
 /* Estilos para el logo del contenido */
 #logo-content {
-  height: 200px;
-  width: 200px;
+  height: 300px !important;
+  width: 300px !important;
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
 }
 
+
+#ContenedorHombres{
+  display: flex;
+  justify-content: space-between;
+}
+
+#img-HomAzul{
+  height: 200px !important;
+  width: 150px !important;
+  margin-left: 2% !important;
+}
+
+#img-HomRosa{
+  height: 200px !important;
+  width: 150px !important;
+  margin-right: 10% !important;
+}
+
+#ContenedorBotones{
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Estilos para el botón de calcular */
 #btn-calcular {
-  background-color: #000000;
   color: #ffffff;
-  border: 2px solid #000000;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 20px !important;
   font-weight: bold;
   margin-bottom: 10px;
+  display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
+  padding: 8px 16px; /* Ajusta el espacio alrededor del texto */
+  font-family: Luckiest Guy !important;
 }
 
 /* Estilos para el botón de información */
 #btn-informacion {
-  background-color: #ffffff;
-  color: #000000;
-  border: 2px solid #000000;
+  color: #ffffff;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 20px !important;
   font-weight: bold;
   margin-bottom: 10px;
+  display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
+  padding: 8px 16px; /* Ajusta el espacio alrededor del texto */
+  font-family: Luckiest Guy !important;
 }
 
 /* Estilos para el pie de página */
 #footer {
-  background-color: #ffffff;
+  background-color: #050B32 !important;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -101,14 +139,20 @@
 
 /* Estilos para los botones del pie de página */
 #info-btn-person, #home-btn-image, #cal-btn-calculator {
-  background-color: transparent;
-  border: none;
+  --background: #050B32 !important;
+  display: inline-block; 
+  padding: 8px 16px;
 }
+
+
 
 /* Estilos para las imágenes del pie de página */
 #personf, #homef, #calf {
-  height: 40px;
-  width: 40px;
+  height: 55px !important;
+  width: 55px !important;
+  border: 1px solid #ffffff !important; /* Ancho y color del borde */
+  border-radius: 20px !important;
+  padding: 20% !important;
 }
 
 /* Media queries para adaptar el diseño a diferentes tamaños de pantalla */

@@ -146,14 +146,14 @@ const Inicio: React.FC = () => {
 
 return (
     <IonPage id="pageIni">
-    <IonHeader id="HeadIni">
-      <IonToolbar id="ToolIni">
-        <IonButtons id="btonReturn" slot="start">
-          <IonBackButton defaultHref="/welcome"/>
-        </IonButtons>
-        <IonTitle id='TitulCorri'>INVERTI.IO</IonTitle>
-        <IonImg id='CorridasLogo' src="./src/images/Logo.png" alt="Logo" />
-      </IonToolbar>
+    <IonHeader id='head'>
+      <div id='tbh'>
+      <IonButtons slot="start" id='btnt' >
+      <IonBackButton defaultHref="/welcome" />
+      </IonButtons>
+        <IonTitle id='welcome-title'>INVERTI.IO</IonTitle>
+        <IonImg id='welcome-logo' src="./src/images/Logo.png" alt="Logo" />
+      </div>
     </IonHeader>
       <IonContent id='InicioContent' className="contenido">
       <IonButton id="IdButtonReset" expand="full" onClick={redirectToInicio}>
@@ -214,7 +214,7 @@ return (
             </IonRow>
 
           {/* Campos de entrada para datos de Inversión */}
-          <p id="IniInverIni"> Inversion Inicial </p>
+          <p id="IniInverIni"> INVERSION INICIAL </p>
           <IonRow id="IniRow4">
             <IonCol id="IniCol6">
               <IonLabel id="IniLaelMinInver">Valor Mínimo</IonLabel>
@@ -245,7 +245,7 @@ return (
             </IonCol>
           </IonRow>
 
-          <p id="IniFlujoNeto"> Flujo Neto </p>
+          <p id="IniFlujoNeto"> FLUJO NETO </p>
           {/* Campos de entrada para datos de Flujo Neto */}
           <IonRow id="IniRow5">
             <IonCol id="IniCol9">
@@ -257,7 +257,7 @@ return (
                 onIonChange={(e) => setValorMinimoFlujoNeto(parseFloat(e.detail.value!))}
               />
             </IonCol>
-            <IonCol id="IniInput11">
+            <IonCol id="IniCol10">
               <IonLabel id="IniLabelValMaxFlu">Valor Máximo</IonLabel>
               <IonInput id="IniInput11"
                 type="number"
@@ -266,7 +266,7 @@ return (
                 onIonChange={(e) => setValorMaximoFlujoNeto(parseFloat(e.detail.value!))}
               />
             </IonCol>
-            <IonCol id="IniInput12">
+            <IonCol id="IniCol11">
               <IonLabel id="IniLabelValProFlu">Valor Probable</IonLabel>
               <IonInput id="IniInput12"
                 type="number"
@@ -297,38 +297,40 @@ return (
              />
 
           {/*<img src="./src/images/HombreAzul.png" alt="HombreAzul" className='info-image'/>*/}
+          <div id="contenedorBotones">
           <IonButton id="IdButtonSim" expand="full" onClick={handleSimularClick}>
             SIMULAR
           </IonButton>
           <IonButton id="IdButtonValor" expand="full" onClick={setValoresPredeterminados}>
             DAR VALORES
           </IonButton>
+          </div>
         </IonGrid>
       </IonContent>
-      <IonFooter id="IniFooter">
-        <IonGrid id="IniGrid2">
-          <IonRow id="IniRow6">
-            <IonCol id="IniCol13">
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton id="IniButtonReuturnInfo" expand="full" onClick={redirectToInformacion}>
-              <IonImg id="IniImaInfo" src="./src/images/person.png" alt="Informacion" />
-              </IonButton>
-            </IonCol>
-            <IonCol id="IniCol14">
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton id="IniButtonReturnWel" expand="full" onClick={redirectToWelcome}>
-              <IonImg id="IniImgWel" src="./src/images/home.png" alt="Welcome" />
-              </IonButton>
-            </IonCol>
-            <IonCol id="IniCol15">
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton id="IniButtonReturnIni" expand="full" onClick={redirectToInicio}>
-              <IonImg id="IniImgIni" src="./src/images/calculator.png" alt="Inicio" />
-              </IonButton>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
-      </IonFooter>
+      <IonFooter id='footer'>
+      <IonGrid id='grid-footer'>
+        <IonRow id='row1-footer'>
+          <IonCol id='col1-footer'>
+            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
+              <IonImg src="./src/images/person.png" alt="Informacion" id='personf'/>
+            </IonButton>
+          </IonCol>
+          <IonCol id='col2-footer'>
+            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
+              <IonImg src="./src/images/home.png" alt="Welcome" id='homef'/>
+            </IonButton>
+          </IonCol>
+          <IonCol id='col3-footer'>
+            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
+              <IonImg src="./src/images/calculator.png" alt="Inicio" id='calf'/>
+            </IonButton>
+          </IonCol>
+        </IonRow>
+      </IonGrid>
+    </IonFooter>
     </IonPage>
   );
 };

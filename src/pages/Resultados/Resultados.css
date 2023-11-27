@@ -3,12 +3,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Luckiest Guy !important;
   }
   
   /* Estilos para la página */
   #page {
     background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    font-family: Luckiest Guy !important;
   }
   
   /* Estilos para el encabezado */
@@ -39,6 +40,7 @@
   
   /* Estilos para el contenido */
   #resultados-content {
+    background-color: #5a0a0a;
     padding: 20px;
   }
   
@@ -53,18 +55,22 @@
   
   /* Estilos para el div de los resultados */
   #div-resultados {
+    background-color: #FDD1AE ;
     border: 2px solid #000000;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-bottom: 10px;
     padding: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
   }
   
   /* Estilos para los párrafos de las TIR de cada corrida */
   #resultados-corridas {
+    background-color: #FDD1AE ;
     color: #000000;
-    font-size: 18px;
+    font-size: 17px !important;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     margin-bottom: 10px;
   }
   
@@ -78,34 +84,78 @@
   }
   
   /* Estilos para el párrafo del resultado de aceptación o rechazo */
-  #resultados-aceptado, #resultados-rechazado {
+  #resultados-aceptados #proyecto1{
     color: #000000;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
   }
-  
+
+  #resultados-aceptados #aceptado{
+    color: #00ff00;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #resultados-aceptados {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #resultados-rechazado #proyecto{
+    color: #000000;
+    font-size: 40px !important;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #resultados-rechazado #rechazado{
+    color: #e01313;
+    font-size: 40px !important;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #resultados-rechazado {
+    font-size: 40px !important;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
   /* Estilos para el botón de volver */
   #resultados-btn-volver {
     background-color: #ffffff;
-    color: #000000;
-    border: 2px solid #000000;
+    color: #ffffff;
     border-radius: 10px;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
+    display: inline-block; 
+    padding: 8px 16px; 
+    margin-top: 2% !important;
+    margin-left: 20%;
   }
   
   /* Estilos para el botón de calcular */
   #resultados-btn-calcular {
-    background-color: #000000;
+    background-color: #ffffff;
     color: #ffffff;
-    border: 2px solid #000000;
     border-radius: 10px;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
+    display: inline-block; 
+    padding: 8px 16px; 
+    margin-top: 2% !important;
+    margin-right: 10%;
   }
   
   /* Estilos para el pie de página */
@@ -127,9 +177,10 @@
   
   /* Estilos para la imagen del senior */
   #senior1 {
-    height: 40px;
-    width: 40px;
-    margin-right: 10px;
+    height: 100px !important;
+    width: 100px !important;
+    margin-left: 40% !important;
+    margin-top: 2% !important;
   }
   
   /* Estilos para las columnas del pie de página */
@@ -168,7 +219,8 @@
   
     /* Estilos para el párrafo del promedio TIR */
     #resultados-promedio {
-      font-size: 16px;
+    text-align: center;
+    font-size: 20px !important;
     }
   
     /* Estilos para el párrafo del resultado de aceptación o rechazo */

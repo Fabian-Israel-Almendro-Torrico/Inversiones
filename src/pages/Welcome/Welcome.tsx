@@ -25,23 +25,31 @@ const Welcome: React.FC = () => {
   return (
     <IonPage id='page'>
     <IonHeader id='head'>
-      <IonToolbar id='tbh'>
+      <div id='tbh'>
         <IonTitle id='welcome-title'>INVERTI.IO</IonTitle>
         <IonImg id='welcome-logo' src="./src/images/Logo.png" alt="Logo" />
-      </IonToolbar>
+      </div>
     </IonHeader>
     <IonContent id="content">
       {/* Mensaje de bienvenida */}
-      <p id='welcome-message'>Bienvenido a la aplicación. ¡Esperamos que disfrutes tu experiencia!</p>
+      <p id='welcome-message'>Bienvenido a la aplicación ¡Esperamos que disfrutes tu Experiencia!</p>
       {/* Agrega tu logo aquí */}
       <img src="./src/images/Logo.png" alt="Logo" id='logo-content'/>
       {/* Botones para redirigir a Inicio e Información */}
+      
+      <div id="ContenedorHombres">
+      <img src="./src/images/HombreAzul.png" alt="Logo" id='img-HomAzul'/>
+      <img src="./src/images/HombreRosa.png" alt="Logo" id='img-HomRosa'/>
+      </div>
+
+      <div id="ContenedorBotones" >
       <IonButton expand="full" onClick={redirectToInicio} id='btn-calcular'>
         CALCULAR
       </IonButton>
       <IonButton expand="full" onClick={redirectToInformacion} id='btn-informacion'>
-        INFORMACION
+        INFORMACIÓN
       </IonButton>
+      </div>
     </IonContent>
     <IonFooter id='footer'>
       <IonGrid id='grid-footer'>

@@ -209,14 +209,14 @@ const simularCorridas = () => {
 
   return (
     <IonPage id="CorriPage">
-    <IonHeader id="CorriHeader">
-      <IonToolbar id="CorriToolbar">
-        <IonButtons id="CorriButtonRet" slot="start">
-          <IonBackButton defaultHref="/inicio"/>
-        </IonButtons>
-        <IonTitle id='CorriInver'>INVERTI.IO</IonTitle>
-        <IonImg id='CorriLogo' src="./src/images/Logo.png" alt="Logo" />
-      </IonToolbar>
+    <IonHeader id='head'>
+      <div id='tbh'>
+      <IonButtons slot="start" id='btnt' >
+      <IonBackButton defaultHref="/inicio" />
+      </IonButtons>
+        <IonTitle id='welcome-title'>INVERTI.IO</IonTitle>
+        <IonImg id='welcome-logo' src="./src/images/Logo.png" alt="Logo" />
+      </div>
     </IonHeader>
       <IonContent id='CorriContent'>
       <h1 id='H1Corri'>CORRIDAS</h1>
@@ -263,30 +263,30 @@ const simularCorridas = () => {
           VER RESULTADOS
         </IonButton>
       </IonContent>
-      <IonFooter id="CorriFooter">
-        <IonGrid id="CorriGrid2">
-          <IonRow id="CorriRow2">
-            <IonCol id="CorriCol2">
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton id="CorriBttonReturnInfo" expand="full" onClick={redirectToInformacion}>
-                <IonImg id="CorriImgInfo" src="./src/images/person.png" alt="Informacion" />
-              </IonButton>
-            </IonCol>
-            <IonCol id="CorriCol3">
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton id="CorriBttonReturnWel" expand="full" onClick={redirectToWelcome} >
-                <IonImg id="CorriImgWel" src="./src/images/home.png" alt="Welcome" />
-              </IonButton>
-            </IonCol>
-            <IonCol id="CorriCol4">
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
-              <IonButton id="CorriBttonReturnIni" expand="full" onClick={redirectToInicio} >
-                <IonImg id="CorriImgIni" src="./src/images/calculator.png" alt="Inicio" />
-              </IonButton>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
-      </IonFooter>
+      <IonFooter id='footer'>
+      <IonGrid id='grid-footer'>
+        <IonRow id='row1-footer'>
+          <IonCol id='col1-footer'>
+            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
+              <IonImg src="./src/images/person.png" alt="Informacion" id='personf'/>
+            </IonButton>
+          </IonCol>
+          <IonCol id='col2-footer'>
+            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
+              <IonImg src="./src/images/home.png" alt="Welcome" id='homef'/>
+            </IonButton>
+          </IonCol>
+          <IonCol id='col3-footer'>
+            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
+              <IonImg src="./src/images/calculator.png" alt="Inicio" id='calf'/>
+            </IonButton>
+          </IonCol>
+        </IonRow>
+      </IonGrid>
+    </IonFooter>
     </IonPage>
   );
 };
