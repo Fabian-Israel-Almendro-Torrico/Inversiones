@@ -10,6 +10,7 @@ const Welcome: React.FC = () => {
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
     history.push('/inicio');
+    window.location.reload();
   };
 
   // Función para redirigir a la vista de Información (debes crearla)

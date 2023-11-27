@@ -33,6 +33,7 @@ interface ResultadoSimulado {
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
     history.push('/inicio');
+    window.location.reload();
   };
 
   // Función para redirigir a la vista de Información (debes crearla)
@@ -42,6 +43,7 @@ interface ResultadoSimulado {
 
   const redirectToWelcome = () => {
     history.push('/welcome');
+    window.location.reload();
   };
 
   // Obtén la ubicación actual
@@ -210,7 +212,7 @@ const simularCorridas = () => {
     <IonHeader id="CorriHeader">
       <IonToolbar id="CorriToolbar">
         <IonButtons id="CorriButtonRet" slot="start">
-          <IonBackButton defaultHref="/inicio" />
+          <IonBackButton defaultHref="/inicio"/>
         </IonButtons>
         <IonTitle id='CorriInver'>INVERTI.IO</IonTitle>
         <IonImg id='CorriLogo' src="./src/images/Logo.png" alt="Logo" />

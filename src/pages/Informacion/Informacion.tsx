@@ -23,10 +23,12 @@ const Informacion: React.FC = () => {
 
   const handleWelcomeClick = () => {
     history.push('/welcome');
+    window.location.reload();
   };
 
   const handleInicioClick = () => {
     history.push('/inicio');
+    window.location.reload();
   };
 
   return (

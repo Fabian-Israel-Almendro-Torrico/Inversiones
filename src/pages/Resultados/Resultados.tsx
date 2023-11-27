@@ -11,6 +11,7 @@ const Resultados: React.FC = () => {
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
     history.push('/inicio');
+    window.location.reload();
   };
 
   // Función para redirigir a la vista de Información (debes crearla)
@@ -21,8 +22,7 @@ const Resultados: React.FC = () => {
   const redirectToWelcome = () => {
     localStorage.clear();
     history.push('/welcome');
-    /*window.location.reload();*/
-    document.cookie = "datosCorridas=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.reload();
   };
 
   const location = useLocation();

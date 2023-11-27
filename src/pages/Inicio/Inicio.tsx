@@ -17,6 +17,7 @@ const Inicio: React.FC = () => {
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
     history.push('/inicio');
+    window.location.reload();
   };
 
   // Función para redirigir a la vista de Información (debes crearla)
@@ -26,6 +27,7 @@ const Inicio: React.FC = () => {
 
   const redirectToWelcome = () => {
     history.push('/welcome');
+    window.location.reload();
   };
 
   // Estados para almacenar los valores ingresados por el usuario
@@ -147,13 +149,16 @@ return (
     <IonHeader id="HeadIni">
       <IonToolbar id="ToolIni">
         <IonButtons id="btonReturn" slot="start">
-          <IonBackButton defaultHref="/welcome" />
+          <IonBackButton defaultHref="/welcome"/>
         </IonButtons>
         <IonTitle id='TitulCorri'>INVERTI.IO</IonTitle>
         <IonImg id='CorridasLogo' src="./src/images/Logo.png" alt="Logo" />
       </IonToolbar>
     </IonHeader>
       <IonContent id='InicioContent' className="contenido">
+      <IonButton id="IdButtonReset" expand="full" onClick={redirectToInicio}>
+            RESETEAR VALORES
+      </IonButton>
         <h1 id="H1Ini">INGRESA LOS VALORES</h1>
         <IonGrid id="IniGrid1">
         <IonRow id='IniRow'>
