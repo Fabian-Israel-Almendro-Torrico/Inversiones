@@ -135,16 +135,10 @@ const Inicio: React.FC = () => {
   
   console.log('Datos de corridas antes de la redirección:', datosCorridas);
 
-  /*history.push({
+  history.push({
     pathname: "/corridas",
     state: { datosCorridas },
-  });*/
-  // Almacenar datos en localStorage
-  localStorage.setItem('datosCorridas', JSON.stringify(datosCorridas));
-
-  // Navegar a la vista de corridas
-  history.push("/corridas");
-
+  });
   setShowSuccessToast(true);
 
 };
