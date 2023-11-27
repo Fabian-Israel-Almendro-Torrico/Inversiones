@@ -9,6 +9,7 @@ const Welcome: React.FC = () => {
 
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
+    localStorage.clear();
     history.push('/inicio');
   };
 
