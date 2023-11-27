@@ -181,7 +181,7 @@ return (
       <IonBackButton defaultHref="/welcome" />
       </IonButtons>
         <IonTitle id='welcome-title'>INVERTI.IO</IonTitle>
-        <IonImg id='welcome-logo' src="./src/images/Logo.png" alt="Logo" />
+        <IonImg id='welcome-logo' src="../assets/images/Logo.png" alt="Logo" />
       </div>
     </IonHeader>
       <IonContent id='InicioContent' className="contenido">
@@ -342,19 +342,19 @@ return (
           <IonCol id='col1-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
-              <IonImg src="./src/images/person.png" alt="Informacion" id='personf'/>
+              <IonImg src="../assets/images/person.png" alt="Informacion" id='personf'/>
             </IonButton>
           </IonCol>
           <IonCol id='col2-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
-              <IonImg src="./src/images/home.png" alt="Welcome" id='homef'/>
+              <IonImg src="../assets/images/home.png" alt="Welcome" id='homef'/>
             </IonButton>
           </IonCol>
           <IonCol id='col3-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
-              <IonImg src="./src/images/calculator.png" alt="Inicio" id='calf'/>
+              <IonImg src="../assets/images/calculator.png" alt="Inicio" id='calf'/>
             </IonButton>
           </IonCol>
         </IonRow>
