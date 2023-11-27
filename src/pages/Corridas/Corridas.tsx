@@ -256,8 +256,7 @@ const simularCorridas = () => {
         <IonButton id="ButtonVerResultados"
           expand="full"
           onClick={() =>     
-            {localStorage.clear();
-            history.push('/resultados', { resultados: resultadosSimulados })}}
+            history.push('/resultados', { resultados: resultadosSimulados })}
         >
           VER RESULTADOS
         </IonButton>
