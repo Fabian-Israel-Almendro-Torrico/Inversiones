@@ -20,6 +20,7 @@ const Resultados: React.FC = () => {
 
   const redirectToWelcome = () => {
     localStorage.clear();
+    localStorage.removeItem('datosCorridas');
     history.push('/welcome');
   };
 
