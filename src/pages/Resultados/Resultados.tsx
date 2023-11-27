@@ -19,8 +19,8 @@ const Resultados: React.FC = () => {
   };
 
   const redirectToWelcome = () => {
-    history.push('/welcome');
     localStorage.clear();
+    history.push('/welcome');
   };
 
   const location = useLocation();
