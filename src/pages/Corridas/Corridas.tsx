@@ -226,26 +226,28 @@ const simularCorridas = () => {
     <IonLabel id="CorriLabelCori" >C. {index + 1}</IonLabel>
 
     <IonList id="CorriList2" lines="none">
-      <IonItem id="CorriItem2" lines="none">
-        <IonLabel id="CorriLabelAnio">Año</IonLabel>
-        <IonLabel id="CorriInverIni">Inversión Inicial</IonLabel>
-        <IonLabel id="CorriNeto">Flujo Neto</IonLabel>
+      <IonItem id="CorriItem2" lines="none"> 
+      
+      {/*Los divs que contienen TITULOS O RESULTADOS antes eran IonLabel (Año - Inversion Inicial - Flujo Neto - 0 - result.Inver-Inver - year+1 - 0 - flujoNetoAnio)*/}
+        <div id="CorriLabelAnio">Año</div>
+        <div id="CorriInverIni">Inversión Inicial</div>
+        <div id="CorriNeto">Flujo Neto</div>
       </IonItem>
       <IonItem id="CorriItem3" lines="none">
-      <IonLabel id="CorriLabel0">0</IonLabel>
-        <IonLabel id="CorriLabelResultInverIni">{resultado.inversionInicial}</IonLabel>
-        <IonLabel id="CorriLabelResultMInverIni">{-resultado.inversionInicial}</IonLabel>
+      <div id="CorriLabel0">0</div>
+        <div id="CorriLabelResultInverIni">{resultado.inversionInicial}</div>
+        <div id="CorriLabelResultMInverIni">{-resultado.inversionInicial}</div>
       </IonItem>
       {Array.from({ length: datosCorridas?.numeroAnios || 0 }, (_, year) => {
   const flujoNetoAnio = calcularFlujoNeto();
   const inversionInicialAnio = year === 0 ? resultado.inversionInicial : 0;
   return (
     <IonItem id="CorriItem3" lines="none" key={year + 1}>
-      <IonLabel id="CorriLabelYear">{year + 1}</IonLabel>
-      <IonLabel id="CorriLabelYear0">{0}</IonLabel>
-      <IonLabel id="CorriLabelFlujoNetoAnio">
+      <div id="CorriLabelYear">{year + 1}</div>
+      <div id="CorriLabelYear0">{0}</div>
+      <div id="CorriLabelFlujoNetoAnio">
         {flujoNetoAnio}
-      </IonLabel>
+      </div>
     </IonItem>
   );
 })}

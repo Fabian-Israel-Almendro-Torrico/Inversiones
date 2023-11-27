@@ -1,4 +1,5 @@
 /* Estilos generales */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -74,7 +75,6 @@
 
 /* Estilos para la lista secundaria */
 #CorriList2 {
-
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -92,6 +92,10 @@
   font-weight: bold;
   text-align: center;
   width: 10% !important;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Estilos para las etiquetas de la inversión inicial */
@@ -264,4 +268,4 @@
     height: 30px;
     width: 30px;
   }
-}
+} 

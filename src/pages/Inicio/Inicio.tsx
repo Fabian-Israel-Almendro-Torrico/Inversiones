@@ -85,6 +85,35 @@ const Inicio: React.FC = () => {
             return;
         }
 
+        // Restricciones para la inversión inicial
+        if (
+          valorMinimoInversion >= valorMaximoInversion ||
+          valorMinimoInversion >= valorProbableInversion ||
+          valorMaximoInversion <= valorMinimoInversion ||
+          valorMaximoInversion <= valorProbableInversion ||
+          valorProbableInversion <= valorMinimoInversion ||
+          valorProbableInversion >= valorMaximoInversion
+        ) {
+          setErrorMessage('Las restricciones para la Inversión Inicial no se cumplen.');
+          setShowErrorToast(true);
+          return;
+        }
+
+        // Restricciones para el flujo neto
+        if (
+          valorMinimoFlujoNeto >= valorMaximoFlujoNeto ||
+          valorMinimoFlujoNeto >= valorProbableFlujoNeto ||
+          valorMaximoFlujoNeto <= valorMinimoFlujoNeto ||
+          valorMaximoFlujoNeto <= valorProbableFlujoNeto ||
+          valorProbableFlujoNeto <= valorMinimoFlujoNeto ||
+          valorProbableFlujoNeto >= valorMaximoFlujoNeto
+        ) {
+          setErrorMessage('Las restricciones para el Flujo Neto no se cumplen.');
+          setShowErrorToast(true);
+          return;
+        }
+
+
         // Validar que los porcentajes estén en el rango permitido (1% - 100%)
         const validateInput = (value: number, min: number, max: number, errorMessage: string) => {
             if (value < min || value > max) {
@@ -281,7 +310,7 @@ return (
             <IonToast id="IniToast"
             isOpen={showSuccessToast}
             onDidDismiss={() => setShowSuccessToast(false)}
-            message="Simulación realizada con éxito. Redirigiendo a la vista de corridas..."
+            message="Simulación realizada con éxito. Se muestran resultados..."
             duration={3000}  // Duración en milisegundos
             position="top"
             color="success"  // Puedes ajustar el color según tu estilo
