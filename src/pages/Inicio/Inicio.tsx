@@ -156,7 +156,7 @@ return (
       </IonToolbar>
     </IonHeader>
       <IonContent id='InicioContent' className="contenido">
-        <h1 id="H1Ini">INICIO</h1>
+        <h1 id="H1Ini">INGRESA LOS VALORES</h1>
         <IonGrid id="IniGrid1">
         <IonRow id='IniRow'>
             <IonCol id="IniCol">
