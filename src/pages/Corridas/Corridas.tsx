@@ -75,7 +75,7 @@ interface ResultadoSimulado {
       Math.sqrt((1 - aleatorio) * (valorMaximoInversion - valorMinimoInversion) * (valorMaximoInversion - valorProbableInversion));
 
   
-    return inversionInicial;
+    return parseFloat(inversionInicial.toFixed(2));
   };
 
   const calcularFlujoNeto = () => {
@@ -90,8 +90,8 @@ interface ResultadoSimulado {
     ? valorMinimoFlujoNeto + Math.sqrt(aleatorio * (valorMaximoFlujoNeto - valorMinimoFlujoNeto) * (valorProbableFlujoNeto - valorMinimoFlujoNeto))
     : valorMaximoFlujoNeto -
       Math.sqrt((1 - aleatorio) * (valorMaximoFlujoNeto - valorMinimoFlujoNeto) * (valorMaximoFlujoNeto - valorProbableFlujoNeto));
-
-  return flujoNeto;
+    let flujoredondeado = flujoNeto.toFixed(2)
+  return parseFloat(flujoredondeado);
   };
 
  /* const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
@@ -121,7 +121,7 @@ const calcularTIR = (inversionInicial: number, flujos: number[]) => {
     }
   }
 
-  return tir * 100;
+  return parseFloat((tir * 100).toFixed(2));
 };
 
 // Función para calcular el Valor Presente Neto (VPN) de los flujos de efectivo
