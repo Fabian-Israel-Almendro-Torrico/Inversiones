@@ -91,7 +91,7 @@ const Resultados: React.FC = () => {
         ) : (
           <p id='resultados-rechazado'>El proyecto es RECHAZADO</p>
           )}
-
+          <img id='senior1' src="./src/images/Senior.png" alt="Senior" />
 <IonButton expand="full" onClick={redirectToWelcome} id='resultados-btn-volver'>
           VOLVER
         </IonButton>
@@ -102,7 +102,6 @@ const Resultados: React.FC = () => {
       <IonFooter id='footer'>
         <IonGrid id='grid-footer'>
           <IonRow id='row1-footer'>
-          <img id='senior1' src="./src/images/Senior.png" alt="Senior" />
             <IonCol id='col1-footer'>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person1'>
