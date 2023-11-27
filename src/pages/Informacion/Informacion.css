@@ -1,0 +1,255 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para la página */
+#page {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para el encabezado */
+#head {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el título */
+#info-titulo {
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Estilos para el logo */
+#info-logo {
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+}
+
+/* Estilos para el botón de volver */
+#btnt {
+  color: #000000;
+}
+
+/* Estilos para el contenido */
+#conte {
+  padding: 20px;
+}
+
+/* Estilos para el título principal */
+#info-title {
+  color: #000000;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la imagen del hombre rosa */
+#info-image {
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el título del problema */
+#problem-title {
+  color: #000000;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el texto del problema */
+#problem-text {
+  color: #000000;
+  font-size: 18px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el título de la solución */
+#solution-title {
+  color: #000000;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el texto de la solución */
+#solution-text {
+  color: #000000;
+  font-size: 18px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el botón de volver */
+#back-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón de calcular */
+#calculate-button {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el pie de página */
+#footer {
+  background-color: #ffffff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la rejilla del pie de página */
+#grid-footer {
+  height: 100%;
+}
+
+/* Estilos para la fila del pie de página */
+#row-footer {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para las columnas del pie de página */
+#col1-footer, #col2-footer, #col3-footer {
+  padding: 10px;
+}
+
+/* Estilos para los botones del pie de página */
+#info-button-informacion, #info-button-welcome, #info-button-calculate {
+  background-color: transparent;
+  border: none;
+}
+
+/* Estilos para las imágenes del pie de página */
+#info-imagen, #home-image, #cal-image {
+  height: 40px;
+  width: 40px;
+}
+
+/* Media queries para adaptar el diseño a diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+  /* Estilos para el título */
+  #info-titulo {
+    font-size: 20px;
+  }
+
+  /* Estilos para el título principal */
+  #info-title {
+    font-size: 28px;
+  }
+
+  /* Estilos para el título del problema */
+  #problem-title {
+    font-size: 24px;
+  }
+
+  /* Estilos para el texto del problema */
+  #problem-text {
+    font-size: 16px;
+  }
+
+  /* Estilos para el título de la solución */
+  #solution-title {
+    font-size: 24px;
+  }
+
+  /* Estilos para el texto de la solución */
+  #solution-text {
+    font-size: 16px;
+  }
+
+  /* Estilos para el botón de volver */
+  #back-button {
+    font-size: 16px;
+  }
+
+  /* Estilos para el botón de calcular */
+  #calculate-button {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Estilos para el título */
+  #info-titulo {
+    font-size: 16px;
+  }
+
+  /* Estilos para el logo */
+  #info-logo {
+    height: 30px;
+    width: 30px;
+  }
+
+  /* Estilos para el título principal */
+  #info-title {
+    font-size: 24px;
+  }
+
+  /* Estilos para la imagen del hombre rosa */
+  #info-image {
+    height: 150px;
+    width: 150px;
+  }
+
+  /* Estilos para el título del problema */
+  #problem-title {
+    font-size: 20px;
+  }
+
+  /* Estilos para el texto del problema */
+  #problem-text {
+    font-size: 14px;
+  }
+
+  /* Estilos para el título de la solución */
+  #solution-title {
+    font-size: 20px;
+  }
+
+  /* Estilos para el texto de la solución */
+  #solution-text {
+    font-size: 14px;
+  }
+
+  /* Estilos para el botón de volver */
+  #back-button {
+    font-size: 14px;
+  }
+
+  /* Estilos para el botón de calcular */
+  #calculate-button {
+    font-size: 14px;
+  }
+
+  /* Estilos para las imágenes del pie de página */
+  #info-imagen, #home-image, #cal-image {
+    height: 30px;
+    width: 30px;
+  }
+}
+

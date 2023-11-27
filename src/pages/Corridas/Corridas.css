@@ -1,0 +1,264 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para la página */
+#CorriPage {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para el encabezado */
+#CorriHeader {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el título */
+#CorriInver {
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Estilos para el logo */
+#CorriLogo {
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+}
+
+/* Estilos para el botón de volver */
+#CorriButtonRet {
+  color: #000000;
+}
+
+/* Estilos para el contenido */
+#CorriContent {
+  padding: 20px;
+}
+
+/* Estilos para el título principal */
+#H1Corri {
+  color: #000000;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la lista principal */
+#CorriList1 {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los ítems de la lista principal */
+#CorriItem1 {
+  border-bottom: 2px solid #000000;
+}
+
+/* Estilos para las etiquetas de las corridas */
+#CorriLabelCori {
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* Estilos para la lista secundaria */
+#CorriList2 {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los ítems de la lista secundaria */
+#CorriItem2, #CorriItem3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Estilos para las etiquetas del año */
+#CorriLabelAnio, #CorriLabel0, #CorriLabelYear {
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  width: 20%;
+}
+
+/* Estilos para las etiquetas de la inversión inicial */
+#CorriInverIni, #CorriLabelResultInverIni, #CorriLabelYear0 {
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  width: 40%;
+}
+
+/* Estilos para las etiquetas del flujo neto */
+#CorriNeto, #CorriLabelResultMInverIni, #CorriLabelFlujoNetoAnio {
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  width: 40%;
+}
+
+/* Estilos para las etiquetas del TIR */
+#CorriTirResult {
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón de ver resultados */
+#ButtonVerResultados {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el pie de página */
+#CorriFooter {
+  background-color: #ffffff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la rejilla del pie de página */
+#CorriGrid2 {
+  height: 100%;
+}
+
+/* Estilos para la fila del pie de página */
+#CorriRow2 {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para las columnas del pie de página */
+#CorriCol2, #CorriCol3, #CorriCol4 {
+  padding: 10px;
+}
+
+/* Estilos para los botones del pie de página */
+#CorriBttonReturnInfo, #CorriBttonReturnWel, #CorriBttonReturnIni {
+  background-color: transparent;
+  border: none;
+}
+
+/* Estilos para las imágenes del pie de página */
+#CorriImgInfo, #CorriImgWel, #CorriImgIni {
+  height: 40px;
+  width: 40px;
+}
+
+/* Media queries para adaptar el diseño a diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+  /* Estilos para el título */
+  #CorriInver {
+    font-size: 20px;
+  }
+
+  /* Estilos para el título principal */
+  #H1Corri {
+    font-size: 28px;
+  }
+
+  /* Estilos para las etiquetas de las corridas */
+  #CorriLabelCori {
+    font-size: 20px;
+  }
+
+  /* Estilos para las etiquetas del año */
+  #CorriLabelAnio, #CorriLabel0, #CorriLabelYear {
+    font-size: 16px;
+  }
+
+  /* Estilos para las etiquetas de la inversión inicial */
+  #CorriInverIni, #CorriLabelResultInverIni, #CorriLabelYear0 {
+    font-size: 16px;
+  }
+
+  /* Estilos para las etiquetas del flujo neto */
+  #CorriNeto, #CorriLabelResultMInverIni, #CorriLabelFlujoNetoAnio {
+    font-size: 16px;
+  }
+
+  /* Estilos para las etiquetas del TIR */
+  #CorriTirResult {
+    font-size: 16px;
+  }
+
+  /* Estilos para el botón de ver resultados */
+  #ButtonVerResultados {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Estilos para el título */
+  #CorriInver {
+    font-size: 16px;
+  }
+
+  /* Estilos para el logo */
+  #CorriLogo {
+    height: 30px;
+    width: 30px;
+  }
+
+  /* Estilos para el título principal */
+  #H1Corri {
+    font-size: 24px;
+  }
+
+  /* Estilos para las etiquetas de las corridas */
+  #CorriLabelCori {
+    font-size: 18px;
+  }
+
+  /* Estilos para las etiquetas del año */
+  #CorriLabelAnio, #CorriLabel0, #CorriLabelYear {
+    font-size: 14px;
+  }
+
+  /* Estilos para las etiquetas de la inversión inicial */
+  #CorriInverIni, #CorriLabelResultInverIni, #CorriLabelYear0 {
+    font-size: 14px;
+  }
+
+  /* Estilos para las etiquetas del flujo neto */
+  #CorriNeto, #CorriLabelResultMInverIni, #CorriLabelFlujoNetoAnio {
+    font-size: 14px;
+  }
+
+  /* Estilos para las etiquetas del TIR */
+  #CorriTirResult {
+    font-size: 14px;
+  }
+
+  /* Estilos para el botón de ver resultados */
+  #ButtonVerResultados {
+    font-size: 14px;
+  }
+
+  /* Estilos para las imágenes del pie de página */
+  #CorriImgInfo, #CorriImgWel, #CorriImgIni {
+    height: 30px;
+    width: 30px;
+  }
+}
