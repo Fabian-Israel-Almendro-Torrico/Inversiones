@@ -21,7 +21,8 @@ const Resultados: React.FC = () => {
   const redirectToWelcome = () => {
     localStorage.clear();
     history.push('/welcome');
-    window.location.reload();
+    /*window.location.reload();*/
+    document.cookie = "datosCorridas=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   };
 
   const location = useLocation();

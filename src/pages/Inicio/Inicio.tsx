@@ -14,7 +14,6 @@ import {
 import './Inicio.css';
 
 const Inicio: React.FC = () => {
-
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
     history.push('/inicio');
