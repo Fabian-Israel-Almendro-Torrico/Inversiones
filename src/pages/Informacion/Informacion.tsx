@@ -39,12 +39,12 @@ const Informacion: React.FC = () => {
       <IonBackButton defaultHref="/welcome" />
       </IonButtons>
         <IonTitle id='welcome-title'>INVERTI.IO</IonTitle>
-        <IonImg id='welcome-logo' src="../assets/images/Logo.png" alt="Logo" />
+        <IonImg id='welcome-logo' src="../public/Logo.png" alt="Logo" />
       </div>
     </IonHeader>
       <IonContent id='conte'>
       <h1 id="info-title">INFORMACIÓN</h1>
-      <img id="info-image" src="../assets/images/HombreRosa.png" alt="HombreRosa" />
+      <img id="info-image" src="../public/HombreRosa.png" alt="HombreRosa" />
       <h2 id="problem-title">PROBLEMA</h2>
       <p id="problem-text">Una empresa usa el TIR para evaluar si una inversión nueva les dará más ganancias de lo esperado, con una probabilidad de certeza. 
       Solo invierten si el TIR es alto y probable. No les importa el valor de rescate, solo el beneficio en un determinado tiempo.</p>
@@ -68,19 +68,19 @@ const Informacion: React.FC = () => {
           <IonCol id='col1-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
-              <IonImg src="../assets/images/person.png" alt="Informacion" id='personf'/>
+              <IonImg src="../public/person.png" alt="Informacion" id='personf'/>
             </IonButton>
           </IonCol>
           <IonCol id='col2-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
-              <IonImg src="../assets/images/home.png" alt="Welcome" id='homef'/>
+              <IonImg src="../public/home.png" alt="Welcome" id='homef'/>
             </IonButton>
           </IonCol>
           <IonCol id='col3-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
-              <IonImg src="../assets/images/calculator.png" alt="Inicio" id='calf'/>
+              <IonImg src="../public/calculator.png" alt="Inicio" id='calf'/>
             </IonButton>
           </IonCol>
         </IonRow>
