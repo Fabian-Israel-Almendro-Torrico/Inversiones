@@ -100,7 +100,7 @@ const Resultados: React.FC = () => {
           </p>
           )}
           <div>
-          <img id='senior1' src="../public/Senior.png" alt="Senior" />
+          <img id='senior1' src="https://images.vexels.com/media/users/3/127303/isolated/preview/d2d88005bdd8195bb5930634e712c8de-dibujos-animados-de-profesion-de-empresario.png" alt="Senior" />
           </div>
           <IonButton expand="full" onClick={redirectToWelcome} id='resultados-btn-volver'>
           VOLVER

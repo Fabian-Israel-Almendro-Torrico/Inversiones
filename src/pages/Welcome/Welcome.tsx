@@ -38,8 +38,8 @@ const Welcome: React.FC = () => {
       {/* Botones para redirigir a Inicio e Información */}
       
       <div id="ContenedorHombres">
-      <img src="../android/app/src/main/assets/public/HombreAzul.png" alt="Logo" id='img-HomAzul'/>
-      <img src="../public/HombreRosa.png" alt="Logo" id='img-HomRosa'/>
+      <img src="https://i.pinimg.com/originals/f8/cc/62/f8cc627c323ba235823f85c97594040a.png" alt="Logo" id='img-HomAzul'/>
+      <img src="https://i.pinimg.com/originals/9f/e6/d7/9fe6d7649d8aa272f21c93f0893e8f4b.png" alt="Logo" id='img-HomRosa'/>
       </div>
 
       <div id="ContenedorBotones" >
@@ -63,7 +63,7 @@ const Welcome: React.FC = () => {
           <IonCol id='col2-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
-              <IonImg src="../public/home.png" alt="Welcome" id='homef'/>
+              <IonImg src="https://agenciafattobene.com.br/wp-content/uploads/2020/03/casa-mila.png" alt="Welcome" id='homef'/>
             </IonButton>
           </IonCol>
           <IonCol id='col3-footer'>
