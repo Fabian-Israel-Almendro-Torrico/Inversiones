@@ -54,18 +54,18 @@
   font-size: 27px !important;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1px;
   margin-top: 5%;
   font-family: Luckiest Guy !important;
 }
 
 /* Estilos para el logo del contenido */
 #logo-content {
-  height: 300px !important;
-  width: 300px !important;
+  height: 250px !important;
+  width: 250px !important;
   display: block;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -83,7 +83,7 @@
 #img-HomRosa{
   height: 200px !important;
   width: 150px !important;
-  margin-right: 10% !important;
+  margin-right: 2% !important;
 }
 
 #ContenedorBotones{
@@ -95,7 +95,7 @@
 #btn-calcular {
   color: #ffffff;
   border-radius: 10px;
-  font-size: 20px !important;
+  font-size: 15px !important;
   font-weight: bold;
   margin-bottom: 10px;
   display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
@@ -107,7 +107,7 @@
 #btn-informacion {
   color: #ffffff;
   border-radius: 10px;
-  font-size: 20px !important;
+  font-size: 15px !important;
   font-weight: bold;
   margin-bottom: 10px;
   display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
@@ -148,8 +148,8 @@
 
 /* Estilos para las imágenes del pie de página */
 #personf, #homef, #calf {
-  height: 55px !important;
-  width: 55px !important;
+  height: 48px !important;
+  width: 48px !important;
   border: 1px solid #ffffff !important; /* Ancho y color del borde */
   border-radius: 20px !important;
   padding: 20% !important;

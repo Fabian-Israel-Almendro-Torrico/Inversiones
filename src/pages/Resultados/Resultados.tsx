@@ -74,7 +74,7 @@ const Resultados: React.FC = () => {
       <IonBackButton defaultHref="/corridas" />
       </IonButtons>
         <IonTitle id='welcome-title'>INVERTI.IO</IonTitle>
-        <IonImg id='welcome-logo' src="../public/Logo.png" alt="Logo" />
+        <IonImg id='welcome-logo' src="https://th.bing.com/th/id/OIG.6w9pUphiH9Sh8Jt9720p?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Logo" />
       </div>
     </IonHeader>
       <IonContent id='resultados-content'>
@@ -100,7 +100,7 @@ const Resultados: React.FC = () => {
           </p>
           )}
           <div>
-          <img id='senior1' src="https://images.vexels.com/media/users/3/127303/isolated/preview/d2d88005bdd8195bb5930634e712c8de-dibujos-animados-de-profesion-de-empresario.png" alt="Senior" />
+          <img id='senior1' src="https://th.bing.com/th/id/R.c11fdb13b7d410e9e8de3bc7a40567f6?rik=%2fTP6w%2bURcn%2b9Zw&pid=ImgRaw&r=0" alt="Senior" />
           </div>
           <IonButton expand="full" onClick={redirectToWelcome} id='resultados-btn-volver'>
           VOLVER
@@ -115,19 +115,19 @@ const Resultados: React.FC = () => {
           <IonCol id='col1-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
-              <IonImg src="../public/person.png" alt="Informacion" id='personf'/>
+              <IonImg src="https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_man_people_person_profile_user_icon_123385.png" alt="Informacion" id='personf'/>
             </IonButton>
           </IonCol>
           <IonCol id='col2-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
-              <IonImg src="../public/home.png" alt="Welcome" id='homef'/>
+              <IonImg src="https://agenciafattobene.com.br/wp-content/uploads/2020/03/casa-mila.png" alt="Welcome" id='homef'/>
             </IonButton>
           </IonCol>
           <IonCol id='col3-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
-              <IonImg src="../public/calculator.png" alt="Inicio" id='calf'/>
+              <IonImg src="https://th.bing.com/th/id/R.eee772e2bfa4f53491444d04b8025701?rik=X%2B595Tz%2FiRKy7g&pid=ImgRaw&r=0" alt="Inicio" id='calf'/>
             </IonButton>
           </IonCol>
         </IonRow>
