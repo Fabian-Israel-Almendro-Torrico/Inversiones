@@ -38,7 +38,7 @@ const Welcome: React.FC = () => {
       {/* Botones para redirigir a Inicio e Información */}
       
       <div id="ContenedorHombres">
-      <img src="../public/HombreAzul.png" alt="Logo" id='img-HomAzul'/>
+      <img src="../android/app/src/main/assets/public/HombreAzul.png" alt="Logo" id='img-HomAzul'/>
       <img src="../public/HombreRosa.png" alt="Logo" id='img-HomRosa'/>
       </div>
 
