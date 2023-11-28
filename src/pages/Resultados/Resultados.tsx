@@ -73,7 +73,7 @@ const Resultados: React.FC = () => {
       <IonButtons slot="start" id='btnt' >
       <IonBackButton defaultHref="/corridas" />
       </IonButtons>
-        <IonTitle id='welcome-title'>INVERTI.IO</IonTitle>
+        <IonTitle id='welcome-title'>INVERT.IO</IonTitle>
         <IonImg id='welcome-logo' src="https://th.bing.com/th/id/OIG.6w9pUphiH9Sh8Jt9720p?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Logo" />
       </div>
     </IonHeader>
