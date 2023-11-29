@@ -11,7 +11,6 @@ import Welcome from './pages/Welcome/Welcome';
 import Informacion from './pages/Informacion/Informacion';
 
 
-
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 

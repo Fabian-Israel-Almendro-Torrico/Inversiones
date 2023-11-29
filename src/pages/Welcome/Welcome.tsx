@@ -38,8 +38,8 @@ const Welcome: React.FC = () => {
       {/* Botones para redirigir a Inicio e Información */}
       
       <div id="ContenedorHombres">
-      <img src="https://i.pinimg.com/originals/f8/cc/62/f8cc627c323ba235823f85c97594040a.png" alt="Logo" id='img-HomAzul'/>
-      <img src="https://i.pinimg.com/originals/9f/e6/d7/9fe6d7649d8aa272f21c93f0893e8f4b.png" alt="Logo" id='img-HomRosa'/>
+      <img src="https://image.freepik.com/vector-gratis/ilustracion-concepto-calculadora_114360-1239.jpg" alt="Logo" id='img-HomAzul'/>
+      <img src="https://1.bp.blogspot.com/-kQw78cBMIB0/Wl1s8XCDUrI/AAAAAAAAEoQ/Kwl04DNlHB46BiRG5-eki4RsoOjN9WD0gCLcBGAs/s1600/INFOR.jpg" alt="Logo" id='img-HomRosa'/>
       </div>
 
       <div id="ContenedorBotones" >

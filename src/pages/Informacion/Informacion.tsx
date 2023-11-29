@@ -44,7 +44,7 @@ const Informacion: React.FC = () => {
     </IonHeader>
       <IonContent id='conte'>
       <h1 id="info-title">INFORMACIÓN</h1>
-      <img id="info-image" src="https://i.pinimg.com/originals/9f/e6/d7/9fe6d7649d8aa272f21c93f0893e8f4b.png" alt="HombreRosa" />
+      <img id="info-image" src="https://www.universidades.com.bo/logos/original/logo-universidad-mayor-de-san-simon.png" alt="HombreRosa" />
       <h2 id="problem-title">PROBLEMA</h2>
       <p id="problem-text">Una empresa usa el TIR para evaluar si una inversión nueva les dará más ganancias de lo esperado, con una probabilidad de certeza. 
       Solo invierten si el TIR es alto y probable. No les importa el valor de rescate, solo el beneficio en un determinado tiempo.</p>
