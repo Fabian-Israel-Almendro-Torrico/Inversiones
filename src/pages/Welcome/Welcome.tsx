@@ -57,7 +57,7 @@ const Welcome: React.FC = () => {
           <IonCol id='col1-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
             <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
-              <IonImg src="https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_man_people_person_profile_user_icon_123385.png" alt="Informacion" id='personf'/>
+              <IonImg src="https://cdn3.iconfinder.com/data/icons/banking-and-finance-4-4/48/158-1024.png" alt="Informacion" id='personf'/>
             </IonButton>
           </IonCol>
           <IonCol id='col2-footer'>
