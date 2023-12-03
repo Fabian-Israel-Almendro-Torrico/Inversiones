@@ -74,7 +74,7 @@
 /* Estilos para el texto del problema */
 #problem-text {
   color: #000000;
-  font-size: 20px !important;
+  font-size: 18px !important;
   text-align:justify;
   margin-bottom: 20px;
   font-family: Luckiest Guy !important;
@@ -91,12 +91,14 @@
   margin-bottom: 10px;
   font-family: Luckiest Guy !important;
 }
-
+#cuadro-ejercicio{
+  margin-right: 1%;
+}
 /* Estilos para el texto de la solución */
 #solution-text {
   margin-top: 3%;
   color: #000000;
-  font-size: 20px !important;
+  font-size: 18px !important;
   text-align: justify;
   margin-bottom: 20px;
   font-family: Luckiest Guy !important;
