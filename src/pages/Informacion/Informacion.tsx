@@ -46,12 +46,13 @@ const Informacion: React.FC = () => {
       <h1 id="info-title">INFORMACIÓN</h1>
       <img id="info-image" src="https://www.universidades.com.bo/logos/original/logo-universidad-mayor-de-san-simon.png" alt="HombreRosa" />
       <h2 id="problem-title">PROBLEMA</h2>
-      <p id="problem-text">Una empresa usa el TIR para evaluar si una inversión nueva les dará más ganancias de lo esperado, con una probabilidad de certeza. 
-      Solo invierten si el TIR es alto y probable. No les importa el valor de rescate, solo el beneficio en un determinado tiempo.</p>
-
-
-      <h2 id="solution-title">SOLUCIÓN</h2>
-      <p id="solution-text">Simulación del Sistema aplicando el Metodo "Transformada Inversa de Distribución Triangular"</p>
+      <p id="problem-text">Una empresa desea entrar en un nuevo negocio cuya inversión inicial requerida y los
+        ingresos netos anuales después de impuestos están distribuidos como sigue:</p>
+      <IonImg id='cuadro-ejercicio' src="https://cdn.discordapp.com/attachments/837905669138677770/1180997518436343829/image.png?ex=657f74a6&is=656cffa6&hm=77911eb2bf1cc6d20c59276ee098ffe241af4608e86f26faa941726bf118f13d&" alt="Logo" />
+      <p id="solution-text">Si la administración ha establecido que un proyecto de inversión será emprendido si
+      Prob (TIR mayor TREMA) ≥ 0.90, y la TREMA es de 30%, ¿debería la empresa X aceptar este nuevo
+      proyecto de inversión? Asuma un horizonte de planeación de 5 años y un valor de rescate
+      al término de este tiempo de cero.</p>
 
       <div id="contenedorBoot">
       <IonButton id="back-button" expand="full" onClick={handleWelcomeClick}>
