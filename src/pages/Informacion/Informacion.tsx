@@ -48,11 +48,11 @@ const Informacion: React.FC = () => {
       <h2 id="problem-title">PROBLEMA</h2>
       <p id="problem-text">Una empresa desea entrar en un nuevo negocio cuya inversión inicial requerida y los
         ingresos netos anuales después de impuestos están distribuidos como sigue:</p>
+
       <IonImg id='cuadro-ejercicio' src="https://cdn.discordapp.com/attachments/837905669138677770/1180999258489503805/image.png?ex=657f7645&is=656d0145&hm=ce85b7a06c37b08c9c94c31c53ed2ccbcaff79aa5dda77d0c22679f34ec9f746&" alt="Logo" />
       <p id="solution-text">Si la administración ha establecido que un proyecto de inversión será emprendido <br /> Si
       <strong> Prob (TIR mayor TREMA) ≥ 0.90 </strong>, <br /> y la <strong>TREMA es de 30% </strong>, <br /> ¿Debería la empresa X aceptar este nuevo
-      proyecto de inversión? <br /> Asuma un horizonte de planeación de 5 años y un valor de rescate
-      al término de este tiempo de cero.</p>
+      proyecto de inversión? <br /> Asuma un horizonte de planeación de 5 años y un valor de rescate al término de este tiempo de cero.</p>
 
       <div id="contenedorBoot">
       <IonButton id="back-button" expand="full" onClick={handleWelcomeClick}>
