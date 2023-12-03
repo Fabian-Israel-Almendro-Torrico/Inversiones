@@ -94,12 +94,14 @@
 
 /* Estilos para el texto de la solución */
 #solution-text {
+  margin-top: 3%;
   color: #000000;
   font-size: 20px !important;
-  text-align: center;
+  text-align: justify;
   margin-bottom: 20px;
-  text-align: center;
   font-family: Luckiest Guy !important;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 #contenedorBoot{
@@ -250,6 +252,7 @@
 
   /* Estilos para el texto de la solución */
   #solution-text {
+    margin-top: 3%;
     font-size: 14px;
   }
 
