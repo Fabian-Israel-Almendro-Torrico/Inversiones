@@ -9,6 +9,7 @@ import Corridas from './pages/Corridas/Corridas';
 import Resultados from './pages/Resultados/Resultados';
 import Welcome from './pages/Welcome/Welcome';
 import Informacion from './pages/Informacion/Informacion';
+import Help from './pages/Help/Help';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -41,6 +42,7 @@ const App: React.FC = () => (
         <Route path="/resultados" component={Resultados} exact />
         <Route path="/welcome" component={Welcome} exact />
         <Route path="/informacion" component={Informacion} exact />
+        <Route path="/help" component={Help} exact />
 
         <Redirect exact from="/" to="/welcome" />
       </IonRouterOutlet>

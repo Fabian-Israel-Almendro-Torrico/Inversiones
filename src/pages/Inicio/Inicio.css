@@ -263,6 +263,12 @@
   margin-left: 18% !important;
 }
 
+#IdButtonAyuda {
+  --background: #ffffff !important;
+  display: inline-block; 
+  padding: 8px 16px;
+}
+
 /* Estilos para el pie de página */
 #IniFooter {
   background-color: #ffffff;

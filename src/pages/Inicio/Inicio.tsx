@@ -30,6 +30,11 @@ const Inicio: React.FC = () => {
     window.location.reload();
   };
 
+  const redirectToHelp = () => {
+    history.push('/help');
+    window.location.reload();
+  };
+
   // Estados para almacenar los valores ingresados por el usuario
   const [trema, setTrema] = useState(0);
   const [porcentajeAceptacion, setPorcentajeAceptacion] = useState(0);
@@ -188,6 +193,12 @@ return (
       <IonButton id="IdButtonReset" expand="full" onClick={redirectToInicio}>
             RESETEAR VALORES
       </IonButton>
+      <IonButton expand="full" onClick={redirectToHelp} id='IdButtonAyuda'>
+              <IonImg src="https://cdn.icon-icons.com/icons2/2596/PNG/512/help_question_icon_155279.png" alt="Informacion" id='personf'/>
+      </IonButton>
+      {/*<IonButton id="IdButtonAyuda" expand="full" onClick={redirectToHelp}>
+            AYUDA
+      </IonButton>*/}
         <h1 id="H1Ini">INGRESA LOS VALORES</h1>
         <IonGrid id="IniGrid1">
         <IonRow id='IniRow'>
