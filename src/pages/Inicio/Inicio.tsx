@@ -190,15 +190,17 @@ return (
       </div>
     </IonHeader>
       <IonContent id='InicioContent' className="contenido">
+        <div id='contendor-b'>
       <IonButton id="IdButtonReset" expand="full" onClick={redirectToInicio}>
             RESETEAR VALORES
       </IonButton>
       <IonButton expand="full" onClick={redirectToHelp} id='IdButtonAyuda'>
-              <IonImg src="https://cdn.icon-icons.com/icons2/2596/PNG/512/help_question_icon_155279.png" alt="Informacion" id='personf'/>
+              <IonImg src="https://cdn.icon-icons.com/icons2/2596/PNG/512/help_question_icon_155279.png" alt="Informacion" id='img-help'/>
       </IonButton>
       {/*<IonButton id="IdButtonAyuda" expand="full" onClick={redirectToHelp}>
             AYUDA
       </IonButton>*/}
+      </div>
         <h1 id="H1Ini">INGRESA LOS VALORES</h1>
         <IonGrid id="IniGrid1">
         <IonRow id='IniRow'>

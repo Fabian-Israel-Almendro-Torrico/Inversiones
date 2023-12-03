@@ -250,7 +250,10 @@
   display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
   padding: 8px 16px;
 }
-
+#contendor-b{
+  display: flex;
+  justify-content: space-between;
+}
 #IdButtonReset {
   background-color: #ffffff;
   color: #ffffff;
@@ -264,7 +267,6 @@
 }
 
 #IdButtonAyuda {
-  --background: #ffffff !important;
   display: inline-block; 
   padding: 8px 16px;
 }
