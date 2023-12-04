@@ -43,13 +43,30 @@ const Help: React.FC = () => {
       </div>
     </IonHeader>
       <IonContent id='conte'>
-      <h1 id="info-title">AYUDA</h1>
-      <img id="info-image" src="https://www.universidades.com.bo/logos/original/logo-universidad-mayor-de-san-simon.png" alt="HombreRosa" />
-      <h2 id="problem-title">AYUDA X2</h2>
-      <p id="problem-text">INGRESA TEXTO</p>
+      <h1 id="info-title">¿Problemas?</h1>
+      <p id="inicio-text">Acá te enseñamos a usar un poco la aplicación</p>
 
-      <IonImg id='cuadro-ejercicio' src="" alt="Logo" />
-      <p id="solution-text">INGRESA TEXTO</p>
+      <h2 id="titulo-ejemplo">TREMA - PROYECTO ACEPTADO</h2>
+      <img id="help-1" src="https://cdn.discordapp.com/attachments/837905669138677770/1181023425704235048/image.png?ex=657f8cc7&is=656d17c7&hm=56dd23130cc2ad722f0c1f5a8eaf196bbe186eb1d9d6b09ba557aab96b217931&" alt="HombreRosa" />
+      <p id="texto-help"><strong>Trema: </strong>El trema es  <br /><strong>% Proyecto Aceptado: </strong>Se refiere al </p>
+
+      <h2 id="titulo-ejemplo">NÚMERO DE CORRIDAS - NÚMERO DE AÑOS</h2>
+      <img id="help-1" src="" alt="HombreRosa" />
+      <p id="texto-help"><strong>Corridas: </strong>Se refiere a  <br /><strong>Años: </strong>Se refiere al </p>
+
+      <h2 id="titulo-ejemplo">INVERSIÓN INICIAL</h2>
+      <img id="help-1" src="" alt="HombreRosa" />
+      <p id="texto-help"><strong>Inversión Inicial: </strong>Se refiere a... y cuenta con 3 campos <br />
+      <strong>Valor Minimo: </strong>Se refiere al <br />
+      <strong>Valor Maximo: </strong>Se refiere al <br />
+      <strong>Valor Probable: </strong>Se refiere al </p>
+
+      <h2 id="titulo-ejemplo">FLUJO NETO</h2>
+      <img id="help-1" src="" alt="HombreRosa" />
+      <p id="texto-help"><strong>Flujo Neto: </strong>Se refiere a... y cuenta con 3 campos <br />
+      <strong>Valor Minimo: </strong>Se refiere al <br />
+      <strong>Valor Maximo: </strong>Se refiere al <br />
+      <strong>Valor Probable: </strong>Se refiere al </p>
 
       <div id="contenedorBoot">
       <IonButton id="back-button" expand="full" onClick={handleWelcomeClick}>

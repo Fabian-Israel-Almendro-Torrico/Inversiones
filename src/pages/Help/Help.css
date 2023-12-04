@@ -62,19 +62,19 @@
   }
   
   /* Estilos para el título del problema */
-  #problem-title {
+  #titulo-ejemplo {
     color: #000000;
-    font-size: 28px;
+    font-size: 12px !important;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     margin-bottom: 10px;
     font-family: Luckiest Guy;
   }
   
   /* Estilos para el texto del problema */
-  #problem-text {
+  #texto-help {
     color: #000000;
-    font-size: 18px !important;
+    font-size: 12px !important;
     text-align:justify;
     margin-bottom: 20px;
     font-family: Luckiest Guy !important;
@@ -82,6 +82,15 @@
     margin-right: 3%;
   }
   
+#inicio-text{
+    color: #000000;
+    font-size: 12px !important;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: Luckiest Guy;
+}
+
   /* Estilos para el título de la solución */
   #solution-title {
     color: #000000;
@@ -184,12 +193,12 @@
     }
   
     /* Estilos para el título del problema */
-    #problem-title {
+    #titulo-ejemplo {
       font-size: 24px;
     }
   
     /* Estilos para el texto del problema */
-    #problem-text {
+    #texto-help {
       font-size: 16px;
     }
   
@@ -238,12 +247,12 @@
     }
   
     /* Estilos para el título del problema */
-    #problem-title {
+    #titulo-ejemplo {
       font-size: 20px;
     }
   
     /* Estilos para el texto del problema */
-    #problem-text {
+    #texto-help {
       font-size: 14px;
     }
   
