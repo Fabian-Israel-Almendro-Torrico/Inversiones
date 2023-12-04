@@ -130,6 +130,18 @@
     margin-bottom: 10px;
   }
 
+  #conclu-acep{
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+
+  #conclu-recha{
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+
   /* Estilos para el botón de volver */
   #resultados-btn-volver {
     background-color: #ffffff;
