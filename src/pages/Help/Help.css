@@ -43,12 +43,12 @@
   }
   
   /* Estilos para el título principal */
-  #info-title {
+  #titulo-problema {
     color: #000000;
-    font-size: 36px;
+    font-size: 22px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     font-family: Luckiest Guy !important;
   }
   
@@ -84,7 +84,7 @@
   
 #inicio-text{
     color: #000000;
-    font-size: 12px !important;
+    font-size: 15px !important;
     text-align: center;
     margin-bottom: 10px;
     font-family: Luckiest Guy;
