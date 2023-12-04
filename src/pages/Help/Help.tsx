@@ -44,7 +44,7 @@ const Help: React.FC = () => {
     </IonHeader>
       <IonContent id='conte'>
       <h1 id="titulo-problema">¿Problemas?</h1>
-      <p id="inicio-text">😁Tenemos un pequeño tutorial el cual te enseñara que llenar cada campo y que significa 😉</p>
+      <p id="inicio-text">😁Tenemos un pequeño tutorial el cual te enseñara a llenar cada campo y que significa 😉</p>
 
       <h2 id="titulo-ejemplo">TREMA - PROYECTO ACEPTADO</h2>
       <img id="help-1" src="https://cdn.discordapp.com/attachments/837905669138677770/1181030607208333443/image.png?ex=657f9377&is=656d1e77&hm=4bd078b51d91206aea81b1f0ea08a6e149f3305c2291c72958f949ac5db49469&" alt="HombreRosa" />
