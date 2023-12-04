@@ -103,7 +103,7 @@ const resultadosCorridas = (location.state as { resultados?: any })?.resultados 
         <img id='senior1' src="https://th.bing.com/th/id/R.c11fdb13b7d410e9e8de3bc7a40567f6?rik=%2fTP6w%2bURcn%2b9Zw&pid=ImgRaw&r=0" alt="Senior" />
         <p id='conclu-acep'><strong>Conclusión: </strong> 
         El proyecto cumple con las expectativas esperadas superando la probabilidad de aceptacion del proyecto establecido por la 
-        empresa con una Inversion Inicial de: <strong>"{datosCorridas?.valorProbableInversion}"</strong>, la cual se recuperara en <strong>"{datosCorridas?.numeroAnios}"</strong> años 
+        empresa con una Inversion Inicial de: Bs. <strong>{datosCorridas?.valorProbableInversion}</strong>, la cual se recuperara en <strong>{datosCorridas?.numeroAnios}</strong> años 
         con un TIR de <strong>{calcularPromedioTIR()}%</strong></p>
         </div>
         ) : (
@@ -115,7 +115,7 @@ const resultadosCorridas = (location.state as { resultados?: any })?.resultados 
         <img id='senior1' src="https://cdn.discordapp.com/attachments/837905669138677770/1181033033235705938/360_F_6323356_UNMbB0uOmhkfPFC2JpzX5QX3Nnj9xMVI.png?ex=657f95b9&is=656d20b9&hm=42ecefc9c8e27b6829e4e6d02b0c30a06d9d87d1e000b8dcf7db1c295d3ab7a9&" alt="Senior" />
         <p id='conclu-recha'><strong>Conclusión: </strong> 
         El proyecto es rechazado porque no cumple con las expectativas deseadas por la empresa ya que no supera la probabildiad 
-        de aceptacion establecida del <strong>"{datosCorridas?.porcentajeAceptacion}%".</strong></p>
+        de aceptacion establecida del <strong>{datosCorridas?.porcentajeAceptacion}%.</strong></p>
           </div>
           )}
           {/*
