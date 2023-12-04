@@ -44,7 +44,7 @@ const Help: React.FC = () => {
     </IonHeader>
       <IonContent id='conte'>
       <h1 id="titulo-problema">¿Problemas?</h1>
-      <p id="inicio-text">Acá te enseñamos a llenar esta parte 😁</p>
+      <p id="inicio-text">Acá te enseñamos a llenar  y usar esta parte 😁</p>
 
       <h2 id="titulo-ejemplo">TREMA - PROYECTO ACEPTADO</h2>
       <img id="help-1" src="https://cdn.discordapp.com/attachments/837905669138677770/1181026064668041266/image.png?ex=657f8f3c&is=656d1a3c&hm=d2b375ba7c85c45eca7c42f4ce499b94017a7d6f4cb4ac1b7a8dce2959f34576&" alt="HombreRosa" />
@@ -56,18 +56,22 @@ const Help: React.FC = () => {
 
       <h2 id="titulo-ejemplo">INVERSIÓN INICIAL</h2>
       <img id="help-1" src="https://cdn.discordapp.com/attachments/837905669138677770/1181027628791111801/image.png?ex=657f90b1&is=656d1bb1&hm=04a20a9152aa4f7c63865553ad1e69d8d972fcd7407c2e5cd3bd7e24d91c41ae&" alt="HombreRosa" />
-      <p id="texto-help"><strong>Inversión Inicial: </strong>Se refiere a... y cuenta con 3 campos <br />
-      <strong>Valor Minimo: </strong>Se refiere al <br />
-      <strong>Valor Maximo: </strong>Se refiere al <br />
-      <strong>Valor Probable: </strong>Se refiere al </p>
+      <p id="texto-help">La <strong>Inversión Inicial </strong>Se refiere a... y cuenta con 3 campos <br />
+      <strong>-Valor Minimo: </strong>Se refiere al <br />
+      <strong>-Valor Maximo: </strong>Se refiere al <br />
+      <strong>-Valor Probable: </strong>Se refiere al </p>
 
       <h2 id="titulo-ejemplo">FLUJO NETO</h2>
       <img id="help-1" src="https://cdn.discordapp.com/attachments/837905669138677770/1181028036032876554/image.png?ex=657f9112&is=656d1c12&hm=cf4780adf1a0c712d60a017fe26e73920c9023f1903182afdf161678afbed57c&" alt="HombreRosa" />
-      <p id="texto-help"><strong>Flujo Neto: </strong>Se refiere a... y cuenta con 3 campos <br />
-      <strong>Valor Minimo: </strong>Se refiere al <br />
-      <strong>Valor Maximo: </strong>Se refiere al <br />
-      <strong>Valor Probable: </strong>Se refiere al </p>
+      <p id="texto-help">El <strong>Flujo Neto </strong>Se refiere a... y cuenta con 3 campos <br />
+      <strong>-Valor Minimo: </strong>Se refiere al <br />
+      <strong>-Valor Maximo: </strong>Se refiere al <br />
+      <strong>-Valor Probable: </strong>Se refiere al </p>
 
+      <h2 id="titulo-ejemplo">BOTONES</h2>
+      <img id="help-1" src="https://cdn.discordapp.com/attachments/837905669138677770/1181029086852825148/image.png?ex=657f920c&is=656d1d0c&hm=48d53e906395957a46a59c3e72287797971b0342d4895ac4cc31cbf8361b6434&" alt="HombreRosa" />
+
+      {/*
       <div id="contenedorBoot">
       <IonButton id="back-button" expand="full" onClick={handleWelcomeClick}>
           VOLVER
@@ -75,7 +79,7 @@ const Help: React.FC = () => {
         <IonButton id="calculate-button" expand="full" onClick={handleInicioClick}>
           CALCULAR
         </IonButton>
-        </div>
+       </div>*/}
       </IonContent>
       <IonFooter id='footer'>
       <IonGrid id='grid-footer'>
