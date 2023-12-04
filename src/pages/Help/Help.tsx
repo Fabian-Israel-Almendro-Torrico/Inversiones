@@ -47,7 +47,7 @@ const Help: React.FC = () => {
       <p id="inicio-text">Acá te enseñamos a usar un poco la aplicación</p>
 
       <h2 id="titulo-ejemplo">TREMA - PROYECTO ACEPTADO</h2>
-      <img id="help-1" src="https://cdn.discordapp.com/attachments/837905669138677770/1181023425704235048/image.png?ex=657f8cc7&is=656d17c7&hm=56dd23130cc2ad722f0c1f5a8eaf196bbe186eb1d9d6b09ba557aab96b217931&" alt="HombreRosa" />
+      <img id="help-1" src="https://cdn.discordapp.com/attachments/837905669138677770/1181026064668041266/image.png?ex=657f8f3c&is=656d1a3c&hm=d2b375ba7c85c45eca7c42f4ce499b94017a7d6f4cb4ac1b7a8dce2959f34576&" alt="HombreRosa" />
       <p id="texto-help"><strong>Trema: </strong>El trema es  <br /><strong>% Proyecto Aceptado: </strong>Se refiere al </p>
 
       <h2 id="titulo-ejemplo">NÚMERO DE CORRIDAS - NÚMERO DE AÑOS</h2>
