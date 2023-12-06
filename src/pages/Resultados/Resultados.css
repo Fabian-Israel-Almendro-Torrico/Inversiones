@@ -140,6 +140,27 @@
     font-family: Luckiest Guy !important;
   }
   
+  #mostrar-mas-section {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  #mostrar-mas-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #mostrar-mas-texto {
+    margin-top: 10px;
+    display: none; /* Inicialmente oculto */
+  }
+  
+  #mostrar-mas-texto.active {
+    display: block; /* Mostrar cuando tiene la clase 'active' */
+  }
 
   /* Estilos para el botón de volver */
   #resultados-btn-volver {

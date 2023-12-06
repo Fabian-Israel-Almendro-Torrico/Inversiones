@@ -263,6 +263,11 @@ return (
                 placeholder="Ingrese Número de Corridas"
                 onIonChange={(e) => setNumeroCorridas(parseInt(e.detail.value!, 10))}
                 />
+              {numeroCorridas < 3 || numeroCorridas > 100 ? (
+              <IonLabel id="IniLabelAcepS" color="danger">
+                Solo se aceptan de 3 a 100 corridas
+              </IonLabel>
+            ) : null}
             </IonCol>
           </IonRow>
         {/*  FIN ROW DE INVERSION  */}
@@ -299,72 +304,6 @@ return (
             </IonCol>
           </IonRow>
         {/*  FIN ROW DE TREMA Y %ACEPTACION  */}
-<<<<<<< HEAD
-
-
-          <IonRow id="Ini2Row3">
-            <IonCol id="Ini2Col4">
-                <IonLabel id="IniLabelNum">Número de Corridas</IonLabel>
-                <IonInput id="IniInput5"
-                type="number"
-                value={numeroCorridas}
-                placeholder="Ingrese Número de Corridas"
-                onIonChange={(e) => setNumeroCorridas(parseInt(e.detail.value!, 10))}
-                />
-            {numeroCorridas < 3 || numeroCorridas > 100 ? (
-              <IonLabel id="IniLabelAcepS" color="danger">
-                Solo se aceptan de 3 a 100 corridas
-              </IonLabel>
-            ) : null}
-            </IonCol>
-            {/*<IonCol id="IniCol5">
-                <IonLabel id="IniLabelAnios">Número de Años</IonLabel>
-                <IonInput id="IniInput6"
-                type="number"
-                value={numeroAnios}
-                placeholder="Ingrese Número de Años"
-                onIonChange={(e) => setNumeroAnios(parseInt(e.detail.value!, 10))}
-                />
-            </IonCol>*/}
-            </IonRow>
-
-
-
-          {/*<p id="IniFlujoNeto"> FLUJO NETO </p> */}
-          {/* Campos de entrada para datos de Flujo Neto */}
-          {/*<IonRow id="IniRow5"> */}
-            {/*<IonCol id="IniCol9">
-              <IonLabel id="IniLabelValMinFlu">Valor Mínimo</IonLabel>
-              <IonInput id="IniInput10"
-                type="number"
-                value={valorMinimoFlujoNeto}
-                placeholder="Ingrese Valor Mínimo Flujo Neto"
-                onIonChange={(e) => setValorMinimoFlujoNeto(parseFloat(e.detail.value!))}
-              />
-            </IonCol>*/}
-            {/*<IonCol id="IniCol10">
-              <IonLabel id="IniLabelValMaxFlu">Valor Máximo</IonLabel>
-              <IonInput id="IniInput11"
-                type="number"
-                value={valorMaximoFlujoNeto}
-                placeholder="Ingrese Valor Máximo Flujo Neto"
-                onIonChange={(e) => setValorMaximoFlujoNeto(parseFloat(e.detail.value!))}
-              />
-            </IonCol>*/}
-            {/*<IonCol id="IniCol11">
-              <IonLabel id="IniLabelValProFlu">Valor Probable</IonLabel>
-              <IonInput id="IniInput12"
-                type="number"
-                value={valorProbableFlujoNeto}
-                placeholder="Ingrese Valor Probable Flujo Neto"
-                onIonChange={(e) => setValorProbableFlujoNeto(parseFloat(e.detail.value!))}
-              />
-            </IonCol>*/}
-
-          {/*</IonRow> */}
-
-=======
->>>>>>> 11273150b4c8969f6a5320afbd491572241db2e9
             <IonToast id="IniToast"
             isOpen={showSuccessToast}
             onDidDismiss={() => setShowSuccessToast(false)}

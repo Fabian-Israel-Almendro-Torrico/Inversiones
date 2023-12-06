@@ -10,6 +10,14 @@ const Resultados: React.FC = () => {
   // Obtén la ubicación actual
   const history = useHistory();
   // Función para redirigir a la vista de Inicio
+
+  const [mostrarMas, setMostrarMas] = useState(false);
+
+  const toggleMostrarMas = () => {
+    setMostrarMas(!mostrarMas);
+  };
+
+
   const redirectToInicio = () => {
     history.push('/inicio2');
     window.location.reload();
@@ -249,8 +257,8 @@ console.log('Resultados Finales:', { primerAnio, gananciaRedondeada });
         con un TIR de <strong>{calcularPromedioTIR()}%</strong></p>
 
         <p id='conclu-acep'><strong>Dato Extra: </strong> 
-        "Usted acaba de Invertir <strong>{datosCorridas?.valorProbableInversion}</strong>, y usted recuperara dicha Inversión en los siguientes <strong>{primerAnio}</strong> años
-        y tendrá una ganancia de <strong>{gananciaRedondeada}</strong> Bs. en {datosCorridas?.numeroAnios} años.</p>
+        "Usted acaba de Invertir <strong>{datosCorridas?.valorProbableInversion}</strong>, recuperara dicha Inversión en <strong>{primerAnio}</strong> años
+        con una ganancia de <strong>{gananciaRedondeada}</strong> Bs. en {datosCorridas?.numeroAnios} años.</p>
         </div>
         ) : (
           <div>
@@ -264,6 +272,25 @@ console.log('Resultados Finales:', { primerAnio, gananciaRedondeada });
         de aceptacion establecida del <strong>{datosCorridas?.porcentajeAceptacion}%.</strong></p>
           </div>
           )}
+
+      <div id='mostrar-mas-section'>
+      <button onClick={toggleMostrarMas} id='mostrar-mas-btn'>
+        {mostrarMas ? 'Cerrar Detalles' : 'Desplegar Detalles'}
+      </button>
+      {mostrarMas && (
+        <p id='mostrar-mas-texto' className='active'>
+          <strong>Inversión Inicial: </strong>
+          {datosCorridas?.valorProbableInversion} Bs. <br></br>
+          <strong>Años: </strong>
+          {datosCorridas?.numeroAnios} Años <br></br>
+          <strong>Trema: </strong>
+          {datosCorridas?.trema}% <br></br>
+          <strong>%Aceptación: </strong>
+          {datosCorridas?.porcentajeAceptacion}%
+        </p>
+      )}
+    </div>
+
           {/*
           <div>
           <img id='senior1' src="https://th.bing.com/th/id/R.c11fdb13b7d410e9e8de3bc7a40567f6?rik=%2fTP6w%2bURcn%2b9Zw&pid=ImgRaw&r=0" alt="Senior" />
