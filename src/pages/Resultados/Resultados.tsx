@@ -34,7 +34,7 @@ const resultadosCorridas = (location.state as { resultados?: any })?.resultados 
   const resultadosCorridas = resultados || [];
 
   console.log('Resultados Corridas:', resultadosCorridas);
-
+  
   // Estados para almacenar los resultados de las corridas
   /*const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujos: number[], tir: number }[]>([]); */
 
@@ -57,8 +57,6 @@ const resultadosCorridas = (location.state as { resultados?: any })?.resultados 
     return parseFloat(promedioTIR.toFixed(2));
   };
 
-
-
   // Función para verificar si la TIR promedio es aceptada
   const esProyectoAceptado = () => {
     
@@ -71,6 +69,150 @@ const resultadosCorridas = (location.state as { resultados?: any })?.resultados 
   /*useEffect(() => {
     // Resto del código...
   }, [datosCorridas]); */
+
+  {/* //EMPIEZO promedio
+  const calcularSegundaConclusión = () => {
+    // Paso 1: Calcular el Promedio de la Inversión Inicial
+    const sumaInversiones = resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.inversionInicial, 0);
+    const promedioInversion = sumaInversiones / resultadosCorridas.length;
+  
+    // Paso 2: Calcular el Promedio de los Flujos Netos por Año
+    const promediosFlujosPorAño = Array.from({ length: (datosCorridas?.numeroAnios || 0) -1 }, (_, year: number) => {
+        // Suma de los promedios de los flujos netos desde el año 1 hasta el año actual
+      const sumaPromediosAnteriores = Array.from({ length: year + 1 }, (_, i) => i)
+      .map((anterior) => resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.flujos[anterior + 1], 0))
+      .reduce((suma, promedio) => suma + promedio, 0);
+          // Promedio del flujo neto del año actual
+      const promedioFlujoActual = resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.flujos[year + 1], 0) / resultadosCorridas.length;
+
+      // Suma de los promedios de los flujos netos de los años anteriores al año actual
+      const sumaTotal = sumaPromediosAnteriores + promedioFlujoActual;
+
+      return sumaTotal / (year + 1); // Promedio total incluyendo el año
+    });
+  
+    // Paso 3: Encontrar el Primer Año en el que el Flujo Neto sea Mayor o Igual al Promedio de la Inversión Inicial
+    let primerAnio = -1;
+    for (let year = 0; year < promediosFlujosPorAño.length; year++) {
+      console.log(`Comparando año ${year + 1}: ${promediosFlujosPorAño[year]} >= ${promedioInversion}`);
+      if (promediosFlujosPorAño[year] >= promedioInversion) {
+        primerAnio = year + 1;
+        console.log(`¡Encontrado! Primer año: ${primerAnio}`);
+        break;
+      }
+    }
+  
+    // Paso 4: Calcular la Ganancia
+    const ganancia = promediosFlujosPorAño.slice(primerAnio).reduce((suma, promedio) => suma + promedio, 0);
+  
+    return { primerAnio, ganancia };
+  };
+  
+  const { primerAnio, ganancia } = calcularSegundaConclusión();
+const gananciaRedondeada = ganancia.toFixed(2); */}
+  
+  // Usar los valores obtenidos en tu JSX:
+  // Usar {primerAnio} donde necesites mostrar el año y {ganancia} para la ganancia.
+
+  {/*const calcularSegundaConclusión = () => {
+    // Paso 1: Calcular el Promedio de la Inversión Inicial
+    const sumaInversiones = resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.inversionInicial, 0);
+    const promedioInversion = sumaInversiones / resultadosCorridas.length;
+  
+    console.log(`Promedio de Inversión Inicial: ${promedioInversion}`);
+
+    // Paso 2: Calcular el Promedio de los Flujos Netos por Año (sin incluir el año 0)
+    const promediosFlujosPorAño = Array.from({ length: (datosCorridas?.numeroAnios || 0) }, (_, year: number) => {
+      // Suma de los flujos netos solo para el año actual
+      const sumaFlujos = resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.flujos[year + 1], 0);
+      // Promedio del flujo neto del año actual
+      const promedio = sumaFlujos / resultadosCorridas.length;
+
+      console.log(`Promedio de Flujos Netos para el Año ${year + 1}: ${promedio}`);
+
+      return promedio;
+    });
+
+    console.log('Promedios de Flujos Netos por Año:', promediosFlujosPorAño);
+  
+    // Paso 3: Encontrar el Primer Año en que la Suma Acumulativa de los Promedios sea Mayor o Igual al Promedio de la Inversión Inicial
+    let primerAnio = -1;
+    let sumaAcumulativa = 0;
+  
+    for (let year = 0; year < promediosFlujosPorAño.length; year++) {
+      sumaAcumulativa += promediosFlujosPorAño[year];
+  
+      console.log(`Suma Acumulativa hasta el Año ${year + 1}: ${sumaAcumulativa}`);
+
+      if (sumaAcumulativa >= promedioInversion) {
+        primerAnio = year + 1;
+        console.log(`¡Encontrado! Primer año: ${primerAnio}`);
+
+        break;
+      }
+    }
+  
+    // Paso 4: Calcular la Ganancia desde el siguiente año al encontrado (filtrando valores NaN)
+    const ganancia = promediosFlujosPorAño.slice(primerAnio).filter((valor) => !isNaN(valor)).reduce((suma, promedio) => suma + promedio, 0);
+    console.log('Ganancia:', ganancia);
+
+    return { primerAnio, ganancia };
+  };
+  
+  const { primerAnio, ganancia } = calcularSegundaConclusión();
+  const gananciaRedondeada = ganancia.toFixed(2);
+console.log('Resultados Finales:', { primerAnio, gananciaRedondeada }); */}
+
+const calcularSegundaConclusión = () => {
+  // Paso 1: Calcular el Promedio de la Inversión Inicial
+  const sumaInversiones = resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.inversionInicial, 0);
+  const promedioInversion = sumaInversiones / resultadosCorridas.length;
+
+  console.log(`Promedio de Inversión Inicial: ${promedioInversion}`);
+
+    // Paso 2: Calcular el Promedio de los Flujos Netos por Año (sin incluir el año 0)
+    const promediosFlujosPorAño = Array.from({ length: (datosCorridas?.numeroAnios || 0) }, (_, year: number) => {
+      // Suma de los flujos netos solo para el año actual
+      const sumaFlujos = resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.flujos[year + 1], 0);
+      // Promedio del flujo neto del año actual
+      const promedio = sumaFlujos / resultadosCorridas.length;
+
+      console.log(`Promedio de Flujos Netos para el Año ${year + 1}: ${promedio}`);
+
+      return promedio;
+    });
+
+    console.log('Promedios de Flujos Netos por Año:', promediosFlujosPorAño);
+
+  // Paso 3: Encontrar el Primer Año en que la Suma Acumulativa de los Promedios sea Mayor o Igual al Promedio de la Inversión Inicial
+  let primerAnio = -1;
+  let sumaAcumulativa = 0;
+
+  for (let year = 0; year < promediosFlujosPorAño.length; year++) {
+    sumaAcumulativa += promediosFlujosPorAño[year];
+
+    console.log(`Suma Acumulativa hasta el Año ${year + 1}: ${sumaAcumulativa}`);
+
+    if (sumaAcumulativa >= promedioInversion) {
+      primerAnio = year + 1;
+      console.log(`¡Encontrado! Primer año: ${primerAnio}`);
+      break;
+    }
+  }
+
+  // Paso 4: Calcular la Ganancia desde el primer año encontrado (filtrando valores NaN)
+  const ganancia = promediosFlujosPorAño.slice(primerAnio).filter((valor) => !isNaN(valor)).reduce((suma, promedio) => suma + promedio, 0);
+
+  console.log('Ganancia:', ganancia);
+
+  return { primerAnio, ganancia };
+};
+
+const { primerAnio, ganancia } = calcularSegundaConclusión();
+const gananciaRedondeada = ganancia.toFixed(2);
+
+console.log('Resultados Finales:', { primerAnio, gananciaRedondeada });
+
 
   return (
     <IonPage id='page'>
@@ -105,6 +247,10 @@ const resultadosCorridas = (location.state as { resultados?: any })?.resultados 
         El proyecto cumple con las expectativas esperadas superando la probabilidad de aceptacion del proyecto establecido por la 
         empresa con una Inversion Inicial de: <strong>{datosCorridas?.valorProbableInversion} Bs.</strong> La cual se recuperará en <strong>{datosCorridas?.numeroAnios}</strong> años 
         con un TIR de <strong>{calcularPromedioTIR()}%</strong></p>
+
+        <p id='conclu-acep'><strong>Dato Extra: </strong> 
+        "Usted acaba de Invertir <strong>{datosCorridas?.valorProbableInversion}</strong>, y usted recuperara dicha Inversión en los siguientes <strong>{primerAnio}</strong> años
+        y tendrá una ganancia de <strong>{gananciaRedondeada}</strong> Bs. en {datosCorridas?.numeroAnios} años.</p>
         </div>
         ) : (
           <div>

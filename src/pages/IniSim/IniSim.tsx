@@ -52,7 +52,7 @@ const IniSim: React.FC = () => {
   {/*const [trema, setTrema] = useState(0); */}
   const [porcentajeAceptacion, setPorcentajeAceptacion] = useState(0);
   const [numeroCorridas, setNumeroCorridas] = useState(0);
-  const [numeroAnios, setNumeroAnios] = useState(5);
+  const [numeroAnios, setNumeroAnios] = useState(6);
 
   {/*const [valorMinimoInversion, setValorMinimoInversion] = useState(0);*/}
  {/* const [valorMaximoInversion, setValorMaximoInversion] = useState(0);*/}
@@ -96,6 +96,22 @@ const IniSim: React.FC = () => {
             setShowErrorToast(true);
             return;
         }
+
+        if (
+          porcentajeAceptacion < 0 ||
+          porcentajeAceptacion > 100 ||
+          numeroCorridas < 3 ||
+          numeroCorridas > 100 ||
+          trema < 1 ||
+          trema > 100 ||
+          valorProbableInversion < 50000 ||
+          valorProbableInversion > 1000000
+      ) {
+          // Mostrar un mensaje de error o hacer lo que sea necesario
+          setErrorMessage('Verifica que todo este llenado correctamente');
+          setShowErrorToast(true);
+          return;
+      }
 
         // Restricciones para la inversión inicial
         {/*if (
@@ -255,6 +271,11 @@ return (
                 placeholder="Ingrese Valor Probable Inversión"
                 onIonChange={(e) => setValorProbableInversion(parseFloat(e.detail.value!))}
               />
+            {valorProbableInversion < 50000 || valorProbableInversion > 1000000 ? (
+              <IonLabel id="IniLabelAcepS" color="danger">
+                Solo se acepta de 50000 Bs. y 1000000 Bs.
+              </IonLabel>
+            ) : null}
             </IonCol>
           </IonRow>
         {/*  FIN ROW DE INVERSION  */}
@@ -302,6 +323,11 @@ return (
                 placeholder="Ingrese Número de Corridas"
                 onIonChange={(e) => setNumeroCorridas(parseInt(e.detail.value!, 10))}
                 />
+            {numeroCorridas < 3 || numeroCorridas > 100 ? (
+              <IonLabel id="IniLabelAcepS" color="danger">
+                Solo se aceptan de 3 a 100 corridas
+              </IonLabel>
+            ) : null}
             </IonCol>
             {/*<IonCol id="IniCol5">
                 <IonLabel id="IniLabelAnios">Número de Años</IonLabel>

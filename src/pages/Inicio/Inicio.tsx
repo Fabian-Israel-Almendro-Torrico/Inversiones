@@ -71,7 +71,7 @@ const Inicio: React.FC = () => {
       setTrema(30);
       setPorcentajeAceptacion(90);
       setNumeroCorridas(5);
-      setNumeroAnios(5);
+      setNumeroAnios(6);
       setValorMinimoInversion(95000);
       setValorMaximoInversion(105000);
       setValorProbableInversion(100000);
@@ -99,6 +99,22 @@ const Inicio: React.FC = () => {
             setShowErrorToast(true);
             return;
         }
+
+        if (
+          porcentajeAceptacion < 0 ||
+          porcentajeAceptacion > 100 ||
+          numeroCorridas < 3 ||
+          numeroCorridas > 100 ||
+          numeroAnios < 3 ||
+          numeroAnios > 10 ||
+          trema < 1 ||
+          trema > 100 
+      ) {
+          // Mostrar un mensaje de error o hacer lo que sea necesario
+          setErrorMessage('Verifica que todo este llenado correctamente');
+          setShowErrorToast(true);
+          return;
+      }
 
         // Restricciones para la inversión inicial
         if (
@@ -256,6 +272,11 @@ return (
                 placeholder="Ingrese Número de Corridas"
                 onIonChange={(e) => setNumeroCorridas(parseInt(e.detail.value!, 10))}
                 />
+            {numeroCorridas < 3 || numeroCorridas > 100 ? (
+              <IonLabel id="IniLabelAcepS" color="danger">
+                Solo se aceptan de 3 a 100 corridas
+              </IonLabel>
+            ) : null}
             </IonCol>
             <IonCol id="IniCol5">
                 <IonLabel id="IniLabelAnios">Número de Años</IonLabel>
@@ -265,6 +286,11 @@ return (
                 placeholder="Ingrese Número de Años"
                 onIonChange={(e) => setNumeroAnios(parseInt(e.detail.value!, 10))}
                 />
+            {numeroAnios < 3 || numeroAnios > 10 ? (
+              <IonLabel id="IniLabelAcepS" color="danger">
+                Solo se aceptan de 3 a 10 años
+              </IonLabel>
+            ) : null}
             </IonCol>
             </IonRow>
 
