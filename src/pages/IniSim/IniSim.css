@@ -59,25 +59,25 @@
   }
   
   /* Estilos para la fila del contenido */
-  #IniRow, #IniRow3, #IniRow4, #IniRow5 {
+  #Ini2Row, #Ini2Row3, #Ini2Row4, #Ini2Row5 {
     align-items: center;
     justify-content: center;
   }
   
   /* Estilos para las columnas del contenido */
-  #IniCol, #IniCol2, #IniCol4, #IniCol5, #IniCol6, #IniCol7, #IniCol8, #IniCol9, #IniCol10, #IniCol11, #IniCol12 {
+  #Ini2Col, #Ini2Col2, #Ini2Col4, #Ini2Col5, #Ini2Col6, #Ini2Col7, #Ini2Col8, #Ini2Col9, #Ini2Col10, #Ini2Col11, #Ini2Col12 {
     padding: 20px;
   }
   
   /* Estilos para las etiquetas del TREMA */
-  #IniLabelTrema{
+  #Ini2LabelTrema{
     color: #000000;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
   }
   
-  #IniInpu{
+  #IniInpu2{
     color: #000000;
     font-size: 18px;
     font-weight: bold;
@@ -157,14 +157,14 @@
   }
   
   /* Estilos para las etiquetas del valor probable de la inversión */
-  #IniLabelValProInver {
+  #Ini2LabelValProInver {
     color: #000000;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
   }
   
-  #IniInpu9{
+  #Ini2Inpu9{
     color: #000000;
     font-weight: bold;
     margin-left: 25% !important;
@@ -266,11 +266,16 @@
     margin-left: 18% !important;
   }
   
-  #IdButtonAyuda {
+  #IdButtonAyuda2 {
     display: inline-block; 
     padding: 8px 16px;
   }
   
+  #IdButtonAltern1 {
+    display: inline-block; 
+    padding: 8px 16px;
+  }
+
   /* Estilos para el pie de página */
   #IniFooter {
     background-color: #ffffff;
@@ -318,7 +323,7 @@
     }
   
     /* Estilos para las etiquetas del TREMA */
-    #IniLabelTrema, #IniInpu {
+    #Ini2LabelTrema, #IniInpu {
       font-size: 16px;
     }
   
@@ -362,7 +367,7 @@
     }
   
     /* Estilos para las etiquetas del valor probable de la inversión */
-    #IniLabelValProInver, #IniInpu9 {
+    #Ini2LabelValProInver, #Ini2Inpu9 {
       font-size: 16px;
     }
   

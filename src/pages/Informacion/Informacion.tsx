@@ -8,7 +8,7 @@ const Informacion: React.FC = () => {
 
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
-    history.push('/inicio');
+    history.push('/inicio2');
   };
 
   // Función para redirigir a la vista de Información (debes crearla)
@@ -27,7 +27,7 @@ const Informacion: React.FC = () => {
   };
 
   const handleInicioClick = () => {
-    history.push('/inicio');
+    history.push('/inicio2');
     window.location.reload();
   };
 

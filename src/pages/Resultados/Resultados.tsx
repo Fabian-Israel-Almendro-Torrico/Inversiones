@@ -11,7 +11,7 @@ const Resultados: React.FC = () => {
   const history = useHistory();
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
-    history.push('/inicio');
+    history.push('/inicio2');
     window.location.reload();
   };
 

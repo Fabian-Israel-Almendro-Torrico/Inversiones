@@ -16,6 +16,11 @@ import './Inicio.css';
 const Inicio: React.FC = () => {
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
+    history.push('/inicio2');
+    window.location.reload();
+  };
+
+  const redirectToInicio1 = () => {
     history.push('/inicio');
     window.location.reload();
   };
@@ -32,6 +37,11 @@ const Inicio: React.FC = () => {
 
   const redirectToHelp = () => {
     history.push('/help');
+    window.location.reload();
+  };
+
+  const redirectToIni2 = () => {
+    history.push('/inicio2');
     window.location.reload();
   };
 
@@ -191,7 +201,10 @@ return (
     </IonHeader>
       <IonContent id='InicioContent' className="contenido">
         <div id='contendor-b'>
-      <IonButton id="IdButtonReset" expand="full" onClick={redirectToInicio}>
+      <IonButton expand="full" onClick={redirectToIni2} id='IdButtonAltern2'>
+              <IonImg src="https://cdn.discordapp.com/attachments/837905669138677770/1181812752319266846/912265.png?ex=65826be5&is=656ff6e5&hm=3726c4dc1f51f1ee091df3821fd7fb3bfe16f7bcddc96f1cc7abb7975b35a75d&" alt="Informacion" id='img-help'/>
+      </IonButton>
+      <IonButton id="IdButtonReset" expand="full" onClick={redirectToInicio1}>
             RESETEAR VALORES
       </IonButton>
       <IonButton expand="full" onClick={redirectToHelp} id='IdButtonAyuda'>
@@ -366,7 +379,7 @@ return (
           </IonCol>
           <IonCol id='col3-footer'>
             {/* Botón con ícono personalizado desde la carpeta 'images' */}
-            <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
+            <IonButton expand="full" onClick={redirectToInicio1} id='cal-btn-calculator'>
               <IonImg src="https://th.bing.com/th/id/R.eee772e2bfa4f53491444d04b8025701?rik=X%2B595Tz%2FiRKy7g&pid=ImgRaw&r=0" alt="Inicio" id='calf'/>
             </IonButton>
           </IonCol>

@@ -32,7 +32,7 @@ interface ResultadoSimulado {
 
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
-    history.push('/inicio');
+    history.push('/inicio2');
     window.location.reload();
   };
 

@@ -271,6 +271,11 @@
   padding: 8px 16px;
 }
 
+#IdButtonAltern2 {
+  display: inline-block; 
+  padding: 8px 16px;
+}
+
 /* Estilos para el pie de página */
 #IniFooter {
   background-color: #ffffff;

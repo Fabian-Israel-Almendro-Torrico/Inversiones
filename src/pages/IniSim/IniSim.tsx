@@ -16,6 +16,11 @@ import './IniSim.css';
 const IniSim: React.FC = () => {
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
+    history.push('/inicio2');
+    window.location.reload();
+  };
+
+  const redirectToInicio1 = () => {
     history.push('/inicio');
     window.location.reload();
   };
@@ -30,24 +35,32 @@ const IniSim: React.FC = () => {
     window.location.reload();
   };
 
-  const redirectToHelp = () => {
-    history.push('/help');
+  const redirectToHelp2 = () => {
+    history.push('/help2');
     window.location.reload();
   };
 
-  // Estados para almacenar los valores ingresados por el usuario
   const [trema, setTrema] = useState(0);
-  const [porcentajeAceptacion, setPorcentajeAceptacion] = useState(0);
-  const [numeroCorridas, setNumeroCorridas] = useState(0);
-  const [numeroAnios, setNumeroAnios] = useState(0);
-
   const [valorMinimoInversion, setValorMinimoInversion] = useState(0);
   const [valorMaximoInversion, setValorMaximoInversion] = useState(0);
+  const [valorMinimoFlujoNeto, setValorMinimoFlujoNeto] = useState(27000);
+  const [valorMaximoFlujoNeto, setValorMaximoFlujoNeto] = useState(33000);
+  const [valorProbableFlujoNeto, setValorProbableFlujoNeto] = useState(30000);
+
+
+  // Estados para almacenar los valores ingresados por el usuario
+  {/*const [trema, setTrema] = useState(0); */}
+  const [porcentajeAceptacion, setPorcentajeAceptacion] = useState(0);
+  const [numeroCorridas, setNumeroCorridas] = useState(0);
+  const [numeroAnios, setNumeroAnios] = useState(5);
+
+  {/*const [valorMinimoInversion, setValorMinimoInversion] = useState(0);*/}
+ {/* const [valorMaximoInversion, setValorMaximoInversion] = useState(0);*/}
   const [valorProbableInversion, setValorProbableInversion] = useState(0);
 
-  const [valorMinimoFlujoNeto, setValorMinimoFlujoNeto] = useState(0);
-  const [valorMaximoFlujoNeto, setValorMaximoFlujoNeto] = useState(0);
-  const [valorProbableFlujoNeto, setValorProbableFlujoNeto] = useState(0);
+  {/*const [valorMinimoFlujoNeto, setValorMinimoFlujoNeto] = useState(0);*/}
+  {/*const [valorMaximoFlujoNeto, setValorMaximoFlujoNeto] = useState(0);*/}
+  {/*const [valorProbableFlujoNeto, setValorProbableFlujoNeto] = useState(0);*/}
 
 
   const [showSuccessToast, setShowSuccessToast] = useState(false);
@@ -58,31 +71,25 @@ const IniSim: React.FC = () => {
 
     // Función para establecer automáticamente los valores predeterminados
     const setValoresPredeterminados = () => {
-      setTrema(30);
+      setTrema(30); 
       setPorcentajeAceptacion(90);
       setNumeroCorridas(5);
-      setNumeroAnios(5);
-      setValorMinimoInversion(95000);
-      setValorMaximoInversion(105000);
+      {/*setNumeroAnios(5);*/}
+      {/*setValorMinimoInversion(95000); */}
+      {/*setValorMaximoInversion(105000); */}
       setValorProbableInversion(100000);
-      setValorMinimoFlujoNeto(27000);
-      setValorMaximoFlujoNeto(33000);
-      setValorProbableFlujoNeto(30000);
+      {/*setValorMinimoFlujoNeto(27000); */}
+      {/*setValorMaximoFlujoNeto(33000); */}
+      {/*setValorProbableFlujoNeto(30000); */}
     };
 
   const handleSimularClick = () => {
         // Validar que todos los campos necesarios estén completos y no tengan el valor 0
         if (
-            trema <= 0 ||
             porcentajeAceptacion <= 0 ||
+            trema <= 0 ||
             numeroCorridas <= 0 ||
-            numeroAnios <= 0 ||
-            valorMinimoInversion <= 0 ||
-            valorMaximoInversion <= 0 ||
-            valorProbableInversion <= 0 ||
-            valorMinimoFlujoNeto <= 0 ||
-            valorMaximoFlujoNeto <= 0 ||
-            valorProbableFlujoNeto <= 0
+            valorProbableInversion <= 0 
         ) {
             // Mostrar un mensaje de error o hacer lo que sea necesario
             setErrorMessage('Todos los campos son obligatorios y deben ser mayores que 0');
@@ -91,7 +98,7 @@ const IniSim: React.FC = () => {
         }
 
         // Restricciones para la inversión inicial
-        if (
+        {/*if (
           valorMinimoInversion >= valorMaximoInversion ||
           valorMinimoInversion >= valorProbableInversion ||
           valorMaximoInversion <= valorMinimoInversion ||
@@ -116,11 +123,11 @@ const IniSim: React.FC = () => {
           setErrorMessage('Las restricciones para el Flujo Neto no se cumplen.');
           setShowErrorToast(true);
           return;
-        }
+        } */}
 
 
         // Validar que los porcentajes estén en el rango permitido (1% - 100%)
-        const validateInput = (value: number, min: number, max: number, errorMessage: string) => {
+        {/*const validateInput = (value: number, min: number, max: number, errorMessage: string) => {
             if (value < min || value > max) {
               setErrorMessage(errorMessage);
               setShowErrorToast(true);
@@ -130,7 +137,7 @@ const IniSim: React.FC = () => {
           };
           
           // Llamada a la función de validación
-          validateInput(trema, 1, 100, 'El TREMA debe estar entre 1% y 100%');
+          validateInput(trema, 1, 100, 'El TREMA debe estar entre 1% y 100%'); */}
 
 
     // Realizar cálculos según las fórmulas proporcionadas
@@ -160,13 +167,24 @@ const IniSim: React.FC = () => {
     porcentajeAceptacion,
     numeroCorridas,
     numeroAnios,
-    valorMinimoInversion,
-    valorMaximoInversion,
     valorProbableInversion,
+    valorMinimoInversion: valorProbableInversion - 5000,
+    valorMaximoInversion: valorProbableInversion + 5000,
     valorMinimoFlujoNeto,
     valorMaximoFlujoNeto,
     valorProbableFlujoNeto,
   };
+
+      // Resto de los valores generados automáticamente
+      {/* const valoresGenerados = {
+        valorMinimoInversion: valorProbableInversion - 5000,
+        valorMaximoInversion: valorProbableInversion + 5000,
+        valorMinimoFlujoNeto,
+        valorMaximoFlujoNeto,
+        valorProbableFlujoNeto,
+      };
+
+     const datosCompletos  = { ...datosCorridas, ...valoresGenerados }; */}
   
   console.log('Datos de corridas antes de la redirección:', datosCorridas);
 
@@ -191,10 +209,13 @@ return (
     </IonHeader>
       <IonContent id='InicioContent' className="contenido">
         <div id='contendor-b'>
+        <IonButton expand="full" onClick={redirectToInicio1} id='IdButtonAltern1'>
+              <IonImg src="https://cdn.discordapp.com/attachments/837905669138677770/1181812806908125204/2830593.png?ex=65826bf2&is=656ff6f2&hm=a0738e45e9b02a26be54af5b567a40667c449ffce1c28371a587318a6e2ea3be&" alt="Informacion" id='img-help'/>
+      </IonButton>
       <IonButton id="IdButtonReset" expand="full" onClick={redirectToInicio}>
             RESETEAR VALORES
       </IonButton>
-      <IonButton expand="full" onClick={redirectToHelp} id='IdButtonAyuda'>
+      <IonButton expand="full" onClick={redirectToHelp2} id='IdButtonAyuda2'>
               <IonImg src="https://cdn.icon-icons.com/icons2/2596/PNG/512/help_question_icon_155279.png" alt="Informacion" id='img-help'/>
       </IonButton>
       {/*<IonButton id="IdButtonAyuda" expand="full" onClick={redirectToHelp}>
@@ -203,10 +224,46 @@ return (
       </div>
         <h1 id="H1Ini">INGRESA LOS VALORES</h1>
         <IonGrid id="IniGrid1">
-        <IonRow id='IniRow'>
-            <IonCol id="IniCol">
-            <IonLabel id='IniLabelTrema'>TREMA (%)</IonLabel>
-              <IonInput id="IniInpu"
+
+        {/*  INICIO ROW DE INVERSION  */}
+          {/* Campos de entrada para datos de Inversión */}
+          {/*<p id="IniInverIni"> INVERSION INICIAL </p>*/}
+          <IonRow id="Ini2Row4">
+            {/*<IonCol id="Ini2Col6">
+              <IonLabel id="IniLaelMinInver">Valor Mínimo</IonLabel>
+              <IonInput id="IniInput7"
+                type="number"
+                value={valorMinimoInversion}
+                placeholder="Ingrese Valor Mínimo Inversión"
+                onIonChange={(e) => setValorMinimoInversion(parseFloat(e.detail.value!))}
+              />
+            </IonCol>*/}
+            {/*<IonCol id="Ini2Col7">
+              <IonLabel id="IniLabelMaxInv">Valor Máximo</IonLabel>
+              <IonInput id="IniInpu8"
+                type="number"
+                value={valorMaximoInversion}
+                placeholder="Ingrese Valor Máximo Inversión"
+                onIonChange={(e) => setValorMaximoInversion(parseFloat(e.detail.value!))}
+              />
+            </IonCol>*/}
+            <IonCol id="Ini2Col8">
+              <IonLabel id="Ini2LabelValProInver">INVERSIÓN INICIAL</IonLabel>
+              <IonInput id="Ini2Inpu9"
+                type="number"
+                value={valorProbableInversion}
+                placeholder="Ingrese Valor Probable Inversión"
+                onIonChange={(e) => setValorProbableInversion(parseFloat(e.detail.value!))}
+              />
+            </IonCol>
+          </IonRow>
+        {/*  FIN ROW DE INVERSION  */}
+
+        {/*  INICIO ROW DE TREMA Y %ACEPTACION  */}
+        <IonRow id='Ini2Row'>
+            <IonCol id="Ini2Col">
+            <IonLabel id='Ini2LabelTrema'>TREMA (%)</IonLabel>
+              <IonInput id="Ini2Inpu"
                 type="number"
                 value={trema}
                 placeholder="Ingrese TREMA"
@@ -217,8 +274,8 @@ return (
             {trema < 1 || trema > 100 ? (
             <IonLabel id='IniLaberError' color="danger">El TREMA debe estar entre 1% y 100%</IonLabel>
             ) : null}
-            </IonCol>
-            <IonCol id="IniCol2">
+            </IonCol> 
+            <IonCol id="Ini2Col2">
               <IonLabel id="IniLabelPor">Porcentaje de Proyecto Aceptado (%)</IonLabel>
               <IonInput id="IniInpu2"
                 type="number"
@@ -233,9 +290,11 @@ return (
             ) : null}
             </IonCol>
           </IonRow>
+        {/*  FIN ROW DE TREMA Y %ACEPTACION  */}
 
-          <IonRow id="IniRow3">
-            <IonCol id="IniCol4">
+
+          <IonRow id="Ini2Row3">
+            <IonCol id="Ini2Col4">
                 <IonLabel id="IniLabelNum">Número de Corridas</IonLabel>
                 <IonInput id="IniInput5"
                 type="number"
@@ -244,7 +303,7 @@ return (
                 onIonChange={(e) => setNumeroCorridas(parseInt(e.detail.value!, 10))}
                 />
             </IonCol>
-            <IonCol id="IniCol5">
+            {/*<IonCol id="IniCol5">
                 <IonLabel id="IniLabelAnios">Número de Años</IonLabel>
                 <IonInput id="IniInput6"
                 type="number"
@@ -252,45 +311,15 @@ return (
                 placeholder="Ingrese Número de Años"
                 onIonChange={(e) => setNumeroAnios(parseInt(e.detail.value!, 10))}
                 />
-            </IonCol>
+            </IonCol>*/}
             </IonRow>
 
-          {/* Campos de entrada para datos de Inversión */}
-          <p id="IniInverIni"> INVERSION INICIAL </p>
-          <IonRow id="IniRow4">
-            <IonCol id="IniCol6">
-              <IonLabel id="IniLaelMinInver">Valor Mínimo</IonLabel>
-              <IonInput id="IniInput7"
-                type="number"
-                value={valorMinimoInversion}
-                placeholder="Ingrese Valor Mínimo Inversión"
-                onIonChange={(e) => setValorMinimoInversion(parseFloat(e.detail.value!))}
-              />
-            </IonCol>
-            <IonCol id="IniCol7">
-              <IonLabel id="IniLabelMaxInv">Valor Máximo</IonLabel>
-              <IonInput id="IniInpu8"
-                type="number"
-                value={valorMaximoInversion}
-                placeholder="Ingrese Valor Máximo Inversión"
-                onIonChange={(e) => setValorMaximoInversion(parseFloat(e.detail.value!))}
-              />
-            </IonCol>
-            <IonCol id="IniCol8">
-              <IonLabel id="IniLabelValProInver">Valor Probable</IonLabel>
-              <IonInput id="IniInpu9"
-                type="number"
-                value={valorProbableInversion}
-                placeholder="Ingrese Valor Probable Inversión"
-                onIonChange={(e) => setValorProbableInversion(parseFloat(e.detail.value!))}
-              />
-            </IonCol>
-          </IonRow>
 
-          <p id="IniFlujoNeto"> FLUJO NETO </p>
+
+          {/*<p id="IniFlujoNeto"> FLUJO NETO </p> */}
           {/* Campos de entrada para datos de Flujo Neto */}
-          <IonRow id="IniRow5">
-            <IonCol id="IniCol9">
+          {/*<IonRow id="IniRow5"> */}
+            {/*<IonCol id="IniCol9">
               <IonLabel id="IniLabelValMinFlu">Valor Mínimo</IonLabel>
               <IonInput id="IniInput10"
                 type="number"
@@ -298,8 +327,8 @@ return (
                 placeholder="Ingrese Valor Mínimo Flujo Neto"
                 onIonChange={(e) => setValorMinimoFlujoNeto(parseFloat(e.detail.value!))}
               />
-            </IonCol>
-            <IonCol id="IniCol10">
+            </IonCol>*/}
+            {/*<IonCol id="IniCol10">
               <IonLabel id="IniLabelValMaxFlu">Valor Máximo</IonLabel>
               <IonInput id="IniInput11"
                 type="number"
@@ -307,8 +336,8 @@ return (
                 placeholder="Ingrese Valor Máximo Flujo Neto"
                 onIonChange={(e) => setValorMaximoFlujoNeto(parseFloat(e.detail.value!))}
               />
-            </IonCol>
-            <IonCol id="IniCol11">
+            </IonCol>*/}
+            {/*<IonCol id="IniCol11">
               <IonLabel id="IniLabelValProFlu">Valor Probable</IonLabel>
               <IonInput id="IniInput12"
                 type="number"
@@ -316,9 +345,9 @@ return (
                 placeholder="Ingrese Valor Probable Flujo Neto"
                 onIonChange={(e) => setValorProbableFlujoNeto(parseFloat(e.detail.value!))}
               />
-            </IonCol>
+            </IonCol>*/}
 
-          </IonRow>
+          {/*</IonRow> */}
 
             <IonToast id="IniToast"
             isOpen={showSuccessToast}
