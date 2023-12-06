@@ -69,8 +69,8 @@ const Help: React.FC = () => {
       <strong>-Valor Probable: </strong>Se refiere al valor más frecuente o más esperado que puede tomar la variable en este caso sera su flujo neto</p>
 
       <h2 id="titulo-ejemplo">BOTONES</h2>
-      <img id="help-1" src="https://cdn.discordapp.com/attachments/837905669138677770/1181029086852825148/image.png?ex=657f920c&is=656d1d0c&hm=48d53e906395957a46a59c3e72287797971b0342d4895ac4cc31cbf8361b6434&" alt="HombreRosa" />
-
+      <img id="help-1" src="https://cdn.discordapp.com/attachments/837905669138677770/1181029086852825148/image.png?ex=657f920c&is=656d1d0c&hm=48d53e906395957a46a59c3e72287797971b0342d4895ac4cc31cbf8361b6434&" alt="botones-abajo" />
+      <img id="help-2" src='https://cdn.discordapp.com/attachments/837905669138677770/1182030053006127185/image.png?ex=65833645&is=6570c145&hm=90868260294b77e42d6e1a98be7853e6b0987341c520b923a18e7041c23564dd&' alt='botones-arriba'/>
       {/*
       <div id="contenedorBoot">
       <IonButton id="back-button" expand="full" onClick={handleWelcomeClick}>
