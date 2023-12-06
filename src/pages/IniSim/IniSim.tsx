@@ -223,48 +223,26 @@ return (
         <IonImg id='welcome-logo' src="https://th.bing.com/th/id/OIG.6w9pUphiH9Sh8Jt9720p?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Logo" />
       </div>
     </IonHeader>
-      <IonContent id='InicioContent' className="contenido">
+      <IonContent id='InicioContent'>
         <div id='contendor-b'>
         <IonButton expand="full" onClick={redirectToInicio1} id='IdButtonAltern1'>
-              <IonImg src="https://cdn.discordapp.com/attachments/837905669138677770/1181812806908125204/2830593.png?ex=65826bf2&is=656ff6f2&hm=a0738e45e9b02a26be54af5b567a40667c449ffce1c28371a587318a6e2ea3be&" alt="Informacion" id='img-help'/>
+              <IonImg src="https://cdn.discordapp.com/attachments/837905669138677770/1181812806908125204/2830593.png?ex=65826bf2&is=656ff6f2&hm=a0738e45e9b02a26be54af5b567a40667c449ffce1c28371a587318a6e2ea3be&" alt="Informacion" id='img-help1'/>
       </IonButton>
       <IonButton id="IdButtonReset" expand="full" onClick={redirectToInicio}>
-            RESETEAR VALORES
+      RESETEAR VALORES
       </IonButton>
       <IonButton expand="full" onClick={redirectToHelp2} id='IdButtonAyuda2'>
-              <IonImg src="https://cdn.icon-icons.com/icons2/2596/PNG/512/help_question_icon_155279.png" alt="Informacion" id='img-help'/>
+              <IonImg src="https://cdn.icon-icons.com/icons2/2596/PNG/512/help_question_icon_155279.png" alt="Informacion" id='img-help2'/>
       </IonButton>
-      {/*<IonButton id="IdButtonAyuda" expand="full" onClick={redirectToHelp}>
-            AYUDA
-      </IonButton>*/}
       </div>
         <h1 id="H1Ini">INGRESA LOS VALORES</h1>
         <IonGrid id="IniGrid1">
 
         {/*  INICIO ROW DE INVERSION  */}
           {/* Campos de entrada para datos de Inversión */}
-          {/*<p id="IniInverIni"> INVERSION INICIAL </p>*/}
           <IonRow id="Ini2Row4">
-            {/*<IonCol id="Ini2Col6">
-              <IonLabel id="IniLaelMinInver">Valor Mínimo</IonLabel>
-              <IonInput id="IniInput7"
-                type="number"
-                value={valorMinimoInversion}
-                placeholder="Ingrese Valor Mínimo Inversión"
-                onIonChange={(e) => setValorMinimoInversion(parseFloat(e.detail.value!))}
-              />
-            </IonCol>*/}
-            {/*<IonCol id="Ini2Col7">
-              <IonLabel id="IniLabelMaxInv">Valor Máximo</IonLabel>
-              <IonInput id="IniInpu8"
-                type="number"
-                value={valorMaximoInversion}
-                placeholder="Ingrese Valor Máximo Inversión"
-                onIonChange={(e) => setValorMaximoInversion(parseFloat(e.detail.value!))}
-              />
-            </IonCol>*/}
             <IonCol id="Ini2Col8">
-              <IonLabel id="Ini2LabelValProInver">INVERSIÓN INICIAL</IonLabel>
+              <IonLabel id="Ini2LabelValProInver">Inversión Inicial</IonLabel>
               <IonInput id="Ini2Inpu9"
                 type="number"
                 value={valorProbableInversion}
@@ -276,6 +254,15 @@ return (
                 Solo se acepta de 50000 Bs. y 1000000 Bs.
               </IonLabel>
             ) : null}
+            </IonCol>
+            <IonCol id="Ini2Col4">
+                <IonLabel id="IniLabelNum">Número de Corridas</IonLabel>
+                <IonInput id="IniInput5"
+                type="number"
+                value={numeroCorridas}
+                placeholder="Ingrese Número de Corridas"
+                onIonChange={(e) => setNumeroCorridas(parseInt(e.detail.value!, 10))}
+                />
             </IonCol>
           </IonRow>
         {/*  FIN ROW DE INVERSION  */}
@@ -312,6 +299,7 @@ return (
             </IonCol>
           </IonRow>
         {/*  FIN ROW DE TREMA Y %ACEPTACION  */}
+<<<<<<< HEAD
 
 
           <IonRow id="Ini2Row3">
@@ -375,6 +363,8 @@ return (
 
           {/*</IonRow> */}
 
+=======
+>>>>>>> 11273150b4c8969f6a5320afbd491572241db2e9
             <IonToast id="IniToast"
             isOpen={showSuccessToast}
             onDidDismiss={() => setShowSuccessToast(false)}

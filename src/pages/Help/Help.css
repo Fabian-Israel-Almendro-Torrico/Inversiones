@@ -178,7 +178,9 @@
     height: 40px;
     width: 40px;
   }
-  
+  #titulo-ejemplo{
+    margin-left: 2% !important;
+  }
   /* Media queries para adaptar el diseño a diferentes tamaños de pantalla */
   @media screen and (max-width: 768px) {
     /* Estilos para el título */

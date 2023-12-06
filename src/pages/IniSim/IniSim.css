@@ -8,7 +8,7 @@
   
   /* Estilos para la página */
   #pageIni {
-    background-color: #f0f0f0;
+    background-color: #fff !important;
     font-family: Luckiest Guy !important;
   }
   
@@ -66,9 +66,15 @@
   
   /* Estilos para las columnas del contenido */
   #Ini2Col, #Ini2Col2, #Ini2Col4, #Ini2Col5, #Ini2Col6, #Ini2Col7, #Ini2Col8, #Ini2Col9, #Ini2Col10, #Ini2Col11, #Ini2Col12 {
-    padding: 20px;
+    padding: 15px;
   }
   
+  #Ini2Col4{
+    margin-bottom: 5% !important;
+  }
+  #Ini2Col2{
+    margin-top: 8% !important;
+  }
   /* Estilos para las etiquetas del TREMA */
   #Ini2LabelTrema{
     color: #000000;
@@ -254,28 +260,33 @@
     display: flex;
     justify-content: space-between;
   }
-  #IdButtonReset {
+  #IdButtonReset{
     background-color: #ffffff;
     color: #ffffff;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     margin-bottom: 10px;
     display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
     padding: 8px 16px;
-    margin-left: 18% !important;
+    margin-left: -1% !important;
   }
-  
   #IdButtonAyuda2 {
+    --background: #fff;
     display: inline-block; 
     padding: 8px 16px;
+    margin-bottom: 10px;
   }
-  
   #IdButtonAltern1 {
+    --background: #fff;
     display: inline-block; 
     padding: 8px 16px;
+    margin-bottom: 10px;
   }
-
+  #img-help1,#img-help2{
+    height: 25px;
+    width: 25px;
+  }
   /* Estilos para el pie de página */
   #IniFooter {
     background-color: #ffffff;

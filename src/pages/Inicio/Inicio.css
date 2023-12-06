@@ -267,15 +267,22 @@
 }
 
 #IdButtonAyuda {
+  --background: #fff;
   display: inline-block; 
   padding: 8px 16px;
+  margin-bottom: 10px;
 }
 
 #IdButtonAltern2 {
+  --background: #fff;
   display: inline-block; 
   padding: 8px 16px;
+  margin-bottom: 10px;
 }
-
+#img-help{
+  height: 25px;
+  width: 25px;
+}
 /* Estilos para el pie de página */
 #IniFooter {
   background-color: #ffffff;
