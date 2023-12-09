@@ -1,3 +1,7 @@
+/* VISTA INCIO */
+/* APARTADO DONDE EL USUARIO PODRA INGRESAR VALORES DE MANERA EXPERTA */
+
+/* IMPORTACIONES */
 import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 import { IonContent, IonPage, IonInput, IonButtons, IonBackButton, IonButton,IonFooter,IonImg } from '@ionic/react';
@@ -13,6 +17,9 @@ import {
   } from '@ionic/react';
 import './Inicio.css';
 
+/*
+ Componente principal para la vista de inicio.
+ */
 const Inicio: React.FC = () => {
   // Función para redirigir a la vista de Inicio
   const redirectToInicio = () => {
@@ -64,6 +71,7 @@ const Inicio: React.FC = () => {
   const [showErrorToast, setShowErrorToast] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Hook para la gestión del historial de navegación
   const history = useHistory();
 
     // Función para establecer automáticamente los valores predeterminados
