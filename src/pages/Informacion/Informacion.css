@@ -110,6 +110,7 @@
   margin-right: 3%;
 }
 
+/* Estilos para botones VOLVER y CALCULAR */
 #contenedorBoot{
   display: flex;
   justify-content: space-between;
