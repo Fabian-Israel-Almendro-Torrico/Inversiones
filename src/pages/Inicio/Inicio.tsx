@@ -6,20 +6,12 @@ import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 import { IonContent, IonPage, IonInput, IonButtons, IonBackButton, IonButton,IonFooter,IonImg } from '@ionic/react';
 import { IonToast } from '@ionic/react';
-import {
-    IonLabel,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonGrid,
-    IonRow,
-    IonCol,
-  } from '@ionic/react';
+import {IonLabel, IonHeader, IonTitle, IonGrid, IonRow, IonCol,} from '@ionic/react';
 import './Inicio.css';
 
 /*
  Componente principal para la vista de inicio.
- */
+*/
 const Inicio: React.FC = () => {
     // Hook para la gestión del historial de navegación
     const history = useHistory();
