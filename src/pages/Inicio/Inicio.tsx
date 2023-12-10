@@ -1,4 +1,4 @@
-/* VISTA INCIO */
+/* VISTA INCIO (EXPERTO) */
 /* APARTADO DONDE EL USUARIO PODRA INGRESAR VALORES DE MANERA EXPERTA */
 
 /* IMPORTACIONES */
@@ -10,7 +10,7 @@ import {IonLabel, IonHeader, IonTitle, IonGrid, IonRow, IonCol,} from '@ionic/re
 import './Inicio.css';
 
 /*
- Componente principal para la vista de inicio.
+ Componente principal para la vista de INICIO (EXPERTO).
 */
 const Inicio: React.FC = () => {
     // Hook para la gestión del historial de navegación
@@ -235,7 +235,7 @@ const Inicio: React.FC = () => {
 
       {/* Contenido de la vista INICIO */}
         <IonContent id='InicioContent' className="contenido">
-
+          
         <div id='contendor-b'>
         <IonButton expand="full" onClick={redirectToIni2} id='IdButtonAltern2'>
                 <IonImg src="https://cdn.discordapp.com/attachments/837905669138677770/1181812752319266846/912265.png?ex=65826be5&is=656ff6e5&hm=3726c4dc1f51f1ee091df3821fd7fb3bfe16f7bcddc96f1cc7abb7975b35a75d&" alt="Informacion" id='img-help'/>
@@ -422,22 +422,23 @@ const Inicio: React.FC = () => {
         <IonFooter id='footer'>
         <IonGrid id='grid-footer'>
           <IonRow id='row1-footer'>
+
             <IonCol id='col1-footer'>
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              {/* Botón para la vista INFORMACIO */}
               <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
                 <IonImg src="https://cdn3.iconfinder.com/data/icons/banking-and-finance-4-4/48/158-1024.png" alt="Informacion" id='personf'/>
               </IonButton>
             </IonCol>
 
             <IonCol id='col2-footer'>
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              {/* Botón para la vista WELCOME */}
               <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
                 <IonImg src="https://agenciafattobene.com.br/wp-content/uploads/2020/03/casa-mila.png" alt="Welcome" id='homef'/>
               </IonButton>
             </IonCol>
 
             <IonCol id='col3-footer'>
-              {/* Botón con ícono personalizado desde la carpeta 'images' */}
+              {/* Botón para la vista INICIO2 */}
               <IonButton expand="full" onClick={redirectToInicio1} id='cal-btn-calculator'>
                 <IonImg src="https://th.bing.com/th/id/R.eee772e2bfa4f53491444d04b8025701?rik=X%2B595Tz%2FiRKy7g&pid=ImgRaw&r=0" alt="Inicio" id='calf'/>
               </IonButton>
