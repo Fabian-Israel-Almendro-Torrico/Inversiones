@@ -298,21 +298,21 @@ const IniSim: React.FC = () => {
             <IonRow id='row1-footer'>
 
               <IonCol id='col1-footer'>
-                {/* Botón con ícono personalizado desde la carpeta 'images' */}
+                {/* Botón para la vista INFORMACION */}
                 <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
                   <IonImg src="https://cdn3.iconfinder.com/data/icons/banking-and-finance-4-4/48/158-1024.png" alt="Informacion" id='personf'/>
                 </IonButton>
               </IonCol>
 
               <IonCol id='col2-footer'>
-                {/* Botón con ícono personalizado desde la carpeta 'images' */}
+                {/* Botón para la vista WELCOME */}
                 <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
                   <IonImg src="https://agenciafattobene.com.br/wp-content/uploads/2020/03/casa-mila.png" alt="Welcome" id='homef'/>
                 </IonButton>
               </IonCol>
 
               <IonCol id='col3-footer'>
-                {/* Botón con ícono personalizado desde la carpeta 'images' */}
+                {/* Botón para la vista INICIO2 */}
                 <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
                   <IonImg src="https://th.bing.com/th/id/R.eee772e2bfa4f53491444d04b8025701?rik=X%2B595Tz%2FiRKy7g&pid=ImgRaw&r=0" alt="Inicio" id='calf'/>
                 </IonButton>

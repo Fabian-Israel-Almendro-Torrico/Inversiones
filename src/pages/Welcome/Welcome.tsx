@@ -11,6 +11,7 @@ import './Welcome.css'
  Componente principal para la vista de WELCOME.
 */
 const Welcome: React.FC = () => {
+  // Hook para la gestión del historial de navegación
   const history = useHistory();
 
   // Función para redirigir a la vista de Inicio
@@ -29,6 +30,7 @@ const Welcome: React.FC = () => {
     history.push('/welcome');
   };
 
+  //Renderizacion de la vista
   return (
     <IonPage id='page'>
 
@@ -71,7 +73,7 @@ const Welcome: React.FC = () => {
         <IonRow id='row1-footer'>
 
           <IonCol id='col1-footer'>
-            {/* Botón para la vista INFORMACIO */}
+            {/* Botón para la vista INFORMACION */}
             <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
               <IonImg src="https://cdn3.iconfinder.com/data/icons/banking-and-finance-4-4/48/158-1024.png" alt="Informacion" id='personf'/>
             </IonButton>

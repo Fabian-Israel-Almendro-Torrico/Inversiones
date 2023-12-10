@@ -425,7 +425,7 @@ const Inicio: React.FC = () => {
           <IonRow id='row1-footer'>
 
             <IonCol id='col1-footer'>
-              {/* Botón para la vista INFORMACIO */}
+              {/* Botón para la vista INFORMACION */}
               <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
                 <IonImg src="https://cdn3.iconfinder.com/data/icons/banking-and-finance-4-4/48/158-1024.png" alt="Informacion" id='personf'/>
               </IonButton>
