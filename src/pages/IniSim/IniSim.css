@@ -69,12 +69,16 @@
     padding: 15px;
   }
   
+    /* Estilos para columna Numero de Corridas */
   #Ini2Col4{
     margin-bottom: 5% !important;
   }
+
+  /* Estilos para las columnas del contenido */
   #Ini2Col2{
     margin-top: 8% !important;
   }
+
   /* Estilos para las etiquetas del TREMA */
   #Ini2LabelTrema{
     color: #000000;
@@ -83,6 +87,7 @@
     text-align: center;
   }
   
+   /* Estilos para el valor de %proyecto Aceptado */
   #IniInpu2{
     color: #000000;
     font-size: 18px;
@@ -98,6 +103,7 @@
     text-align: center;
   }
   
+   /* Estilos para el valor de %proyecto Aceptado */
   #IniInpu2{
     color: #000000;
     font-size: 18px;
@@ -113,6 +119,7 @@
     text-align: center;
   }
   
+  /* Estilos para los valores de Numero de Corridas */
   #IniInput5{
     color: #000000;
     font-size: 18px;
@@ -128,6 +135,7 @@
     text-align: center;
   }
   
+  /* Estilos para los valores de Numero de Años */
   #IniInput6{
     color: #000000;
     font-size: 18px;
@@ -170,6 +178,7 @@
     text-align: center;
   }
   
+  /* Estilos para las etiquetas de %proyecto Aceptado */
   #Ini2Inpu9{
     color: #000000;
     font-weight: bold;
@@ -214,6 +223,7 @@
     text-align: center;
   }
   
+/* Estilos para los valores de Valor Probable (Flujo Neto) */
   #IniInput12{
     color: #000000;
     font-weight: bold;
@@ -222,12 +232,13 @@
   
   }
   
-  /* Estilos para las tostadas de éxito y error */
+  /* Estilos para los mnesajes de éxito y error */
   #IniToast, #IniToast1 {
     font-size: 16px;
     font-weight: bold;
   }
   
+    /* Estilos para botones simular y dar valores */
   #contenedorBotones{
     display: flex;
     justify-content: space-between;
@@ -256,10 +267,14 @@
     display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
     padding: 8px 16px;
   }
+
+   /* Estilos para los botones de Help - Resetear valores - Cambio Inicio */
   #contendor-b{
     display: flex;
     justify-content: space-between;
   }
+
+ /* Estilos para el botón de Resetear Valores */
   #IdButtonReset{
     background-color: #ffffff;
     color: #ffffff;
@@ -271,22 +286,29 @@
     padding: 8px 16px;
     margin-left: -1% !important;
   }
+
+ /* Estilos para el botón de Help2 */
   #IdButtonAyuda2 {
     --background: #fff;
     display: inline-block; 
     padding: 8px 16px;
     margin-bottom: 10px;
   }
+
+ /* Estilos para el botón de cambio a INICIO */
   #IdButtonAltern1 {
     --background: #fff;
     display: inline-block; 
     padding: 8px 16px;
     margin-bottom: 10px;
   }
+
+ /* Estilos para las imagenes de los botones HELP2 - HELP */
   #img-help1,#img-help2{
     height: 25px;
     width: 25px;
   }
+
   /* Estilos para el pie de página */
   #IniFooter {
     background-color: #ffffff;
