@@ -159,18 +159,26 @@ const IniSim: React.FC = () => {
     //Renderizacion de la vista
     return (
         <IonPage id="pageIni">
+
+        {/* Header de la vista INICIO2 */}  
         <IonHeader id='head'>
           <div id='tbh'>
+
           <IonButtons slot="start" id='btnt' >
           <IonBackButton defaultHref="/welcome" />
           </IonButtons>
+
             <IonTitle id='welcome-title'>INVERT.IO</IonTitle>
+
             <IonImg id='welcome-logo' src="https://th.bing.com/th/id/OIG.6w9pUphiH9Sh8Jt9720p?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Logo" />
           </div>
         </IonHeader>
+
+        {/* Contenido de la vista INICIO2 */}
           <IonContent id='InicioContent'>
-            <div id='contendor-b'>
-            <IonButton expand="full" onClick={redirectToInicio1} id='IdButtonAltern1'>
+
+          <div id='contendor-b'>
+          <IonButton expand="full" onClick={redirectToInicio1} id='IdButtonAltern1'>
                   <IonImg src="https://cdn.discordapp.com/attachments/837905669138677770/1181812806908125204/2830593.png?ex=65826bf2&is=656ff6f2&hm=a0738e45e9b02a26be54af5b567a40667c449ffce1c28371a587318a6e2ea3be&" alt="Informacion" id='img-help1'/>
           </IonButton>
           <IonButton id="IdButtonReset" expand="full" onClick={redirectToInicio}>
@@ -180,11 +188,11 @@ const IniSim: React.FC = () => {
                   <IonImg src="https://cdn.icon-icons.com/icons2/2596/PNG/512/help_question_icon_155279.png" alt="Informacion" id='img-help2'/>
           </IonButton>
           </div>
+
             <h1 id="H1Ini">INGRESA LOS VALORES</h1>
             <IonGrid id="IniGrid1">
 
-            {/*  INICIO ROW DE INVERSION  */}
-              {/* Campos de entrada para datos de Inversión */}
+            {/* Seccion que almacena Inversion Inicial y Numero de Corridas */}
               <IonRow id="Ini2Row4">
                 <IonCol id="Ini2Col8">
                   <IonLabel id="Ini2LabelValProInver">Inversión Inicial</IonLabel>
@@ -200,6 +208,7 @@ const IniSim: React.FC = () => {
                   </IonLabel>
                 ) : null}
                 </IonCol>
+
                 <IonCol id="Ini2Col4">
                     <IonLabel id="IniLabelNum">Número de Corridas</IonLabel>
                     <IonInput id="IniInput5"
@@ -215,9 +224,8 @@ const IniSim: React.FC = () => {
                 ) : null}
                 </IonCol>
               </IonRow>
-            {/*  FIN ROW DE INVERSION  */}
 
-            {/*  INICIO ROW DE TREMA Y %ACEPTACION  */}
+            {/*  Seccion que almacena Trema y %de de Proyecto Aceptado  */}
             <IonRow id='Ini2Row'>
                 <IonCol id="Ini2Col">
                 <IonLabel id='Ini2LabelTrema'>TREMA (%)</IonLabel>
@@ -233,6 +241,7 @@ const IniSim: React.FC = () => {
                 <IonLabel id='IniLaberError' color="danger">El TREMA debe estar entre 1% y 100%</IonLabel>
                 ) : null}
                 </IonCol> 
+
                 <IonCol id="Ini2Col2">
                   <IonLabel id="IniLabelPor">Porcentaje de Proyecto Aceptado (%)</IonLabel>
                   <IonInput id="IniInpu2"
@@ -248,7 +257,8 @@ const IniSim: React.FC = () => {
                 ) : null}
                 </IonCol>
               </IonRow>
-            {/*  FIN ROW DE TREMA Y %ACEPTACION  */}
+
+              {/* Mensaje de exito al ingresar todo correctamente */}
                 <IonToast id="IniToast"
                 isOpen={showSuccessToast}
                 onDidDismiss={() => setShowSuccessToast(false)}
@@ -258,6 +268,7 @@ const IniSim: React.FC = () => {
                 color="success"  // Puedes ajustar el color según tu estilo
                 />
 
+            {/* Accion de error al ingresar algun campo incorrectamente */}
                 <IonToast id="IniToast1"
                     isOpen={showErrorToast}
                     onDidDismiss={() => setShowErrorToast(false)}
@@ -267,32 +278,38 @@ const IniSim: React.FC = () => {
                     color="danger"
                 />
 
-              {/*<img src="./src/images/HombreAzul.png" alt="HombreAzul" className='info-image'/>*/}
+              {/* BOTON DE SIMULAR Y DAR VALORES */}
               <div id="contenedorBotones">
               <IonButton id="IdButtonSim" expand="full" onClick={handleSimularClick}>
                 SIMULAR
               </IonButton>
+
               <IonButton id="IdButtonValor" expand="full" onClick={setValoresPredeterminados}>
                 DAR VALORES
               </IonButton>
               </div>
             </IonGrid>
           </IonContent>
+
+          {/* Inicio del Footer */}
           <IonFooter id='footer'>
           <IonGrid id='grid-footer'>
             <IonRow id='row1-footer'>
+
               <IonCol id='col1-footer'>
                 {/* Botón con ícono personalizado desde la carpeta 'images' */}
                 <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
                   <IonImg src="https://cdn3.iconfinder.com/data/icons/banking-and-finance-4-4/48/158-1024.png" alt="Informacion" id='personf'/>
                 </IonButton>
               </IonCol>
+
               <IonCol id='col2-footer'>
                 {/* Botón con ícono personalizado desde la carpeta 'images' */}
                 <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
                   <IonImg src="https://agenciafattobene.com.br/wp-content/uploads/2020/03/casa-mila.png" alt="Welcome" id='homef'/>
                 </IonButton>
               </IonCol>
+              
               <IonCol id='col3-footer'>
                 {/* Botón con ícono personalizado desde la carpeta 'images' */}
                 <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
