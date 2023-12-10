@@ -45,7 +45,7 @@ const Informacion: React.FC = () => {
       return (
         <IonPage id='page'>
 
-        {/* Header de la vista INICIO2 */}  
+        {/* Header de la vista INFORMACION */}  
         <IonHeader id='head'>
           <div id='tbh'>
 
@@ -59,7 +59,7 @@ const Informacion: React.FC = () => {
           </div>
         </IonHeader>
 
-        {/* Contenido de la vista INICIO2 */}
+        {/* Contenido de la vista INFORMACION */}
           <IonContent id='conte'>
 
           {/* PRESENTACION */}

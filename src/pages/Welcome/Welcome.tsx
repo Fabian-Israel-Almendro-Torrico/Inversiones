@@ -34,7 +34,7 @@ const Welcome: React.FC = () => {
   return (
     <IonPage id='page'>
 
-    {/* Header de la vista INICIO */}     
+    {/* Header de la vista WELCOME */}     
     <IonHeader id='head'>
       <div id='tbh'>
 
@@ -44,13 +44,13 @@ const Welcome: React.FC = () => {
       </div>
     </IonHeader>
 
-    {/* Contenido de la vista INICIO */}
+    {/* Contenido de la vista WELCOME */}
     <IonContent id="content">
       {/* Mensaje de bienvenida y Logo de la App */}
       <p id='welcome-message'>Bienvenido a la aplicación ¡Esperamos que disfrutes tu Experiencia!</p>
       <img src="https://th.bing.com/th/id/OIG.6w9pUphiH9Sh8Jt9720p?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Logo" id='logo-content'/>
 
-      {/* imagenes de Inicio e Información */}
+      {/* Imagenes de Inicio e Información */}
       <div id="ContenedorHombres">
       <img src="https://image.freepik.com/vector-gratis/ilustracion-concepto-calculadora_114360-1239.jpg" alt="Logo" id='img-HomAzul'/>
       <img src="https://1.bp.blogspot.com/-kQw78cBMIB0/Wl1s8XCDUrI/AAAAAAAAEoQ/Kwl04DNlHB46BiRG5-eki4RsoOjN9WD0gCLcBGAs/s1600/INFOR.jpg" alt="Logo" id='img-HomRosa'/>

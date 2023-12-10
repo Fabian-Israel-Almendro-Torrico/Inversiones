@@ -86,12 +86,13 @@ const Help: React.FC = () => {
       <img id="help-2" src='https://cdn.discordapp.com/attachments/837905669138677770/1182030053006127185/image.png?ex=65833645&is=6570c145&hm=90868260294b77e42d6e1a98be7853e6b0987341c520b923a18e7041c23564dd&' alt='botones-arriba'/>
       </IonContent>
 
+      {/* Inicio del Footer */}
       <IonFooter id='footer'>
       <IonGrid id='grid-footer'>
         <IonRow id='row1-footer'>
 
           <IonCol id='col1-footer'>
-            {/* Botón para la vista INFORMACIO */}
+            {/* Botón para la vista INFORMACION */}
             <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
               <IonImg src="https://cdn3.iconfinder.com/data/icons/banking-and-finance-4-4/48/158-1024.png" alt="Informacion" id='personf'/>
             </IonButton>
