@@ -10,27 +10,33 @@ import { IonPage, IonHeader, IonTitle, IonContent, IonList, IonItem, IonLabel, I
 import { useParams } from 'react-router-dom';
 import './Corridas.css';
 
-interface DatosCorridasType {
-  trema: number;
-  porcentajeAceptacion: number;
-  numeroCorridas: number;
-  numeroAnios: number;
-  valorMinimoInversion: number;
-  valorMaximoInversion: number;
-  valorProbableInversion: number;
-  valorMinimoFlujoNeto: number;
-  valorMaximoFlujoNeto: number;
-  valorProbableFlujoNeto: number;
-}
-  
-interface ResultadoSimulado {
-  rendimiento: number;
-  inversionInicial: number;
-  flujos: number[];
-  tir: number;
-}
+    // Funcion para convertir y especificar que los valores son numericos
+    interface DatosCorridasType {
+      trema: number;
+      porcentajeAceptacion: number;
+      numeroCorridas: number;
+      numeroAnios: number;
+      valorMinimoInversion: number;
+      valorMaximoInversion: number;
+      valorProbableInversion: number;
+      valorMinimoFlujoNeto: number;
+      valorMaximoFlujoNeto: number;
+      valorProbableFlujoNeto: number;
+    }
+      
+    // Funcion para convertir y especificar que los simulados son numericos
+    interface ResultadoSimulado {
+      rendimiento: number;
+      inversionInicial: number;
+      flujos: number[];
+      tir: number;
+    }
 
+/*
+ Componente principal para la vista de INICIO (EXPERTO).
+*/
   const Corridas: React.FC = () => {
+  // Hook para la gestión del historial de navegación
   const history = useHistory();
 
   // Función para redirigir a la vista de Inicio
@@ -39,17 +45,18 @@ interface ResultadoSimulado {
     window.location.reload();
   };
 
-  // Función para redirigir a la vista de Información (debes crearla)
+  // Función para redirigir a la vista de Información 
   const redirectToInformacion = () => {
     history.push('/informacion');
   };
 
+  // Función para redirigir a la vista de Welcome
   const redirectToWelcome = () => {
     history.push('/welcome');
     window.location.reload();
   };
 
-  // Obtén la ubicación actual
+  // Obtencion de los valores introducidos en la vista INICIO - INICIO2
   const location = useLocation();
   const datosCorridas = (location.state as { datosCorridas?: DatosCorridasType })?.datosCorridas;
 
@@ -57,15 +64,8 @@ interface ResultadoSimulado {
   const [resultados, setResultados] = useState<{ rendimiento: number, inversionInicial: number, flujos: number[], tir: number }[]>([]);
 
   const [resultadosSimulados, setResultadosSimulados] = useState<ResultadoSimulado[]>([]);
-    /*rendimiento: number;
-    inversionInicial: number;
-    flujos: number[];
-    tir: number;
-  }[]>([]);*/
-  // Función para realizar los cálculos de las corridas
 
-
-
+  // Función para calcular la inversión inicial en cada corrida
   const calcularInversionInicial = () => {
     const aleatorio = Math.random();
 
@@ -83,6 +83,7 @@ interface ResultadoSimulado {
     return parseFloat(inversionInicial.toFixed(2));
   };
 
+  // Función para calcular el flujo neto en cada año de cada corrida
   const calcularFlujoNeto = () => {
     const aleatorio = Math.random();
 
@@ -99,60 +100,56 @@ interface ResultadoSimulado {
   return parseFloat(flujoredondeado);
   };
 
- /* const calcularTIR = (inversionInicial: number, flujoNeto: number) => {
-    // Utiliza la función irr para calcular la TIR
-    const cashflows = [-inversionInicial, flujoNeto];
-    const tir = irr(cashflows);
+  // Función para calcular la TIR de una corrida
+    const calcularTIR = (inversionInicial: number, flujos: number[]) => {
+      const maxIteraciones = 1000;
+      const tolerancia = 0.0001;
 
-  return tir * 100; // Multiplica por 100 para obtener el porcentaje
-}; */
+      let tir = 0.1; // Supongamos una tasa inicial
+      let vpn = vpnFlujos(inversionInicial, flujos, tir);
 
-const calcularTIR = (inversionInicial: number, flujos: number[]) => {
-  const maxIteraciones = 1000;
-  const tolerancia = 0.0001;
+      for (let i = 0; i < maxIteraciones; i++) {
+        const derivada = derivadaVPNFlujos(inversionInicial, flujos, tir);
+        tir = tir - vpn / derivada;
 
-  let tir = 0.1; // Supongamos una tasa inicial
-  let vpn = vpnFlujos(inversionInicial, flujos, tir);
+        vpn = vpnFlujos(inversionInicial, flujos, tir);
 
-  for (let i = 0; i < maxIteraciones; i++) {
-    const derivada = derivadaVPNFlujos(inversionInicial, flujos, tir);
-    tir = tir - vpn / derivada;
+        if (Math.abs(vpn) < tolerancia) {
+          // Se alcanzó la tolerancia deseada
+          break;
+        }
+      }
 
-    vpn = vpnFlujos(inversionInicial, flujos, tir);
+      return parseFloat((tir * 100).toFixed(2));
+    };
 
-    if (Math.abs(vpn) < tolerancia) {
-      // Se alcanzó la tolerancia deseada
-      break;
-    }
-  }
+    // Función para calcular el Valor Presente Neto (VPN) de los flujos de efectivo
+    const vpnFlujos = (inversionInicial: number, flujos: number[], tir: number) => {
+      let suma = 0;
+      for (let t = 0; t < flujos.length; t++) {
+        suma += flujos[t] / Math.pow(1 + tir, t + 1);
+      }
+      return -inversionInicial + suma;
+    };
 
-  return parseFloat((tir * 100).toFixed(2));
-};
+    // Función para calcular la derivada del VPN respecto a la tasa
+    const derivadaVPNFlujos = (inversionInicial: number, flujos: number[], tir: number) => {
+      let suma = 0;
+      for (let t = 0; t < flujos.length; t++) {
+        suma += -flujos[t] * (t + 1) / Math.pow(1 + tir, t + 2);
+      }
+      return suma;
+    };
 
-// Función para calcular el Valor Presente Neto (VPN) de los flujos de efectivo
-const vpnFlujos = (inversionInicial: number, flujos: number[], tir: number) => {
-  let suma = 0;
-  for (let t = 0; t < flujos.length; t++) {
-    suma += flujos[t] / Math.pow(1 + tir, t + 1);
-  }
-  return -inversionInicial + suma;
-};
 
-// Función para calcular la derivada del VPN respecto a la tasa
-const derivadaVPNFlujos = (inversionInicial: number, flujos: number[], tir: number) => {
-  let suma = 0;
-  for (let t = 0; t < flujos.length; t++) {
-    suma += -flujos[t] * (t + 1) / Math.pow(1 + tir, t + 2);
-  }
-  return suma;
-};
-const simularCorridas = () => {
-  const resultadosSimuladosNuevos: {
-      rendimiento: number;
-      inversionInicial: number;
-      flujos: number[];
-      tir: number;
-    }[] = [];
+    // Función para simular las corridas y almacenar los resultados
+    const simularCorridas = () => {
+      const resultadosSimuladosNuevos: {
+          rendimiento: number;
+          inversionInicial: number;
+          flujos: number[];
+          tir: number;
+        }[] = [];
 
     for (let i = 0; i < (datosCorridas?.numeroCorridas || 0); i++) {
       const inversionInicial = calcularInversionInicial();
@@ -170,21 +167,13 @@ const simularCorridas = () => {
           tir,
           trema: datosCorridas?.trema || 0, // Asegúrate de incluir el TREMA en cada resultado
     };
-
-    /*console.log('Resultados Simulados:', resultadosSimulados);*/
-
-    /*resultadosSimulados.push(resultado);*/
     resultadosSimuladosNuevos.push(resultado);
 
   }
-    // Agrega console.log para verificar los resultados simulados
-     // Actualiza el estado con los resultados simulados
-  /*setResultados(resultadosSimulados);*/
+
   setResultadosSimulados(resultadosSimuladosNuevos);
-  /*console.log('Resultados Simulados:', resultadosSimulados);*/
 
 };
-
 
   useEffect(() => {
     try {
@@ -200,66 +189,82 @@ const simularCorridas = () => {
         const valorMaximoFlujoNeto = datosCorridas?.valorMaximoFlujoNeto;
         const valorProbableFlujoNeto = datosCorridas?.valorProbableFlujoNeto
   
-        // Realizar tus cálculos utilizando estas variables
-    simularCorridas();
-    } catch (error) {
-    console.error("Error al convertir los parámetros:", error);
-    // Manejo de error al convertir los parámetros
-    // Puedes mostrar un mensaje de error en la interfaz o redirigir a una página de error
-    
-  }
-  }, [datosCorridas]); 
+      // Realizar tus cálculos utilizando estas variables
+      simularCorridas();
+      } catch (error) {
+      //Log para verificar si existen errores al convertir los parametros
+      console.error("Error al convertir los parámetros:", error);
+      }
+      }, [datosCorridas]); 
 
+
+  //Renderizacion de la vista
   return (
     <IonPage id="CorriPage">
+
+     {/* Header de la vista CORRIDAS */} 
     <IonHeader id='head'>
       <div id='tbh'>
+
       <IonButtons slot="start" id='btnt' >
       <IonBackButton defaultHref="/inicio" />
       </IonButtons>
+
         <IonTitle id='welcome-title'>INVERT.IO</IonTitle>
+
         <IonImg id='welcome-logo' src="https://th.bing.com/th/id/OIG.6w9pUphiH9Sh8Jt9720p?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Logo" />
       </div>
     </IonHeader>
+
+    {/* Contenido de la vista RESULTADOS */}
       <IonContent id='CorriContent'>
       <h1 id='H1Corri'>CORRIDAS</h1>
+
+    {/* CONTENEDOR DE TODAS LAS CORRIDAS */}
       <IonList id="CorriList1">
       {resultadosSimulados.map((resultado: ResultadoSimulado, index: number) => (
-  <IonItem id="CorriItem1" key={index}>
-    <IonLabel id="CorriLabelCori" >C. {index + 1}</IonLabel>
+      <IonItem id="CorriItem1" key={index}>
+      <IonLabel id="CorriLabelCori" >C. {index + 1}</IonLabel>
 
-    <IonList id="CorriList2" lines="none">
+      {/* TITULOS - CALCULO (INVERSION INICIAL - FLUJO NETO) */}
+      <IonList id="CorriList2" lines="none">
+      {/* TITULOS de Año - Inversion Inicial - Flujo Neto */}
       <IonItem id="CorriItem2" lines="none"> 
-      
-      {/*Los divs que contienen TITULOS O RESULTADOS antes eran IonLabel (Año - Inversion Inicial - Flujo Neto - 0 - result.Inver-Inver - year+1 - 0 - flujoNetoAnio)*/}
         <div id="CorriLabelAnio">Año</div>
         <div id="CorriInverIni">Inversión Inicial</div>
         <div id="CorriNeto">Flujo Neto</div>
       </IonItem>
+
+      {/* Columna de Inversion Inicial ingresada al inicio */}
       <IonItem id="CorriItem3" lines="none">
       <div id="CorriLabel0">0</div>
         <div id="CorriLabelResultInverIni">{resultado.inversionInicial}</div>
         <div id="CorriLabelResultMInverIni">{-resultado.inversionInicial}</div>
       </IonItem>
+
+      {/* Columna de Flujo Neto (calculos) */}
       {Array.from({ length: datosCorridas?.numeroAnios || 0 }, (_, year) => {
-  const flujoNetoAnio = calcularFlujoNeto();
-  const inversionInicialAnio = year === 0 ? resultado.inversionInicial : 0;
-  return (
-    <IonItem id="CorriItem3" lines="none" key={year + 1}>
-      <div id="CorriLabelYear">{year + 1}</div>
-      <div id="CorriLabelYear0">{0}</div>
-      <div id="CorriLabelFlujoNetoAnio">
-        {flujoNetoAnio}
-      </div>
-    </IonItem>
-  );
-})}
+      const flujoNetoAnio = calcularFlujoNeto();
+      const inversionInicialAnio = year === 0 ? resultado.inversionInicial : 0;
+      return (
+        <IonItem id="CorriItem3" lines="none" key={year + 1}>
+          <div id="CorriLabelYear">{year + 1}</div>
+          <div id="CorriLabelYear0">{0}</div>
+          <div id="CorriLabelFlujoNetoAnio">
+            {flujoNetoAnio}
+          </div>
+        </IonItem>
+      );
+    })}
     </IonList>
+
+    {/* Calculo de TIR por corrida */}
     <div id="CorriTirResult">TIR: {resultado.tir}</div>
   </IonItem>
-))}
+  ))}
+  </IonList>
 
-</IonList>
+        {/* Boton VER RESULTADOS: manda los resultados a la siguiente vista */}
         <IonButton id="ButtonVerResultados"
           expand="full"
           onClick={() =>     
@@ -268,23 +273,28 @@ const simularCorridas = () => {
           VER RESULTADOS
         </IonButton>
       </IonContent>
+
+      {/* Inicio del Footer */}
       <IonFooter id='footer'>
       <IonGrid id='grid-footer'>
         <IonRow id='row1-footer'>
+
           <IonCol id='col1-footer'>
-            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            {/* Botón para la vista INFORMACION */}
             <IonButton expand="full" onClick={redirectToInformacion} id='info-btn-person'>
               <IonImg src="https://cdn3.iconfinder.com/data/icons/banking-and-finance-4-4/48/158-1024.png" alt="Informacion" id='personf'/>
             </IonButton>
           </IonCol>
+
           <IonCol id='col2-footer'>
-            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            {/* Botón para la vista WELCOME */}
             <IonButton expand="full" onClick={redirectToWelcome} id='home-btn-image'>
               <IonImg src="https://agenciafattobene.com.br/wp-content/uploads/2020/03/casa-mila.png" alt="Welcome" id='homef'/>
             </IonButton>
           </IonCol>
+
           <IonCol id='col3-footer'>
-            {/* Botón con ícono personalizado desde la carpeta 'images' */}
+            {/* Botón para la vista INICIO2 */}
             <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>
               <IonImg src="https://th.bing.com/th/id/R.eee772e2bfa4f53491444d04b8025701?rik=X%2B595Tz%2FiRKy7g&pid=ImgRaw&r=0" alt="Inicio" id='calf'/>
             </IonButton>

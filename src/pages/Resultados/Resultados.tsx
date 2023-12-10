@@ -132,7 +132,7 @@ const Resultados: React.FC = () => {
     // Log para verificar los dos resultados esperados
     console.log('Resultados Finales:', { primerAnio, gananciaRedondeada });
 
-
+    //Renderizacion de la vista
       return (
         <IonPage id='page'>
 
