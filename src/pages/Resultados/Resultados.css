@@ -84,6 +84,29 @@
     margin-bottom: 10px;
   }
   
+    /* Estilos para el boton pdf*/
+  #btn-pdf {
+    --background: #e0dbdb;
+    display: inline-block; 
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    margin-top: 2% !important;
+    margin-right: 35% !important;
+  }
+
+  /* Estilos para el boton pdf*/
+  #img-pdf{
+    height: 25px;
+    width: 25px;
+  }
+
+/* Estilos para el boton pdf*/
+  #pne{
+
+    display: flex;
+    justify-content: space-between;
+  }
+
   /* Estilos para el párrafo del resultado de aceptación o rechazo */
   #resultados-aceptados #proyecto1{
     color: #000000;
