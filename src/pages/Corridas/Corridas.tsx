@@ -1,12 +1,15 @@
-// Importa las bibliotecas necesarias
+/* VISTA CORRIDAS */
+/* APARTADO DONDE EL USUARIO PODRA VER LAS CORRIDAS */
+
+/* IMPORTACIONES */
 import { useLocation } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-
 import * as finance from 'financejs';
 import React, { useEffect, useState } from 'react';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel,IonBackButton, IonButtons, IonButton, IonFooter, IonGrid, IonRow, IonCol, IonImg } from '@ionic/react';
+import { IonPage, IonHeader, IonTitle, IonContent, IonList, IonItem, IonLabel, IonBackButton, IonButtons, IonButton, IonFooter, IonGrid, IonRow, IonCol, IonImg } from '@ionic/react';
 import { useParams } from 'react-router-dom';
 import './Corridas.css';
+
 interface DatosCorridasType {
   trema: number;
   porcentajeAceptacion: number;
