@@ -1,5 +1,5 @@
 /* VISTA HELP (SIMPLE) */
-/* APARTADO DONDE EL USUARIO PODRA INGRESAR VALORES DE MANERA EXPERTA */
+/* APARTADO DONDE EL USUARIO PODRA VER UNA GUIA PARA LA VISTA INICIO (SIMPLE) */
 
 /* IMPORTACIONES */
 import React from 'react';
@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 import './HelpSim.css'
 
 /*
- Componente principal para la vista de INICIO (EXPERTO).
+ Componente principal para la vista de HELP (SIMPLE).
 */
 const HelpSim: React.FC = () => {
   // Hook para la gestión del historial de navegación

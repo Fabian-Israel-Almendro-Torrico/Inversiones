@@ -33,7 +33,7 @@ import './Corridas.css';
     }
 
 /*
- Componente principal para la vista de INICIO (EXPERTO).
+ Componente principal para la vista de CORRIDAS.
 */
   const Corridas: React.FC = () => {
   // Hook para la gestión del historial de navegación

@@ -1,4 +1,4 @@
-/* VISTA INFORMACIO */
+/* VISTA INFORMACION */
 /* APARTADO DONDE EL USUARIO PODRA VER EL EJERCICIO A RESOLVER A DETALLE */
 
 /* IMPORTACIONES */
@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 import './Informacion.css'
 
 /*
- Componente principal para la vista de INICIO (SIMPLE).
+ Componente principal para la vista de INFORMACION.
 */
 const Informacion: React.FC = () => {
   // Hook para la gestión del historial de navegación

@@ -11,7 +11,7 @@ import { IonPage, IonHeader, IonTitle, IonContent, IonBackButton, IonButtons, Io
 import './Resultados.css'
 
 /*
- Componente principal para la vista de INICIO (EXPERTO).
+ Componente principal para la vista de RESULTADOS.
 */
 const Resultados: React.FC = () => {
   // Hook para la gestión del historial de navegación
