@@ -3,19 +3,19 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Luckiest Guy !important;
+  font-family: Luckiest Guy !important; /* Se establece una fuente predeterminada para todo el documento */
 }
 
 /* Estilos para la página */
 #pageIni {
   background-color: #f0f0f0;
-  font-family: Luckiest Guy !important;
+  font-family: Luckiest Guy !important; /* Se establece una fuente específica para la página */
 }
 
 /* Estilos para el encabezado */
 #HeadIni {
   background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Se agrega una sombra sutil al encabezado */
 }
 
 /* Estilos para el título */
@@ -77,6 +77,7 @@
   text-align: center;
 }
 
+/* Estilos para los valores de TREMA */
 #IniInpu{
   color: #000000;
   font-size: 18px;
@@ -92,6 +93,7 @@
   text-align: center;
 }
 
+/* Estilos para los valores de %de Aceptacion */
 #IniInpu2{
   color: #000000;
   font-size: 18px;
@@ -107,6 +109,7 @@
   text-align: center;
 }
 
+/* Estilos para los valores de Numero de Corridas */
 #IniInput5{
   color: #000000;
   font-size: 18px;
@@ -122,6 +125,7 @@
   text-align: center;
 }
 
+/* Estilos para los valores de Numero de Años */
 #IniInput6{
   color: #000000;
   font-size: 18px;
@@ -164,6 +168,7 @@
   text-align: center;
 }
 
+/* Estilos para los valores de Valor Probable (Inversion Inicial) */
 #IniInpu9{
   color: #000000;
   font-weight: bold;
@@ -208,12 +213,12 @@
   text-align: center;
 }
 
+/* Estilos para los valores de Valor Probable (Flujo Neto) */
 #IniInput12{
   color: #000000;
   font-weight: bold;
   margin-left: 25% !important;
   margin-bottom: 15% !important;
-
 }
 
 /* Estilos para las tostadas de éxito y error */
@@ -222,6 +227,7 @@
   font-weight: bold;
 }
 
+/* Estilos del Contenedor de botones (Simular - Dar Valores) */
 #contenedorBotones{
   display: flex;
   justify-content: space-between;
@@ -250,10 +256,14 @@
   display: inline-block; /* Hace que el ancho sea solo el necesario para el contenido */
   padding: 8px 16px;
 }
+
+/* Estilos del Contenedor de botones (Inicio2 - Resetear Valores - Help) */
 #contendor-b{
   display: flex;
   justify-content: space-between;
 }
+
+/* Estilos para el boton de resetear valores */
 #IdButtonReset {
   background-color: #ffffff;
   color: #ffffff;
@@ -266,6 +276,7 @@
   margin-left: 18% !important;
 }
 
+/* Estilos para el boton de Ayuda */
 #IdButtonAyuda {
   --background: #fff;
   display: inline-block; 
@@ -273,16 +284,20 @@
   margin-bottom: 10px;
 }
 
+/* Estilos para el boton de cambio a INICIO2 */
 #IdButtonAltern2 {
   --background: #fff;
   display: inline-block; 
   padding: 8px 16px;
   margin-bottom: 10px;
 }
+
+/* Estilos para el logo del boton HELP */
 #img-help{
   height: 25px;
   width: 25px;
 }
+
 /* Estilos para el pie de página */
 #IniFooter {
   background-color: #ffffff;
@@ -354,6 +369,7 @@
     font-size: 16px;
   }
 
+  /* Estilos para las entradas del número de años */
  #IniInput6{
   font-size: 16px;
  }

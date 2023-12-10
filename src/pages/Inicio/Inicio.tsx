@@ -24,7 +24,8 @@ const Inicio: React.FC = () => {
     // Hook para la gestión del historial de navegación
     const history = useHistory();
 
-  // Estados para almacenar los valores ingresados por el usuario
+  {/*Estados para almacenar los valores ingresados por el usuario */}
+  // Estados para Trema, Porcentaje de Aceptacion, Numero de Corridas y Numero de Años
   const [trema, setTrema] = useState(0);
   const [porcentajeAceptacion, setPorcentajeAceptacion] = useState(0);
   const [numeroCorridas, setNumeroCorridas] = useState(0);
@@ -442,7 +443,7 @@ const Inicio: React.FC = () => {
                 <IonImg src="https://agenciafattobene.com.br/wp-content/uploads/2020/03/casa-mila.png" alt="Welcome" id='homef'/>
               </IonButton>
             </IonCol>
-            
+
             <IonCol id='col3-footer'>
               {/* Botón con ícono personalizado desde la carpeta 'images' */}
               <IonButton expand="full" onClick={redirectToInicio1} id='cal-btn-calculator'>
