@@ -81,7 +81,8 @@
     margin-left: 3%;
     margin-right: 3%;
   }
-  
+
+/* Estilos para el inicio del HELP */
 #inicio-text{
     color: #000000;
     font-size: 15px !important;
@@ -99,9 +100,12 @@
     margin-bottom: 10px;
     font-family: Luckiest Guy !important;
   }
+
+  /* Estilos para el cuadro del HELP */
   #cuadro-ejercicio{
     margin-right: 1%;
   }
+
   /* Estilos para el texto de la solución */
   #solution-text {
     margin-top: 3%;
@@ -114,6 +118,7 @@
     margin-right: 3%;
   }
   
+    /* Estilos para el la ayuda de botones */
   #contenedorBoot{
     display: flex;
     justify-content: space-between;
