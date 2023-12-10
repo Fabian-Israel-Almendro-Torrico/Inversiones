@@ -91,9 +91,13 @@
   margin-bottom: 10px;
   font-family: Luckiest Guy !important;
 }
+
+/* Estilos para el cuadro del ejercicio */
 #cuadro-ejercicio{
   margin-right: 1%;
 }
+
+
 /* Estilos para el texto de la solución */
 #solution-text {
   margin-top: 3%;
