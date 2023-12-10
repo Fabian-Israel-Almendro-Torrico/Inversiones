@@ -236,6 +236,7 @@ const Inicio: React.FC = () => {
       {/* Contenido de la vista INICIO */}
         <IonContent id='InicioContent' className="contenido">
 
+      {/* Boton INICIO2 - RESETEAR VALORES - HELP */}
         <div id='contendor-b'>
         <IonButton expand="full" onClick={redirectToIni2} id='IdButtonAltern2'>
                 <IonImg src="https://cdn.discordapp.com/attachments/837905669138677770/1181812752319266846/912265.png?ex=65826be5&is=656ff6e5&hm=3726c4dc1f51f1ee091df3821fd7fb3bfe16f7bcddc96f1cc7abb7975b35a75d&" alt="Informacion" id='img-help'/>

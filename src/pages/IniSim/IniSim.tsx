@@ -177,6 +177,7 @@ const IniSim: React.FC = () => {
         {/* Contenido de la vista INICIO2 */}
           <IonContent id='InicioContent'>
 
+          {/* Boton INICIO - RESETEAR VALORES - HELP2 */}
           <div id='contendor-b'>
           <IonButton expand="full" onClick={redirectToInicio1} id='IdButtonAltern1'>
                   <IonImg src="https://cdn.discordapp.com/attachments/837905669138677770/1181812806908125204/2830593.png?ex=65826bf2&is=656ff6f2&hm=a0738e45e9b02a26be54af5b567a40667c449ffce1c28371a587318a6e2ea3be&" alt="Informacion" id='img-help1'/>
@@ -309,7 +310,7 @@ const IniSim: React.FC = () => {
                   <IonImg src="https://agenciafattobene.com.br/wp-content/uploads/2020/03/casa-mila.png" alt="Welcome" id='homef'/>
                 </IonButton>
               </IonCol>
-              
+
               <IonCol id='col3-footer'>
                 {/* Botón con ícono personalizado desde la carpeta 'images' */}
                 <IonButton expand="full" onClick={redirectToInicio} id='cal-btn-calculator'>

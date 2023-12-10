@@ -11,6 +11,7 @@
   font-family: Arial, sans-serif;
 }
 
+/* Estilos para el encabezado */
 #tbh{
   display: flex !important;
   align-items: center !important;
@@ -68,24 +69,27 @@
   margin-bottom: 10px;
 }
 
-
+/* Estilos para el contenedor Imagenes de Inicio e Información */
 #ContenedorHombres{
   display: flex;
   justify-content: space-between;
 }
 
+/* Estilos para Imagen de Inicio */
 #img-HomAzul{
   height: 200px !important;
   width: 150px !important;
   margin-left: 2% !important;
 }
 
+/* Estilos para Imagen de Informacion */
 #img-HomRosa{
   height: 200px !important;
   width: 150px !important;
   margin-right: 2% !important;
 }
 
+/* Estilos para el contenedor botones de Inicio e Información */
 #ContenedorBotones{
   display: flex;
   justify-content: space-between;
