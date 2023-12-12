@@ -74,7 +74,7 @@ const Inicio: React.FC = () => {
       setTrema(30);
       setPorcentajeAceptacion(90);
       setNumeroCorridas(5);
-      setNumeroAnios(6);
+      setNumeroAnios(5);
       setValorMinimoInversion(95000);
       setValorMaximoInversion(105000);
       setValorProbableInversion(100000);
@@ -112,7 +112,7 @@ const Inicio: React.FC = () => {
         if (
           porcentajeAceptacion < 0 ||
           porcentajeAceptacion > 100 ||
-          numeroCorridas < 3 ||
+          numeroCorridas < 1 ||
           numeroCorridas > 100 ||
           numeroAnios < 3 ||
           numeroAnios > 10 ||
@@ -319,7 +319,7 @@ const Inicio: React.FC = () => {
               </IonRow>
 
             {/* Seccion que almacena los valores de INVERSION */}
-            <p id="IniInverIni"> INVERSION INICIAL </p>
+            <p id="IniInverIni"> INVERSIÓN INICIAL </p>
             <IonRow id="IniRow4">
               <IonCol id="IniCol6">
                 <IonLabel id="IniLaelMinInver">Valor Mínimo</IonLabel>

@@ -21,14 +21,14 @@ const IniSim: React.FC = () => {
   const [trema, setTrema] = useState(0);
   const [valorMinimoInversion, setValorMinimoInversion] = useState(0);
   const [valorMaximoInversion, setValorMaximoInversion] = useState(0);
-  const [valorMinimoFlujoNeto, setValorMinimoFlujoNeto] = useState(27000);
-  const [valorMaximoFlujoNeto, setValorMaximoFlujoNeto] = useState(33000);
-  const [valorProbableFlujoNeto, setValorProbableFlujoNeto] = useState(30000);
+  const [valorMinimoFlujoNeto, setValorMinimoFlujoNeto] = useState(0);
+  const [valorMaximoFlujoNeto, setValorMaximoFlujoNeto] = useState(0);
+  const [valorProbableFlujoNeto, setValorProbableFlujoNeto] = useState(0);
 
   // Estados para $de Aceptacion, Numero de Corridas, Numero de Años
   const [porcentajeAceptacion, setPorcentajeAceptacion] = useState(0);
   const [numeroCorridas, setNumeroCorridas] = useState(0);
-  const [numeroAnios, setNumeroAnios] = useState(6);
+  const [numeroAnios, setNumeroAnios] = useState(5);
 
   // Estados para valor Probable de Inversion
   const [valorProbableInversion, setValorProbableInversion] = useState(0);
@@ -100,7 +100,7 @@ const IniSim: React.FC = () => {
         if (
           porcentajeAceptacion < 0 ||
           porcentajeAceptacion > 100 ||
-          numeroCorridas < 3 ||
+          numeroCorridas < 1 ||
           numeroCorridas > 100 ||
           trema < 1 ||
           trema > 100 ||
@@ -131,19 +131,68 @@ const IniSim: React.FC = () => {
           Math.sqrt((1 - Math.random()) * (valorMaximoFlujoNeto - valorMinimoFlujoNeto) * (valorMaximoFlujoNeto - valorProbableFlujoNeto));
 
 
-      // Funcion que almacena los datos ingresados en esta vista
+      // Funciones para calcular los valores de Inversión Inicial y una Desviación Estándar
+      const calcularInversionMinima = (valorProbable: number) => {
+        const desviacionEstandarInversion = 5000;
+        return Math.max(valorProbable - desviacionEstandarInversion, 0);
+      };
+      
+      const calcularInversionMaxima = (valorProbable: number) => {
+        const desviacionEstandarInversion = 5000;
+        return valorProbable + desviacionEstandarInversion;
+      };
+      
+      // Generar un número aleatorio entre 0.10 y 0.90
+      let porcentajeAleatorio = Math.random() * 0.8 + 0.1;
+      porcentajeAleatorio = parseFloat(porcentajeAleatorio.toFixed(2));
+      console.log(`Porcentaje Aleatorio: ${porcentajeAleatorio}`);
+
+      // Funciones para calcular Flujo Neto en función de la Inversión Inicial y una Desviación Estándar
+      const calcularFlujoNetoMinimo = (inversionInicial: number) => {
+        if (inversionInicial === 100000) {
+          return 27000;
+        } else {
+        const desviacionEstandarFlujoNeto = 3000;
+        const porcentaje = parseFloat((porcentajeAleatorio - 0.05).toFixed(2));
+        console.log(`Porcentaje para Flujo Neto Mínimo: ${porcentaje}`);
+        return inversionInicial * porcentaje - desviacionEstandarFlujoNeto;
+        }
+      };
+
+      const calcularFlujoNetoMaximo = (inversionInicial: number) => {
+        if (inversionInicial === 100000) {
+          return 33000;
+        } else {
+        const desviacionEstandarFlujoNeto = 3000;
+        const porcentaje = parseFloat((porcentajeAleatorio + 0.05).toFixed(2));
+        console.log(`Porcentaje para Flujo Neto Máximo: ${porcentaje}`);
+        return inversionInicial * porcentaje + desviacionEstandarFlujoNeto;
+        }
+      };
+
+      const calcularFlujoNetoProbable = (inversionInicial: number) => {
+        if (inversionInicial === 100000) {
+          return 30000;
+        } else {
+        console.log(`Porcentaje para Flujo Neto Probable: ${porcentajeAleatorio}`);
+        return inversionInicial * porcentajeAleatorio;
+        }
+      };
+
+          // Funcion que almacena los datos ingresados en esta vista
       const datosCorridas = {
         trema,
         porcentajeAceptacion,
         numeroCorridas,
         numeroAnios,
         valorProbableInversion,
-        valorMinimoInversion: valorProbableInversion - 5000,
-        valorMaximoInversion: valorProbableInversion + 5000,
-        valorMinimoFlujoNeto,
-        valorMaximoFlujoNeto,
-        valorProbableFlujoNeto,
+        valorMinimoInversion: calcularInversionMinima(valorProbableInversion),
+        valorMaximoInversion: calcularInversionMaxima(valorProbableInversion),
+        valorMinimoFlujoNeto: calcularFlujoNetoMinimo(valorProbableInversion),
+        valorMaximoFlujoNeto: calcularFlujoNetoMaximo(valorProbableInversion),
+        valorProbableFlujoNeto: calcularFlujoNetoProbable(valorProbableInversion), 
       };
+
       // Log para verificar que los datos son pasados correctamente
       console.log('Datos de corridas antes de la redirección:', datosCorridas);
 
