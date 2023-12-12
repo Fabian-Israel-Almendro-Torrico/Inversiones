@@ -112,7 +112,7 @@ const Inicio: React.FC = () => {
         if (
           porcentajeAceptacion < 0 ||
           porcentajeAceptacion > 100 ||
-          numeroCorridas < 1 ||
+          numeroCorridas <= 0 ||
           numeroCorridas > 100 ||
           numeroAnios < 3 ||
           numeroAnios > 10 ||
@@ -295,9 +295,9 @@ const Inicio: React.FC = () => {
                   placeholder="Ingrese Número de Corridas"
                   onIonChange={(e) => setNumeroCorridas(parseInt(e.detail.value!, 10))}
                   />
-              {numeroCorridas < 3 || numeroCorridas > 100 ? (
+              {numeroCorridas <= 0 || numeroCorridas > 100 ? (
                 <IonLabel id="IniLabelAcepS" color="danger">
-                  Solo se aceptan de 3 a 100 corridas
+                  Solo se aceptan de 1 a 100 corridas
                 </IonLabel>
               ) : null}
               </IonCol>
