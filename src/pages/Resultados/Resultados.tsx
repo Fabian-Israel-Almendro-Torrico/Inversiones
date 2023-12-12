@@ -92,7 +92,7 @@ const Resultados: React.FC = () => {
     // Paso 2: Calcular el Promedio de los Flujos Netos por Año (sin incluir el año 0)
     const promediosFlujosPorAño = Array.from({ length: (datosCorridas?.numeroAnios || 0) }, (_, year: number) => {
       // Suma de los flujos netos solo para el año actual
-      const sumaFlujos = resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.flujos[year + 1], 0);
+      const sumaFlujos = resultadosCorridas.reduce((suma: number, resultado: any) => suma + resultado.flujos[year-1 + 1], 0);
       // Promedio del flujo neto del año actual
       const promedio = sumaFlujos / resultadosCorridas.length;
 
