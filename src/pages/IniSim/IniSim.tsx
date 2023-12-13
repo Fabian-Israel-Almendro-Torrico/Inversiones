@@ -104,8 +104,8 @@ const IniSim: React.FC = () => {
           numeroCorridas > 100 ||
           trema < 1 ||
           trema > 100 ||
-          valorProbableInversion < 50000 ||
-          valorProbableInversion > 1000000
+          valorProbableInversion < 10000 ||
+          valorProbableInversion > 100000000
       ) {
           // Mostrar un mensaje de error 
           setErrorMessage('Verifica que todo este llenado correctamente');
@@ -143,7 +143,7 @@ const IniSim: React.FC = () => {
       };
       
       // Generar un número aleatorio entre 0.10 y 0.90
-      let porcentajeAleatorio = Math.random() * 0.8 + 0.1;
+      let porcentajeAleatorio = Math.random() * 0.7 + 0.2;
       porcentajeAleatorio = parseFloat(porcentajeAleatorio.toFixed(2));
       console.log(`Porcentaje Aleatorio: ${porcentajeAleatorio}`);
 
@@ -252,9 +252,9 @@ const IniSim: React.FC = () => {
                     placeholder="Ingrese Valor Probable Inversión"
                     onIonChange={(e) => setValorProbableInversion(parseFloat(e.detail.value!))}
                   />
-                {valorProbableInversion < 50000 || valorProbableInversion > 1000000 ? (
+                {valorProbableInversion < 10000 || valorProbableInversion > 100000000 ? (
                   <IonLabel id="IniLabelAcepS" color="danger">
-                    Solo se acepta de 50000 Bs. y 1000000 Bs.
+                    Solo se acepta de 10000 Bs. y 100000000 Bs.
                   </IonLabel>
                 ) : null}
                 </IonCol>

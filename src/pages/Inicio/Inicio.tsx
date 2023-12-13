@@ -405,11 +405,6 @@ const Inicio: React.FC = () => {
                   placeholder="Ingrese Valor Mínimo Flujo Neto"
                   onIonChange={(e) => setValorMinimoFlujoNeto(parseFloat(e.detail.value!))}
                 />
-                {valorMinimoFlujoNeto < (valorMinimoInversion * 0.1) || valorMinimoFlujoNeto > (valorMinimoInversion * 0.9) ? (
-                  <IonLabel id="IniLabelAcepS" color="danger">
-                    El valor es demasiado bajo o demasiado alto
-                  </IonLabel>
-                ) : null}
               </IonCol>
 
               <IonCol id="IniCol10">
