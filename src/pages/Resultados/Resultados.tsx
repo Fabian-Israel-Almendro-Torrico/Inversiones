@@ -108,6 +108,7 @@ const Resultados: React.FC = () => {
     // Paso 3: Encontrar el Primer Año en que la Suma Acumulativa de los Promedios sea Mayor o Igual al Promedio de la Inversión Inicial
     let primerAnio = -1;
     let sumaAcumulativa = 0;
+    let inversionSobrante = 0;
 
     for (let year = 0; year < promediosFlujosPorAño.length; year++) {
       sumaAcumulativa += promediosFlujosPorAño[year];
@@ -116,6 +117,7 @@ const Resultados: React.FC = () => {
 
       if (sumaAcumulativa >= promedioInversion) {
         primerAnio = year + 1;
+        inversionSobrante = sumaAcumulativa - promedioInversion;
         // Log para verificar el correcto funcionamiento para encontrar el año 
         console.log(`¡Encontrado! Primer año: ${primerAnio}`);
         break;
@@ -123,7 +125,8 @@ const Resultados: React.FC = () => {
     }
 
     // Paso 4: Calcular la Ganancia desde el primer año encontrado 
-    const ganancia = promediosFlujosPorAño.slice(primerAnio).filter((valor) => !isNaN(valor)).reduce((suma, promedio) => suma + promedio, 0);
+    const ganancia1 = promediosFlujosPorAño.slice(primerAnio).filter((valor) => !isNaN(valor)).reduce((suma, promedio) => suma + promedio, 0);
+    const ganancia = ganancia1 + inversionSobrante;
     // Log para verificar el correcto funcionamiento del calculo de Ganancia
     console.log('Ganancia:', ganancia);
     return { primerAnio, ganancia };
@@ -187,8 +190,8 @@ const Resultados: React.FC = () => {
         pdf.setTextColor(0, 0, 0); // Establece el color del texto
       // Agrega la conclusión según si es aceptado o rechazado
           const conclusionText = esProyectoAceptado()
-          ? `El proyecto cumple con las expectativas esperadas superando la probabilidad de aceptación del proyecto establecido por la empresa con una\nInversión Inicial de: ${datosCorridas?.valorProbableInversion} Bs. La cual se recuperará en ${primerAnio} años con una ganancia de ${gananciaRedondeada} Bs.`
-          : `El proyecto es rechazado porque no cumple con las expectativas \ndeseadas por la empresa ya que no supera la probabilidad de aceptación \nestablecida del ${datosCorridas?.porcentajeAceptacion}%.`;
+          ? `El proyecto cumple con las expectativas esperadas, superando la probabilidad de aceptación del proyecto establecido por la empresa, con una\nInversión Inicial de: ${datosCorridas?.valorProbableInversion} Bs. La cual se recuperará en ${primerAnio} años con una ganancia de ${gananciaRedondeada} Bs.`
+          : `El proyecto es rechazado porque no cumple con las expectativas deseadas por la empresa, ya que no supera la probabilidad de aceptación establecida del ${datosCorridas?.porcentajeAceptacion}%.`;
        
            // @ts-ignore
            pdf.text(conclusionText, 20, pdf.autoTable.previous.finalY + 20, { align: 'justify', maxWidth: 170 });
@@ -240,13 +243,13 @@ const Resultados: React.FC = () => {
             {/* CONCLUSION */} 
             <img id='senior1' src="https://cdn.discordapp.com/attachments/837905669138677770/1181068262642024500/a6a0db7b-f3b8-4e33-93b8-269645219f8e.jpeg?ex=657fb689&is=656d4189&hm=468e9b97529cb01212e92cd696da7ade9d56ca3f3204ec40beabdcfb44f85b6b&" alt="Senior" />
             <p id='conclu-acep'><strong>Conclusión: </strong> 
-            El proyecto cumple con las expectativas esperadas superando la probabilidad de aceptacion del proyecto establecido por la 
-            empresa con una Inversion Inicial de: <strong>{datosCorridas?.valorProbableInversion} Bs.</strong> La cual se recuperará en <strong>{datosCorridas?.numeroAnios}</strong> años 
-            con un TIR de <strong>{calcularPromedioTIR()}%</strong></p>
+            El proyecto cumple con las expectativas esperadas, superando la probabilidad de aceptacion del proyecto establecido por la 
+            empresa con una Inversion Inicial de: <strong>{datosCorridas?.valorProbableInversion} Bs.</strong> La cual en <strong>{datosCorridas?.numeroAnios}</strong> años 
+            usted tendra una TIR de <strong>{calcularPromedioTIR()}%</strong></p>
 
             {/* MOSTRADO DE GANANCIAS Y RECUPERACION DE INVERSION INICIAL */}
             <p id='conclu-acep'><strong>Dato Extra: </strong> 
-            "Usted acaba de Invertir <strong>{datosCorridas?.valorProbableInversion}</strong>, recuperara dicha Inversión en <strong>{primerAnio}</strong> años
+            "Usted acaba de Invertir Bs. <strong>{datosCorridas?.valorProbableInversion}</strong>, recuperara dicha Inversión en <strong>{primerAnio}</strong> años
             con una ganancia de <strong>{gananciaRedondeada}</strong> Bs. en {datosCorridas?.numeroAnios} años.</p>
             </div>
             ) : (
