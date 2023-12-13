@@ -138,6 +138,71 @@ const Resultados: React.FC = () => {
     // Log para verificar los dos resultados esperados
     console.log('Resultados Finales:', { primerAnio, gananciaRedondeada });
 
+       // Funcion para generar un PDF de los RESULTADOS
+       const generarPDF = async () => {
+        const pdf = new jsPDF();
+        
+        // Agrega el título "Valores Iniciales"
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(18);
+        pdf.text('Valores Iniciales', 20, 20);
+        pdf.setFont('helvetica', 'normal');
+      
+        // Crea una tabla con los valores iniciales
+        const valoresInicialesData = [
+          ['Inversión Inicial', 'Años', 'Trema', '%Aceptación'],
+          [
+            datosCorridas?.valorProbableInversion + ' Bs.',
+            datosCorridas?.numeroAnios,
+            datosCorridas?.trema + '%',
+            datosCorridas?.porcentajeAceptacion + '%',
+          ],
+        ];
+        // @ts-ignore
+        pdf.autoTable({
+          startY: 30,
+          head: [valoresInicialesData[0]],
+          body: valoresInicialesData.slice(1),
+          styles: { font: 'helvetica', fontSize: 12, textColor: [0, 0, 0] },
+        });
+      
+        // Agrega el título "Resultado"
+        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(18);
+        // @ts-ignore
+        pdf.text('Resultado', 20, pdf.autoTable.previous.finalY + 20);
+        pdf.setFont('helvetica', 'normal');
+      
+        // Crea una tabla con los resultados
+        const resultadosData = [['TIR', 'Estado'], [calcularPromedioTIR() + '%', esProyectoAceptado() ? 'ACEPTADO' : 'RECHAZADO']];
+        // @ts-ignore
+        pdf.autoTable({
+          // @ts-ignore
+          startY: pdf.autoTable.previous.finalY + 30,
+          head: [resultadosData[0]],
+          body: resultadosData.slice(1),
+          styles: { font: 'helvetica', fontSize: 12, textColor: [0, 0, 0] },
+        });
+      
+          // Estilo para la sección de conclusión
+          pdf.setFont('helvetica');
+          pdf.setFontSize(12);
+          pdf.setTextColor(0, 0, 0); // Establece el color del texto
+        // Agrega la conclusión según si es aceptado o rechazado
+            const conclusionText = esProyectoAceptado()
+            ? `El proyecto cumple con las expectativas esperadas, superando la probabilidad de aceptación del proyecto establecido por la empresa, con una\nInversión Inicial de: ${datosCorridas?.valorProbableInversion} Bs. La cual se recuperará en ${primerAnio} años con una ganancia de ${gananciaRedondeada} Bs.`
+            : `El proyecto es rechazado porque no cumple con las expectativas deseadas por la empresa, ya que no supera la probabilidad de aceptación establecida del ${datosCorridas?.porcentajeAceptacion}%.`;
+         
+             // @ts-ignore
+             pdf.text(conclusionText, 20, pdf.autoTable.previous.finalY + 20, { align: 'justify', maxWidth: 170 });
+  
+          // Obtener los datos URI del PDF
+  const pdfDataUri = pdf.toDataURL();
+
+  // Abre el PDF en una nueva ventana o pestaña
+  window.open(pdfDataUri, '_blank');
+      };
+
     //Renderizacion de la vista
       return (
         <IonPage id='page'>
@@ -230,6 +295,9 @@ const Resultados: React.FC = () => {
           <div id='pne'>
            <IonButton expand="full" onClick={redirectToInicio} id='resultados-btn-volver'>
               CALCULAR
+            </IonButton> 
+            <IonButton expand="full" onClick={generarPDF} id='resultados-btn-volver'>
+              PDF
             </IonButton> 
             </div>
           </IonContent>
