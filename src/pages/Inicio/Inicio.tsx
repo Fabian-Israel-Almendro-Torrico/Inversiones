@@ -157,6 +157,48 @@ const Inicio: React.FC = () => {
           return;
         }
 
+        // Validar que el campo de Flujo Neto Minimo sea llenado de acuerdo a la Inversion Inicial Minima
+        const calcular10PorcentajeInverMini = (valor: number) => valor * 0.1;
+        const calcular90PorcentajeInverMini = (valor: number) => valor * 0.9;
+        if (
+          valorMinimoFlujoNeto < (valorMinimoInversion * 0.1) ||
+          valorMinimoFlujoNeto > (valorMinimoInversion * 0.9)
+        ) {
+          const mensajeError = `El valor del Flujo Neto Minimo debe estar entre ${calcular10PorcentajeInverMini(valorMinimoInversion)} y ${calcular90PorcentajeInverMini(valorMinimoInversion)}`;
+          setErrorMessage(mensajeError);
+          // Accion de exito
+          setShowErrorToast(true);
+          return;
+        }
+
+        // Validar que el campo de Flujo Neto Maximo sea llenado de acuerdo a la Inversion Inicial Minima
+        const calcular10PorcentajeInverMaximo = (valor: number) => valor * 0.1;
+        const calcular90PorcentajeInverMaximo = (valor: number) => valor * 0.9;
+        if (
+          valorMaximoFlujoNeto < (valorMaximoInversion * 0.1) ||
+          valorMaximoFlujoNeto > (valorMaximoInversion * 0.9)
+        ) {
+          const mensajeError = `El valor del Flujo Neto Maximo debe estar entre ${calcular10PorcentajeInverMaximo(valorMaximoInversion)} y ${calcular90PorcentajeInverMaximo(valorMaximoInversion)}`;
+          setErrorMessage(mensajeError);
+          // Accion de exito
+          setShowErrorToast(true);
+          return;
+        }
+
+                        // Validar que el campo de Flujo Neto Probable sea llenado de acuerdo a la Inversion Inicial Minima
+        const calcular10PorcentajeInverPro = (valor: number) => valor * 0.1;
+        const calcular90PorcentajeInverPro = (valor: number) => valor * 0.9;
+        if (
+          valorProbableFlujoNeto < (valorProbableInversion * 0.1) ||
+          valorProbableFlujoNeto > (valorProbableInversion * 0.9)
+        ) {
+          const mensajeError = `El valor del Flujo Neto Probable debe estar entre ${calcular10PorcentajeInverPro(valorProbableInversion)} y ${calcular90PorcentajeInverPro(valorProbableInversion)}`;
+          setErrorMessage(mensajeError);
+          // Accion de exito
+          setShowErrorToast(true);
+          return;
+        }
+
 
   /*
     Función para mostrar mensajes para el llenado correcto
@@ -363,6 +405,11 @@ const Inicio: React.FC = () => {
                   placeholder="Ingrese Valor Mínimo Flujo Neto"
                   onIonChange={(e) => setValorMinimoFlujoNeto(parseFloat(e.detail.value!))}
                 />
+                {valorMinimoFlujoNeto < (valorMinimoInversion * 0.1) || valorMinimoFlujoNeto > (valorMinimoInversion * 0.9) ? (
+                  <IonLabel id="IniLabelAcepS" color="danger">
+                    El valor es demasiado bajo o demasiado alto
+                  </IonLabel>
+                ) : null}
               </IonCol>
 
               <IonCol id="IniCol10">
